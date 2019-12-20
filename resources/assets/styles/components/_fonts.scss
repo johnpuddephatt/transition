@@ -1,19 +1,19 @@
-@include font-face("TideSansYS", "/assets/fonts/TideSans-300LilKahuna", $file-formats: woff2 woff) {
+@include font-face("Nunito", "../fonts/NunitoSans-ExtraBold", $file-formats: woff2 woff) {
   font-style: normal;
-  font-weight: 300;
+  font-weight: 900;
 }
 
-@include font-face("TideSansYS", "/assets/fonts/TideSans-500Dudette", $file-formats: woff2 woff) {
-  font-style: normal;
-  font-weight: 400;
-}
-
-@include font-face("TideSansYS", "/assets/fonts/TideSans-600Bunny", $file-formats: woff2 woff) {
-  font-style: normal;
-  font-weight: 600;
-}
-
-@include font-face("TideSansYS", "/assets/fonts/TideSans-800Kahuna", $file-formats: woff2 woff) {
+@include font-face("Nunito", "../fonts/NunitoSans-Bold", $file-formats: woff2 woff) {
   font-style: normal;
   font-weight: 700;
+}
+
+@include font-face("Nunito", "../fonts/NunitoSans-SemiBold", $file-formats: woff2 woff) {
+  font-style: normal;
+  font-weight: 500;
+}
+
+@include font-face("Nunito", "../fonts/NunitoSans-Regular", $file-formats: woff2 woff) {
+  font-style: normal;
+  font-weight: 400;
 }
