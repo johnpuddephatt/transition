@@ -40,9 +40,11 @@
 
   &--title {
     text-transform: lowercase;
+    font-weight: 700;
+    letter-spacing: 0.01em;
     font-size: modular-scale(7);
     color: white;
-    width: 8em;
+    width: 8.5em;
     margin-bottom: 0;
     animation: titleExit 1.5s 4s ease forwards;
 
@@ -50,11 +52,13 @@
       // display: inline !important;
       opacity: 0;
       transform: translateY(0.025em);
-      animation: letterFadeIn ease-in-out 1s forwards;
+      -moz-transform: translateY(0.025em) rotate(0.02deg);
+      backface-visibility: hidden;
+      animation: letterFadeIn ease 1s forwards;
 
       @for $i from 1 through 150 {
         &:nth-child(#{$i}) {
-          animation-delay: #{$i * 70}ms;
+          animation-delay: #{$i * 80}ms;
         }
       }
     }
@@ -62,12 +66,14 @@
 }
 
 @keyframes letterFadeIn {
-  80% {
+  75% {
     transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
   }
 
   100% {
     transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
     opacity: 1;
   }
 }

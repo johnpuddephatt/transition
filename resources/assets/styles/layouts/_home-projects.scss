@@ -12,26 +12,30 @@
     font-weight: 500;
     line-height: 0.8;
     text-transform: lowercase;
-    color: white;
 
-    &::before,
-    &::after {
-      // outline: 1px solid red;
-      height: 1em * 0.8;
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 9;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      mix-blend-mode: difference;
-    }
+    @supports (mix-blend-mode: difference) {
+      color: white;
+      will-change: transform;
 
-    &::after {
-      width: calc(50% + #{$small-spacing});
-      top: 1em * 0.8;
+      &::before,
+      &::after {
+        // outline: 1px solid red;
+        height: 1em * 0.8;
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        mix-blend-mode: difference;
+      }
+
+      &::after {
+        width: calc(50% + #{$small-spacing});
+        top: 1em * 0.8;
+      }
     }
   }
 

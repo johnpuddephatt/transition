@@ -8,9 +8,9 @@
 
       @php do_action('get_header') @endphp
       @include('partials.header')
-      <main class="main">
+      {{-- <main class="main"> --}}
         @yield('content')
-      </main>
+      {{-- </main> --}}
       @if (App\display_sidebar())
         <aside class="sidebar">
           @include('partials.sidebar')

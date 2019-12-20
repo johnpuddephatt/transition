@@ -8,6 +8,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  transform-origin: center center;
   // outline: 1px dotted #eee;
 }
 
@@ -47,6 +48,7 @@ body {
 
   @media screen and (min-width: $medium-screen) {
     perspective: 1px;
+    perspective-origin: bottom center;
   }
 
   body.home:not(.internal-referer) & {
@@ -54,13 +56,13 @@ body {
   }
 }
 
-main {
-  position: relative;
-
-  @media screen and (min-width: $large-screen) {
-    transform-style: preserve-3d;
-  }
-}
+// main {
+//   position: relative;
+//
+//   @media screen and (min-width: $large-screen) {
+//     transform-style: preserve-3d;
+//   }
+// }
 
 .container {
   max-width: $large-screen;

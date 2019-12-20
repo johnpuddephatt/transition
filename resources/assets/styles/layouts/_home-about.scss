@@ -8,6 +8,7 @@
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
+  transform-style: preserve-3d;
 
   &::after {
     display: block;
@@ -24,40 +25,42 @@
     background-image: linear-gradient(135deg, white 50%, $vanilla 50%);
   }
 
-  .container {
-    position: relative;
+  &::before {
+    content: "";
+    height: 50%;
+    position: absolute;
+    top: 55%;
+    right: 5vw;
+    width: 60vw;
+    background-image: radial-gradient(#fff 20%, transparent 20%);
+    background-position: 10px 10px;
+    background-size: 7px 7px;
 
-    &::after {
-      content: "";
-      height: 85%;
-      position: absolute;
-      bottom: 0;
-      left: 25vw;
-      width: 75vw;
-      background-image: radial-gradient(#fff 20%, transparent 20%);
-      background-position: 10px 10px;
-      background-size: 7px 7px;
-
-      @media screen and (min-width: $medium-screen) {
-        will-change: transform;
-        transform: translate3d(0, 0, 0.25px) scale(0.75);
-        transform-origin: center left;
-      }
+    @media screen and (min-width: $medium-screen) {
+      will-change: transform;
+      transform-style: preserve-3d;
+      transform: translate3d(0, 0, 0.25px) scale(0.75);
     }
+  }
+
+  .container {
+    transform-style: preserve-3d;
+    // position: relative;
   }
 
   &--text {
     position: relative;
     z-index: 9;
-    margin-top: 5 * $base-spacing;
+    margin-top: 8 * $base-spacing;
     margin-bottom: 4 * $base-spacing;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing;
 
     @media screen and (min-width: $medium-screen) {
       will-change: transform;
+      transform-style: preserve-3d;
+      perspective-origin: center center;
       transform: translate3d(0, 0, 0.2px) scale(0.8);
-      transform-origin: center center;
     }
   }
 
@@ -72,14 +75,14 @@
   &--image {
     position: absolute;
     right: -2 * $base-spacing;
-    bottom: -$small-spacing;
+    bottom: -2 * $base-spacing;
     width: 55%;
     height: auto;
 
     @media screen and(min-width: $medium-screen) {
       will-change: transform;
+      transform-style: preserve-3d;
       transform: translate3d(0, 0, 0.1px) scale(0.9);
-      transform-origin: center center;
     }
   }
 
