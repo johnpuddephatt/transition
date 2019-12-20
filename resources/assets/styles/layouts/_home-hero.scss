@@ -1,0 +1,30 @@
+.home-hero {
+  position: relative;
+  min-height: calc(100vh - #{5 * $base-spacing});
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &--text {
+    width: 70%;
+    margin-bottom: 4 * $base-spacing;
+  }
+
+  &--title {
+    font-size: modular-scale(6);
+    font-weight: 900;
+  }
+
+  &--excerpt {
+    width: 85%;
+    margin-bottom: 1.5 * $base-spacing;
+  }
+
+  &--image {
+    position: absolute;
+    width: 70%;
+    right: 0;
+    bottom: $small-spacing;
+    z-index: -1;
+  }
+}

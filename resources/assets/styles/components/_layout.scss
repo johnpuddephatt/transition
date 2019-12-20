@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+  background-color: white;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  // outline: 1px dotted #eee;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  display: block;
+
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+#app {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 0;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+
+  @media screen and (min-width: $medium-screen) {
+    perspective: 1px;
+  }
+}
+
+main {
+  position: relative;
+
+  @media screen and (min-width: $large-screen) {
+    transform-style: preserve-3d;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: -999;
+    bottom: -50vh;
+    height: 300px;
+    left: 50%;
+    right: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+
+    // @media screen and(min-width: $medium-screen) {
+    //   background-color: rgba(255, 100, 0, 0.3);
+    //   will-change: transform;
+    //   transform: translate3d(0, 0, -0.4px) scale(1.4);
+    //   transform-origin: bottom center;
+    // }
+  }
+}
+
+.container {
+  max-width: $large-screen;
+  margin: 0 auto;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+}
+
+.container__narrow {
+  max-width: $medium-screen;
+}
+
+.padded-box {
+  background-color: $light-color;
+  padding: $base-spacing;
+  margin: $base-spacing 0;
+  font-weight: 300;
+  font-size: modular-scale(-1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

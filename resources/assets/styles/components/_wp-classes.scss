@@ -1,0 +1,65 @@
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+html[lang],
+html body.admin-bar {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  display: none;
+}
+
+/** Media alignment */
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.aligncenter {
+  display: block;
+  margin: $small-spacing auto;
+  height: auto;
+}
+
+.alignleft,
+.alignright {
+  margin-bottom: $small-spacing;
+  height: auto;
+}
+
+@media (min-width: 30rem) {
+  .alignleft {
+    float: left;
+    margin-right: $small-spacing;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: $small-spacing;
+  }
+}
+
+/** Captions */
+
+// TODO: .wp-caption {}
+// TODO: .wp-caption img {}
+// TODO: .wp-caption-text {}
+
+/** Text meant only for screen readers */
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  color: #000;
+  background: #fff;
+}
