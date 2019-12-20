@@ -1,0 +1,15 @@
+.site-footer {
+  background-color: $base-font-color;
+
+  .container {
+    color: white;
+    height: 8 * $base-spacing;
+    padding-top: 2 * $base-spacing;
+    padding-bottom: 2 * $base-spacing;
+  }
+
+  &--title {
+    font-size: modular-scale(2);
+    font-weight: 500;
+  }
+}

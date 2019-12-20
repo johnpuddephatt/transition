@@ -1,24 +1,94 @@
 .home-projects {
   margin-top: 4 * $base-spacing;
   margin-bottom: 4 * $base-spacing;
+  position: relative;
+
+  .container {
+    position: relative;
+  }
 
   .section-title {
     font-size: modular-scale(12);
     font-weight: 500;
     line-height: 0.8;
     text-transform: lowercase;
+    color: white;
+
+    &::before,
+    &::after {
+      // outline: 1px solid red;
+      height: 1em * 0.8;
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      mix-blend-mode: difference;
+    }
+
+    &::after {
+      width: calc(50% + #{$small-spacing});
+      top: 1em * 0.8;
+    }
   }
 
-  &--list {
-    font-size: modular-scale(3);
-    margin: 4 * $base-spacing 0;
+  &--title-image {
+    position: absolute;
+    z-index: -1;
+    top: (modular-scale(12) - 1em);
+    bottom: 0;
+    right: -2 * $base-spacing;
+    width: calc(50% + #{1.5 * $base-spacing});
+  }
 
-    li {
-      padding: $small-spacing 0;
+  &--intro {
+    width: 50%;
+    padding-right: $base-spacing;
+    margin-top: $base-spacing;
+    margin-bottom: 8 * $base-spacing;
+  }
 
-      &.active {
-        font-weight: 700;
-      }
+  // &--image {
+  // }
+
+  &--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$small-spacing;
+    margin-right: -$small-spacing;
+    padding-top: $base-spacing;
+    margin-top: $base-spacing;
+    padding-bottom: 2 * $base-spacing;
+    border-bottom: $base-border;
+    border-top: $base-border;
+  }
+
+  &--project {
+    flex: 0 0 calc(25% - #{$base-spacing});
+    margin: $small-spacing;
+
+    &:nth-child(1),
+    &:nth-child(6) {
+      flex: 0 0 calc(50% - #{$base-spacing});
     }
+  }
+
+  &--read-more {
+    margin: (-$base-spacing) auto 0;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--image {
+    display: block;
+    margin-bottom: $base-spacing;
+  }
+
+  &--excerpt {
+    font-size: modular-scale(-1);
   }
 }

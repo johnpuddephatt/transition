@@ -1,5 +1,5 @@
 .home-about {
-  margin-top: 2 * $base-spacing;
+  margin-top: 4 * $base-spacing;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,12 +13,12 @@
     display: block;
     content: "";
     position: absolute;
-    width: calc(200vw + 100vh);
+    width: calc(200vw + 100vh - #{4 * $base-spacing});
     height: 100%;
     left: 0;
     z-index: -9;
     background-color: $vanilla;
-    transition: transform 4 * $base-duration $base-timing, opacity 4 * $base-duration $base-timing;
+    transition: transform 3 * $base-duration $base-timing, opacity 3 * $base-duration $base-timing;
     transform: translateX(0);
     opacity: 0;
     background-image: linear-gradient(135deg, white 50%, $vanilla 50%);
@@ -29,11 +29,11 @@
 
     &::after {
       content: "";
-      height: 90%;
+      height: 85%;
       position: absolute;
       bottom: 0;
-      left: 30%;
-      width: 100vw;
+      left: 25vw;
+      width: 75vw;
       background-image: radial-gradient(#fff 20%, transparent 20%);
       background-position: 10px 10px;
       background-size: 7px 7px;
@@ -41,7 +41,7 @@
       @media screen and (min-width: $medium-screen) {
         will-change: transform;
         transform: translate3d(0, 0, 0.25px) scale(0.75);
-        transform-origin: center center;
+        transform-origin: center left;
       }
     }
   }
@@ -71,9 +71,9 @@
 
   &--image {
     position: absolute;
-    right: 0;
-    bottom: 2 * $base-spacing;
-    width: 50%;
+    right: -2 * $base-spacing;
+    bottom: -$small-spacing;
+    width: 55%;
     height: auto;
 
     @media screen and(min-width: $medium-screen) {

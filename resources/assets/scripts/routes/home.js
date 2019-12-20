@@ -28,29 +28,48 @@ export default {
       observer.observe(target);
     })();
 
-    (function projectsIntersectionObserver() {
-      let height = window.innerHeight;
-      let targets = document.querySelectorAll('.home-projects--list li');
-      let targetHeight = targets[0].clientHeight;
+    (function aboutIntersectionObserver() {
       let callback = function (entries) {
         entries.forEach(entry => {
-          if(entry.intersectionRatio > 0.5) {
-            entry.target.classList.add('active');
-          }
-          else{
-            entry.target.classList.remove('active');
+          if(entry.intersectionRatio > 0) {
+            entry.target.classList.add('in-view');
           }
         });
       };
-
       let options = {
-        rootMargin: `-${(height - targetHeight)/2}px 0px`,
-        threshold: 0.5,
+        // rootMargin: '0px 0px',
+        threshold: 0.1,
       }
       let observer = new IntersectionObserver(callback, options);
-      targets.forEach(target => {
-        observer.observe(target);
-      });
+      let target = document.querySelector('.home-blog');
+      observer.observe(target);
+    })();
+
+    (function projectsIntersectionObserver() {
+      let height = window.innerHeight;
+      let targets = document.querySelectorAll('.home-projects--list li');
+      if(targets.length) {
+        let targetHeight = targets[0].clientHeight;
+        let callback = function (entries) {
+          entries.forEach(entry => {
+            if(entry.intersectionRatio > 0.5) {
+              entry.target.classList.add('active');
+            }
+            else{
+              entry.target.classList.remove('active');
+            }
+          });
+        }
+
+        let options = {
+          rootMargin: `-${(height - targetHeight)/2}px 0px`,
+          threshold: 0.5,
+        }
+        let observer = new IntersectionObserver(callback, options);
+        targets.forEach(target => {
+          observer.observe(target);
+        });
+      }
 
     })();
 

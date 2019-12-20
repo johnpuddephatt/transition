@@ -13,6 +13,7 @@
   &--title {
     font-size: modular-scale(6);
     font-weight: 900;
+    margin-bottom: $base-spacing;
   }
 
   &--excerpt {
@@ -26,5 +27,18 @@
     right: 0;
     bottom: $small-spacing;
     z-index: -1;
+    animation: loadHeroImage 5.5s 5s forwards;
+    filter: grayscale(1) contrast(0.25) brightness(1.9);
+
+    body.internal-referer & {
+      filter: none;
+      animation: none;
+    }
+  }
+}
+
+@keyframes loadHeroImage {
+  100% {
+    filter: grayscale(0) contrast(1) brightness(1);
   }
 }

@@ -996,29 +996,48 @@ var SplitType = window.SplitType;
       observer.observe(target);
     })();
 
-    (function projectsIntersectionObserver() {
-      var height = window.innerHeight;
-      var targets = document.querySelectorAll('.home-projects--list li');
-      var targetHeight = targets[0].clientHeight;
+    (function aboutIntersectionObserver() {
       var callback = function (entries) {
         entries.forEach(function (entry) {
-          if(entry.intersectionRatio > 0.5) {
-            entry.target.classList.add('active');
-          }
-          else{
-            entry.target.classList.remove('active');
+          if(entry.intersectionRatio > 0) {
+            entry.target.classList.add('in-view');
           }
         });
       };
-
       var options = {
-        rootMargin: ("-" + ((height - targetHeight)/2) + "px 0px"),
-        threshold: 0.5,
+        // rootMargin: '0px 0px',
+        threshold: 0.1,
       }
       var observer = new IntersectionObserver(callback, options);
-      targets.forEach(function (target) {
-        observer.observe(target);
-      });
+      var target = document.querySelector('.home-blog');
+      observer.observe(target);
+    })();
+
+    (function projectsIntersectionObserver() {
+      var height = window.innerHeight;
+      var targets = document.querySelectorAll('.home-projects--list li');
+      if(targets.length) {
+        var targetHeight = targets[0].clientHeight;
+        var callback = function (entries) {
+          entries.forEach(function (entry) {
+            if(entry.intersectionRatio > 0.5) {
+              entry.target.classList.add('active');
+            }
+            else{
+              entry.target.classList.remove('active');
+            }
+          });
+        }
+
+        var options = {
+          rootMargin: ("-" + ((height - targetHeight)/2) + "px 0px"),
+          threshold: 0.5,
+        }
+        var observer = new IntersectionObserver(callback, options);
+        targets.forEach(function (target) {
+          observer.observe(target);
+        });
+      }
 
     })();
 

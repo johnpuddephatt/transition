@@ -29,7 +29,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: loadingWipe 1.5s 4s ease-in forwards;
+    animation: loadingWipe 1.5s 4.5s ease-in forwards;
   }
 
   .container {
@@ -44,7 +44,7 @@
     color: white;
     width: 8em;
     margin-bottom: 0;
-    animation: titleExit 1s 4s ease forwards;
+    animation: titleExit 1.5s 4s ease forwards;
 
     > * {
       // display: inline !important;

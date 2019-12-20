@@ -5,17 +5,55 @@
       Our process
     </h2>
 
-    <ul class="home-projects--list">
-      <li>Open House</li>
-      <li>House of the Commons</li>
-      <li>Floyds Row</li>
-      <li>Manor Farm</li>
-      <li>Makespace Oxford</li>
-      <li>Wooton Thatched Barn</li>
-    </ul>
+    <p class="home-projects--intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
 
-    <a href="#">View all projects →</a>
+    <img class="home-projects--title-image" src="/app/themes/transition/dist/images/projects.jpg">
 
-    <img src="/app/themes/transition/dist/images/openhouse.jpg" alt="">
+    <div class="home-projects--wrapper">
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project1.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </a>
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project2.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+      </a>
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project3.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+      </a>
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project4.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+      </a>
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project5.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt et dolore magna aliqua.</p>
+      </a>
+
+      <a class="home-projects--project">
+        <img class="home-projects--image" src="/app/themes/transition/dist/images/project6.jpg" alt="">
+        <h3 class="home-projects--heading">Project title</h3>
+        <p class="home-projects--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </a>
+
+    </div>
+
+    <a class="button home-projects--read-more" href="#">View all projects</a>
+
+    <div class="home-projects--image-container">
+
+    </div>
+
   </div>
 </section>

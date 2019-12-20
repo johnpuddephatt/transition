@@ -21,6 +21,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  will-change: transform;
 
   &::before {
     content: "";
