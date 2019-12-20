@@ -80,7 +80,7 @@
     background-color: $base-font-color;
     color: white;
     text-transform: uppercase;
-    margin: $base-spacing 0 $small-spacing;
+    margin: $base-spacing 0 1.5 * $small-spacing;
     padding: $small-spacing/2 $small-spacing;
     font-size: modular-scale(-2);
     letter-spacing: $wide-letter-spacing;
@@ -88,9 +88,27 @@
 
   &--read-more {
     font-size: modular-scale(-1);
+    text-transform: lowercase;
 
     &::after {
-      content: ">";
+      content: "→";
+      display: inline-block;
+      margin-left: $small-spacing/2;
+    }
+  }
+
+  &--read-all {
+    float: right;
+    display: inline-block;
+    margin: $base-spacing 0;
+    line-height: $base-spacing;
+    text-transform: lowercase;
+    position: relative;
+    z-index: 99;
+    font-size: modular-scale(1);
+
+    &::after {
+      content: "→";
       display: inline-block;
       margin-left: $small-spacing/2;
     }
@@ -105,7 +123,7 @@
         display: block;
         position: absolute;
         top: 0;
-        height: calc(#{8.5 * $base-spacing} + #{2 * modular-scale(12) * $big-heading-line-height} - 1px);
+        height: calc(#{11.5 * $base-spacing} + #{2 * modular-scale(12) * $big-heading-line-height} - 2px);
         z-index: 1;
         width: 100%;
         background-color: #fff;

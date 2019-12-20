@@ -48,7 +48,19 @@
     width: 50%;
     padding-right: $base-spacing;
     margin-top: $base-spacing;
-    margin-bottom: 8 * $base-spacing;
+    margin-bottom: 5.5 * $base-spacing;
+  }
+
+  &--tag {
+    display: inline-block;
+    background-color: $base-font-color;
+    color: white;
+    text-transform: uppercase;
+    // margin: $base-spacing 0 $small-spacing;
+    margin-top: $small-spacing;
+    padding: $small-spacing/2 $small-spacing;
+    font-size: modular-scale(-2);
+    letter-spacing: $wide-letter-spacing;
   }
 
   // &--image {

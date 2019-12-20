@@ -2,6 +2,7 @@
   <div class="container">
     <div class="column">
       <h2 class="section-title">Research &amp; writing</h2>
+      <a href="#" class="home-blog--read-all">Read all</a>
       <div class="home-blog--article">
         <div class="home-blog--mask"></div>
         <img src="/app/themes/transition/dist/images/writing.jpg" alt="">

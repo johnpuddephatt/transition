@@ -7,13 +7,13 @@
 
   &--text {
     width: 70%;
-    margin-bottom: 4 * $base-spacing;
+    margin-bottom: 5.5 * $base-spacing;
   }
 
   &--title {
     font-size: modular-scale(6);
     font-weight: 900;
-    margin-bottom: $base-spacing;
+    margin-bottom: $small-spacing;
   }
 
   &--excerpt {
@@ -25,7 +25,7 @@
     position: absolute;
     width: 70%;
     right: 0;
-    bottom: $small-spacing;
+    bottom: $base-spacing;
     z-index: -1;
     animation: loadHeroImage 5.5s 5s forwards;
     filter: grayscale(1) contrast(0.25) brightness(1.9);
