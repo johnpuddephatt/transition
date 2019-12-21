@@ -82,8 +82,9 @@ hr {
 
 .page-title,
 .post-title {
-  font-size: modular-scale(5);
-  margin-bottom: 0;
+  font-size: modular-scale(6);
+  font-weight: 700;
+  margin: 2 * $base-spacing 0 $base-spacing;
 }
 
 .page-subtitle {

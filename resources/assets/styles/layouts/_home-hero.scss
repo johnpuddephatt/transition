@@ -5,6 +5,10 @@
   flex-direction: row;
   align-items: center;
 
+  .container {
+    position: relative;
+  }
+
   &--text {
     width: 70%;
     margin-bottom: 5.5 * $base-spacing;
@@ -13,7 +17,7 @@
   &--title {
     font-size: modular-scale(6);
     font-weight: 900;
-    margin-bottom: $small-spacing;
+    margin-bottom: $base-spacing;
   }
 
   &--excerpt {
@@ -23,9 +27,9 @@
 
   &--image {
     position: absolute;
-    width: 70%;
-    right: 0;
-    bottom: $base-spacing;
+    width: 90%;
+    right: -10%;
+    top: 2 * $base-spacing;
     z-index: -1;
     animation: loadHeroImage 5.5s 5s forwards;
     filter: grayscale(1) contrast(0.25) brightness(1.9);

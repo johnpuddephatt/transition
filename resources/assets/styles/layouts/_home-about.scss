@@ -30,6 +30,7 @@
     height: 50%;
     position: absolute;
     top: 55%;
+    z-index: 99;
     right: 5vw;
     width: 60vw;
     background-image: radial-gradient(#fff 20%, transparent 20%);
@@ -55,6 +56,7 @@
     margin-bottom: 4 * $base-spacing;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing;
+    text-shadow: 0 0 3 * $base-spacing darken($vanilla, 50%);
 
     @media screen and (min-width: $medium-screen) {
       will-change: transform;

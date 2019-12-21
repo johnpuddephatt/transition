@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  @include('partials.loading')
 
   @include('partials.home-hero')
   @include('partials.home-about')

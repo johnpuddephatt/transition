@@ -4,7 +4,6 @@
   <body @php body_class() @endphp>
     <div id="app" role="document">
 
-      @include('partials.loading')
 
       @php do_action('get_header') @endphp
       @include('partials.header')

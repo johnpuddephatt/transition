@@ -854,11 +854,12 @@ hr {
 
 .page-title,
 .post-title {
-  font-size: 2.36139em;
-  margin-bottom: 0;
+  font-size: 2.80415em;
+  font-weight: 700;
+  margin: 3rem 0 1.5rem;
 }
 
-/* line 89, resources/assets/styles/components/_typography.scss */
+/* line 90, resources/assets/styles/components/_typography.scss */
 
 .page-subtitle {
   margin-top: 0.75rem;
@@ -2580,33 +2581,39 @@ body.internal-referer .loading {
 
 /* line 8, resources/assets/styles/layouts/_home-hero.scss */
 
+.home-hero .container {
+  position: relative;
+}
+
+/* line 12, resources/assets/styles/layouts/_home-hero.scss */
+
 .home-hero--text {
   width: 70%;
   margin-bottom: 8.25rem;
 }
 
-/* line 13, resources/assets/styles/layouts/_home-hero.scss */
+/* line 17, resources/assets/styles/layouts/_home-hero.scss */
 
 .home-hero--title {
   font-size: 2.80415em;
   font-weight: 900;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
-/* line 19, resources/assets/styles/layouts/_home-hero.scss */
+/* line 23, resources/assets/styles/layouts/_home-hero.scss */
 
 .home-hero--excerpt {
   width: 85%;
   margin-bottom: 2.25rem;
 }
 
-/* line 24, resources/assets/styles/layouts/_home-hero.scss */
+/* line 28, resources/assets/styles/layouts/_home-hero.scss */
 
 .home-hero--image {
   position: absolute;
-  width: 70%;
-  right: 0;
-  bottom: 1.5rem;
+  width: 90%;
+  right: -10%;
+  top: 3rem;
   z-index: -1;
   -webkit-animation: loadHeroImage 5.5s 5s forwards;
        -o-animation: loadHeroImage 5.5s 5s forwards;
@@ -2615,7 +2622,7 @@ body.internal-referer .loading {
           filter: grayscale(1) contrast(0.25) brightness(1.9);
 }
 
-/* line 33, resources/assets/styles/layouts/_home-hero.scss */
+/* line 37, resources/assets/styles/layouts/_home-hero.scss */
 
 body.internal-referer .home-hero--image {
   -webkit-filter: none;
@@ -2700,6 +2707,7 @@ body.internal-referer .home-hero--image {
   height: 50%;
   position: absolute;
   top: 55%;
+  z-index: 99;
   right: 5vw;
   width: 60vw;
   background-image: -webkit-radial-gradient(#fff 20%, transparent 20%);
@@ -2721,14 +2729,14 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 46, resources/assets/styles/layouts/_home-about.scss */
+/* line 47, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about .container {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-/* line 51, resources/assets/styles/layouts/_home-about.scss */
+/* line 52, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--text {
   position: relative;
@@ -2739,10 +2747,11 @@ body.internal-referer .home-hero--image {
   -webkit-transition: opacity 1500ms 500ms ease-out;
   -o-transition: opacity 1500ms 500ms ease-out;
   transition: opacity 1500ms 500ms ease-out;
+  text-shadow: 0 0 4.5rem #523f2c;
 }
 
 @media screen and (min-width: 720px) {
-  /* line 51, resources/assets/styles/layouts/_home-about.scss */
+  /* line 52, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--text {
     will-change: transform;
@@ -2755,7 +2764,7 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 67, resources/assets/styles/layouts/_home-about.scss */
+/* line 69, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--title {
   font-size: 2.80415em;
@@ -2765,7 +2774,7 @@ body.internal-referer .home-hero--image {
   margin-bottom: 1.5rem;
 }
 
-/* line 75, resources/assets/styles/layouts/_home-about.scss */
+/* line 77, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--image {
   position: absolute;
@@ -2776,7 +2785,7 @@ body.internal-referer .home-hero--image {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 75, resources/assets/styles/layouts/_home-about.scss */
+  /* line 77, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--image {
     will-change: transform;
@@ -2787,7 +2796,7 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 90, resources/assets/styles/layouts/_home-about.scss */
+/* line 92, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view::after {
   -webkit-transform: translateX(calc(6rem - 100vw - 100vh));
@@ -2796,7 +2805,7 @@ body.internal-referer .home-hero--image {
   opacity: 1;
 }
 
-/* line 95, resources/assets/styles/layouts/_home-about.scss */
+/* line 97, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view .home-about--text {
   opacity: 1;
