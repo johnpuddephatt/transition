@@ -2667,15 +2667,11 @@ body.internal-referer .home-hero--image {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5ODYuNiIgaGVpZ2h0PSI5ODYuNiIgdmlld0JveD0iMCAwIDk4Ni42IDk4Ni42Ij48cGF0aCBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjEuNTY4IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik05MTkuOCAzOS41SDcxNi40Yy0xMC43IDAtMTkuMy04LjctMTkuMy0xOS4zIDAtMTAuNyA4LjctMTkuMyAxOS4zLTE5LjNoMjUwLjFjMS4yIDAgMi41LjEgMy44LjRoMGMuMi4xLjUuMS43LjJsLjkuM2gwdjBsLjYuMmguMWMuMSAwIC4yLjEuMy4xbC45LjNjLjMuMS41LjMuOC40LjEuMS4yLjEuMy4ybC43LjRoMHYwbC45LjUuNi4zaDBjLjkuNiAxLjggMS4zIDIuNSAyIDAgLjEuMS4xLjIuMWwuMy41LjMuMmMuNi43IDEuMiAxLjQgMS43IDIuMi4xLjEuMi4yLjMuNGgwYy4xLjIuMi40LjQuN2wuNC45aDBsLjQuOGMuMi4zLjMuNi41IDF2LjFjLjEuMi4yLjUuMy44IDAgLjEuMS4zLjEuNGgwbC4yLjcuMy45di4xYzAgLjEuMS4yLjEuNGwuMS4yYy4zIDEuMy40IDIuNi40IDMuOHYyNTAuMWMwIDEwLjctOC43IDE5LjMtMTkuMyAxOS4zLTEwLjcgMC0xOS4zLTguNy0xOS4zLTE5LjNWNjYuOEw2Ni44IDk0Ny4yaDIwMy40YzEwLjYgMCAxOS4zIDguNyAxOS4zIDE5LjMgMCAxMC42LTguNyAxOS4zLTE5LjMgMTkuM0gyMC4xYy0uOCAwLTEuNi0uMS0yLjUtLjNoMGMtLjIgMC0uNCAwLS42LS4xLS4yIDAtLjQgMC0uNy0uMWgwdjBjLS4yIDAtLjQtLjEtLjctLjJoMGwtLjktLjNoMGwtLjctLjJoMC0uMSAwYy0uNC0uMS0uOC0uMi0xLjItLjRoMGMtLjQtLjItLjctLjQtMS4xLS42aC0uMWwtLjYtLjN2MGgwdjBsLS44LS40LS42LS4zYy0uOS0uNi0xLjctMS4zLTIuNS0ybC0uMi0uMi0uMy0uNS0uMi0uMWMtLjctLjgtMS40LTEuNi0yLTIuNSAwLS4xLS4xLS4xLS4xLS4xaDBjLS4yLS4yLS4yLS40LS40LS43bC0uNS0uOWgwdjBoMGwtLjQtLjdoMGMtLjItLjQtLjQtLjctLjUtMS0uMS0uMS0uMS0uMy0uMS0uNS0uMS0uMy0uMi0uNS0uMy0uOHYwbC0uMi0uN2gwbC0uNC0uOXYtLjFjLS4xLS4yLS4yLS40LS4yLS42LS4zLTEuMy0uNC0yLjYtLjQtMy44VjcxNi40YzAtMTAuNiA4LjctMTkuMyAxOS4zLTE5LjMgMTAuNyAwIDE5LjMgOC43IDE5LjMgMTkuM3YyMDMuNEw5MTkuOCAzOS41eiIvPjwvc3ZnPg==");
-  background-size: contain;
-  background-position: right;
-  background-repeat: no-repeat;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-/* line 13, resources/assets/styles/layouts/_home-about.scss */
+/* line 9, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about::after {
   display: block;
@@ -2700,7 +2696,7 @@ body.internal-referer .home-hero--image {
   background-image: linear-gradient(135deg, white 50%, #d2bfab 50%);
 }
 
-/* line 28, resources/assets/styles/layouts/_home-about.scss */
+/* line 24, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about::before {
   content: "";
@@ -2718,7 +2714,7 @@ body.internal-referer .home-hero--image {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 28, resources/assets/styles/layouts/_home-about.scss */
+  /* line 24, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about::before {
     will-change: transform;
@@ -2729,14 +2725,29 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 47, resources/assets/styles/layouts/_home-about.scss */
+/* line 43, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about .container {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-/* line 52, resources/assets/styles/layouts/_home-about.scss */
+/* line 46, resources/assets/styles/layouts/_home-about.scss */
+
+.home-about .container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5ODYuNiIgaGVpZ2h0PSI5ODYuNiIgdmlld0JveD0iMCAwIDk4Ni42IDk4Ni42Ij48cGF0aCBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjEuNTY4IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGQ9Ik05MTkuOCAzOS41SDcxNi40Yy0xMC43IDAtMTkuMy04LjctMTkuMy0xOS4zIDAtMTAuNyA4LjctMTkuMyAxOS4zLTE5LjNoMjUwLjFjMS4yIDAgMi41LjEgMy44LjRoMGMuMi4xLjUuMS43LjJsLjkuM2gwdjBsLjYuMmguMWMuMSAwIC4yLjEuMy4xbC45LjNjLjMuMS41LjMuOC40LjEuMS4yLjEuMy4ybC43LjRoMHYwbC45LjUuNi4zaDBjLjkuNiAxLjggMS4zIDIuNSAyIDAgLjEuMS4xLjIuMWwuMy41LjMuMmMuNi43IDEuMiAxLjQgMS43IDIuMi4xLjEuMi4yLjMuNGgwYy4xLjIuMi40LjQuN2wuNC45aDBsLjQuOGMuMi4zLjMuNi41IDF2LjFjLjEuMi4yLjUuMy44IDAgLjEuMS4zLjEuNGgwbC4yLjcuMy45di4xYzAgLjEuMS4yLjEuNGwuMS4yYy4zIDEuMy40IDIuNi40IDMuOHYyNTAuMWMwIDEwLjctOC43IDE5LjMtMTkuMyAxOS4zLTEwLjcgMC0xOS4zLTguNy0xOS4zLTE5LjNWNjYuOEw2Ni44IDk0Ny4yaDIwMy40YzEwLjYgMCAxOS4zIDguNyAxOS4zIDE5LjMgMCAxMC42LTguNyAxOS4zLTE5LjMgMTkuM0gyMC4xYy0uOCAwLTEuNi0uMS0yLjUtLjNoMGMtLjIgMC0uNCAwLS42LS4xLS4yIDAtLjQgMC0uNy0uMWgwdjBjLS4yIDAtLjQtLjEtLjctLjJoMGwtLjktLjNoMGwtLjctLjJoMC0uMSAwYy0uNC0uMS0uOC0uMi0xLjItLjRoMGMtLjQtLjItLjctLjQtMS4xLS42aC0uMWwtLjYtLjN2MGgwdjBsLS44LS40LS42LS4zYy0uOS0uNi0xLjctMS4zLTIuNS0ybC0uMi0uMi0uMy0uNS0uMi0uMWMtLjctLjgtMS40LTEuNi0yLTIuNSAwLS4xLS4xLS4xLS4xLS4xaDBjLS4yLS4yLS4yLS40LS40LS43bC0uNS0uOWgwdjBoMGwtLjQtLjdoMGMtLjItLjQtLjQtLjctLjUtMS0uMS0uMS0uMS0uMy0uMS0uNS0uMS0uMy0uMi0uNS0uMy0uOHYwbC0uMi0uN2gwbC0uNC0uOXYtLjFjLS4xLS4yLS4yLS40LS4yLS42LS4zLTEuMy0uNC0yLjYtLjQtMy44VjcxNi40YzAtMTAuNiA4LjctMTkuMyAxOS4zLTE5LjMgMTAuNyAwIDE5LjMgOC43IDE5LjMgMTkuM3YyMDMuNEw5MTkuOCAzOS41eiIvPjwvc3ZnPg==");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+/* line 60, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--text {
   position: relative;
@@ -2751,7 +2762,7 @@ body.internal-referer .home-hero--image {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 52, resources/assets/styles/layouts/_home-about.scss */
+  /* line 60, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--text {
     will-change: transform;
@@ -2764,7 +2775,7 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 69, resources/assets/styles/layouts/_home-about.scss */
+/* line 77, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--title {
   font-size: 2.80415em;
@@ -2774,7 +2785,7 @@ body.internal-referer .home-hero--image {
   margin-bottom: 1.5rem;
 }
 
-/* line 77, resources/assets/styles/layouts/_home-about.scss */
+/* line 85, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--image {
   position: absolute;
@@ -2785,7 +2796,7 @@ body.internal-referer .home-hero--image {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 77, resources/assets/styles/layouts/_home-about.scss */
+  /* line 85, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--image {
     will-change: transform;
@@ -2796,7 +2807,7 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 92, resources/assets/styles/layouts/_home-about.scss */
+/* line 100, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view::after {
   -webkit-transform: translateX(calc(6rem - 100vw - 100vh));
@@ -2805,7 +2816,7 @@ body.internal-referer .home-hero--image {
   opacity: 1;
 }
 
-/* line 97, resources/assets/styles/layouts/_home-about.scss */
+/* line 105, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view .home-about--text {
   opacity: 1;
