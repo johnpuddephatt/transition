@@ -1,11 +1,11 @@
 @include font-face("Nunito", "../fonts/NunitoSans-ExtraBold", $file-formats: woff2 woff) {
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @include font-face("Nunito", "../fonts/NunitoSans-Bold", $file-formats: woff2 woff) {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @include font-face("Nunito", "../fonts/NunitoSans-SemiBold", $file-formats: woff2 woff) {

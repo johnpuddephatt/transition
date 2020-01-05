@@ -172,14 +172,14 @@ button:disabled:hover,
   font-family: "Nunito";
   src: url(/app/themes/transition/dist/fonts/NunitoSans-ExtraBold.woff2) format("woff2"), url(/app/themes/transition/dist/fonts/NunitoSans-ExtraBold.woff) format("woff");
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @font-face {
   font-family: "Nunito";
   src: url(/app/themes/transition/dist/fonts/NunitoSans-Bold.woff2) format("woff2"), url(/app/themes/transition/dist/fonts/NunitoSans-Bold.woff) format("woff");
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @font-face {
