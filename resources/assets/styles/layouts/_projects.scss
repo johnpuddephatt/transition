@@ -1,0 +1,49 @@
+.entry-header {
+  &--title {
+    @extend .post-title;
+
+    margin: 2 * $base-spacing 0 $base-spacing;
+  }
+
+  &--image {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.entry-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5 * $base-spacing;
+
+  &--project {
+    @extend .tag;
+
+    margin-bottom: 3 * $base-spacing;
+  }
+
+  &--sidebar {
+    flex: 0 0 20%;
+    padding-right: $base-spacing;
+    margin-right: $base-spacing;
+    border-right: $base-border;
+  }
+
+  &--meta {
+    position: sticky;
+    top: $small-spacing;
+  }
+
+  &--number {
+    @extend .post-title;
+
+    line-height: 1;
+  }
+
+  p {
+    max-width: 40em;
+    font-size: modular-scale(-1);
+    font-weight: 500;
+  }
+}

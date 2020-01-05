@@ -11,6 +11,10 @@ class App extends Controller
         return get_bloginfo('name');
     }
 
+    public static function baseName() {
+        return basename(get_permalink());
+    }
+
     public static function title()
     {
         if (is_home()) {

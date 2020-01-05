@@ -1,0 +1,53 @@
+.pageload--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+.pageload--wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  circle {
+    transition: r 1s;
+    fill: $vanilla;
+  }
+
+  .triggered {
+    animation: explode 1s forwards;
+  }
+}
+
+@keyframes explode {
+  0% {
+    r: 0;
+    opacity: 1;
+  }
+
+  75% {
+    r: 110vmax;
+    opacity: 1;
+  }
+
+  100% {
+    r: 110vmax;
+    opacity: 0;
+  }
+}
+
+.pageload--logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+  color: #fff;
+}

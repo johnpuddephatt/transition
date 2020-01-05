@@ -5,6 +5,7 @@
   transform-style: preserve-3d;
 
   &::after {
+    opacity: 0.65;
     content: "";
     height: 20em;
     position: absolute;
@@ -29,6 +30,8 @@
   }
 
   .section-title {
+    @extend %fade-into-view;
+
     font-size: modular-scale(12);
     font-weight: 500;
     line-height: $big-heading-line-height;
@@ -81,14 +84,10 @@
   }
 
   &--tag {
-    display: inline-block;
-    background-color: $base-font-color;
-    color: white;
-    text-transform: uppercase;
+    @extend .tag;
+
     margin: $base-spacing 0 1.5 * $small-spacing;
-    padding: $small-spacing/2 $small-spacing;
     font-size: modular-scale(-2);
-    letter-spacing: $wide-letter-spacing;
   }
 
   &--read-more {
@@ -154,7 +153,7 @@
   &.in-view {
     &::after {
       transform: translate3d(0, 0, 0.2px) scale(0.8);
-      opacity: 1;
+      opacity: 0.35;
     }
   }
 }

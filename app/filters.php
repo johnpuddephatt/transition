@@ -22,6 +22,10 @@ add_filter('body_class', function (array $classes) {
         $classes[] = 'internal-referer';
     }
 
+    if (isset($_SERVER['HTTP_X_BARBA'])) {
+        $classes[] = 'barba-loaded';
+    }
+
     /** Clean up class names for custom templates */
     $classes = array_map(function ($class) {
         return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);

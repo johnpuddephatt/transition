@@ -52,9 +52,5 @@
 
     <a class="button home-projects--read-more" href="#">View all projects</a>
 
-    <div class="home-projects--image-container">
-
-    </div>
-
   </div>
 </section>

@@ -38,6 +38,10 @@ body {
   }
 }
 
+body.home:not(.internal-referer, .barba-loaded) #app {
+  animation: lockHomeOnLoad 4.5s forwards;
+}
+
 #app {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -47,22 +51,19 @@ body {
   -webkit-overflow-scrolling: touch;
 
   @media screen and (min-width: $medium-screen) {
+    transform-style: preserve-3d;
     perspective: 1px;
     perspective-origin: bottom center;
   }
-
-  body.home:not(.internal-referer) & {
-    animation: lockHomeOnLoad 4s forwards;
-  }
 }
 
-// main {
-//   position: relative;
-//
-//   @media screen and (min-width: $large-screen) {
-//     transform-style: preserve-3d;
-//   }
-// }
+main {
+  // position: relative;
+
+  @media screen and (min-width: $large-screen) {
+    transform-style: preserve-3d;
+  }
+}
 
 .container {
   max-width: $large-screen;

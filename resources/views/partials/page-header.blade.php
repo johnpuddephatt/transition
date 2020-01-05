@@ -1,3 +1,1 @@
-<div class="page-header">
-  <h1>{!! App::title() !!}</h1>
-</div>
+<h1 class="entry-header--title">{!! App::Title() !!}</h1>

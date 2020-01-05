@@ -1,22 +1,25 @@
 <article @php post_class() @endphp>
   <div class="container">
-    <header>
-      <h1 class="post-title">{!! App::Title() !!}</h1>
-      <em>{{ $excerpt }}</em>
-      <p>Custom: {{ $custom_name }}</p>
-
+    <header class="entry-header">
+      <h1 class="entry-header--title">{!! App::Title() !!}</h1>
       @if($featured_image)
-        <figure class="entry-image">
+        <figure class="entry-header--image">
           {!! $featured_image !!}
         </figure>
       @endif
-
-      @include('partials/entry-meta')
     </header>
 
-
     <div class="entry-content">
-      @php the_content() @endphp
+      <aside class="entry-content--sidebar">
+        <div class="entry-content--meta">
+          <div class="entry-content--number">01</div>
+        </div>
+      </aside>
+      <main>
+        <div class="entry-content--project">{{ $project_name }}</div>
+        @php the_content() @endphp
+        @include('partials/entry-meta')
+      </main>
     </div>
 
     <footer>

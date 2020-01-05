@@ -28,7 +28,7 @@ button,
   position: relative;
   cursor: pointer;
   display: inline-block;
-  font-family: "Avenir", "Avenir Next", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: "Avenir Next", "Avenir", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -38,9 +38,9 @@ button,
   padding: 0.75rem 1.5rem;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: background-color 500ms ease-out, color 500ms ease-out;
-  -o-transition: background-color 500ms ease-out, color 500ms ease-out;
-  transition: background-color 500ms ease-out, color 500ms ease-out;
+  -webkit-transition: background-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1), color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: background-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1), color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: background-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1), color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -86,11 +86,11 @@ button::after,
   -webkit-transform: skewX(-45deg) scaleX(0);
        -o-transform: skewX(-45deg) scaleX(0);
           transform: skewX(-45deg) scaleX(0);
-  -webkit-transition: -webkit-transform 500ms ease-out;
-  transition: -webkit-transform 500ms ease-out;
-  -o-transition: -o-transform 500ms ease-out;
-  transition: transform 500ms ease-out;
-  transition: transform 500ms ease-out, -webkit-transform 500ms ease-out, -o-transform 500ms ease-out;
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: -webkit-transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: -o-transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
   z-index: -1;
 }
 
@@ -233,7 +233,7 @@ input,
 select,
 textarea {
   display: block;
-  font-family: "Avenir", "Avenir Next", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: "Avenir Next", "Avenir", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 16px;
 }
 
@@ -286,9 +286,9 @@ select {
           box-sizing: border-box;
   margin-bottom: 0.75rem;
   padding: 0.5rem;
-  -webkit-transition: border-color 500ms ease-out;
-  -o-transition: border-color 500ms ease-out;
-  transition: border-color 500ms ease-out;
+  -webkit-transition: border-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: border-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: border-color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
   width: 100%;
 }
 
@@ -487,6 +487,63 @@ select::placeholder {
   margin-bottom: 0.75rem;
 }
 
+/* line 1, resources/assets/styles/components/_gutenberg.scss */
+
+.wp-block-columns {
+  margin: 2.25rem 0;
+}
+
+/* line 4, resources/assets/styles/components/_gutenberg.scss */
+
+.wp-block-columns img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 10, resources/assets/styles/components/_gutenberg.scss */
+
+.wp-block-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  /* line 15, resources/assets/styles/components/_gutenberg.scss */
+
+  .wp-block-column .wp-block-column {
+    -ms-flex-preferred-size: calc(50% - 0.75rem);
+        flex-basis: calc(50% - 0.75rem);
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
+
+  /* line 20, resources/assets/styles/components/_gutenberg.scss */
+
+  .wp-block-column .wp-block-column:nth-child(even) {
+    margin-left: 1.5rem;
+  }
+}
+
+@media (min-width: 782px) {
+  /* line 26, resources/assets/styles/components/_gutenberg.scss */
+
+  .wp-block-column .wp-block-column:not(:first-child) {
+    margin-left: 1.5rem;
+  }
+}
+
+/* line 31, resources/assets/styles/components/_gutenberg.scss */
+
+.wp-block-column > *:last-child {
+  margin-top: auto;
+}
+
 /* line 1, resources/assets/styles/components/_layout.scss */
 
 html {
@@ -561,6 +618,14 @@ body.locked {
 
 /* line 41, resources/assets/styles/components/_layout.scss */
 
+body.home:not(.internal-referer):not(.barba-loaded) #app {
+  -webkit-animation: lockHomeOnLoad 4.5s forwards;
+       -o-animation: lockHomeOnLoad 4.5s forwards;
+          animation: lockHomeOnLoad 4.5s forwards;
+}
+
+/* line 45, resources/assets/styles/components/_layout.scss */
+
 #app {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -571,9 +636,11 @@ body.locked {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 41, resources/assets/styles/components/_layout.scss */
+  /* line 45, resources/assets/styles/components/_layout.scss */
 
   #app {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
     -webkit-perspective: 1px;
             perspective: 1px;
     -webkit-perspective-origin: bottom center;
@@ -581,15 +648,16 @@ body.locked {
   }
 }
 
-/* line 54, resources/assets/styles/components/_layout.scss */
+@media screen and (min-width: 1120px) {
+  /* line 60, resources/assets/styles/components/_layout.scss */
 
-body.home:not(.internal-referer) #app {
-  -webkit-animation: lockHomeOnLoad 4s forwards;
-       -o-animation: lockHomeOnLoad 4s forwards;
-          animation: lockHomeOnLoad 4s forwards;
+  main {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
 }
 
-/* line 67, resources/assets/styles/components/_layout.scss */
+/* line 68, resources/assets/styles/components/_layout.scss */
 
 .container {
   max-width: 1120px;
@@ -598,13 +666,13 @@ body.home:not(.internal-referer) #app {
   padding-right: 1.5rem;
 }
 
-/* line 74, resources/assets/styles/components/_layout.scss */
+/* line 75, resources/assets/styles/components/_layout.scss */
 
 .container__narrow {
   max-width: 720px;
 }
 
-/* line 78, resources/assets/styles/components/_layout.scss */
+/* line 79, resources/assets/styles/components/_layout.scss */
 
 .padded-box {
   background-color: #c8c7c7;
@@ -614,7 +682,7 @@ body.home:not(.internal-referer) #app {
   font-size: 0.84211em;
 }
 
-/* line 86, resources/assets/styles/components/_layout.scss */
+/* line 87, resources/assets/styles/components/_layout.scss */
 
 .sr-only {
   position: absolute;
@@ -728,6 +796,20 @@ th {
   vertical-align: middle;
 }
 
+/* line 1, resources/assets/styles/components/_tags.scss */
+
+.tag,
+.entry-content--project,
+.home-projects--tag,
+.home-blog--tag {
+  display: inline-block;
+  background-color: #221f1f;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.375rem 0.75rem;
+}
+
 /* line 1, resources/assets/styles/components/_typography.scss */
 
 html {
@@ -746,11 +828,19 @@ html {
   /* line 1, resources/assets/styles/components/_typography.scss */
 
   html {
+    font-size: 1.0625em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  /* line 1, resources/assets/styles/components/_typography.scss */
+
+  html {
     font-size: 1.1875em;
   }
 }
 
-/* line 13, resources/assets/styles/components/_typography.scss */
+/* line 17, resources/assets/styles/components/_typography.scss */
 
 ::-moz-selection {
   background-color: #d2bfab;
@@ -762,16 +852,16 @@ html {
   color: white;
 }
 
-/* line 18, resources/assets/styles/components/_typography.scss */
+/* line 22, resources/assets/styles/components/_typography.scss */
 
 body {
   color: #221f1f;
-  font-family: "Avenir", "Avenir Next", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: "Avenir Next", "Avenir", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 1em;
   line-height: 1.5;
 }
 
-/* line 25, resources/assets/styles/components/_typography.scss */
+/* line 29, resources/assets/styles/components/_typography.scss */
 
 u {
   text-decoration: none;
@@ -780,7 +870,7 @@ u {
           box-shadow: inset 0 0 #fff, inset 0 -0.4rem #221f1f;
 }
 
-/* line 31, resources/assets/styles/components/_typography.scss */
+/* line 35, resources/assets/styles/components/_typography.scss */
 
 h1,
 h2,
@@ -788,7 +878,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Avenir", "Avenir Next", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: "Avenir Next", "Avenir", "Nunito", -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   font-size: 1.1875em;
   line-height: 1.15;
   margin: 0 0 0.75rem;
@@ -796,23 +886,23 @@ h6 {
   font-weight: 500;
 }
 
-/* line 45, resources/assets/styles/components/_typography.scss */
+/* line 49, resources/assets/styles/components/_typography.scss */
 
 p {
   margin: 0 0 0.75rem;
 }
 
-/* line 49, resources/assets/styles/components/_typography.scss */
+/* line 53, resources/assets/styles/components/_typography.scss */
 
 a {
   color: #221f1f;
   text-decoration: none;
-  -webkit-transition: color 500ms ease-out;
-  -o-transition: color 500ms ease-out;
-  transition: color 500ms ease-out;
+  -webkit-transition: color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: color 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
 }
 
-/* line 54, resources/assets/styles/components/_typography.scss */
+/* line 58, resources/assets/styles/components/_typography.scss */
 
 a:active,
 a:focus,
@@ -820,13 +910,13 @@ a:hover {
   color: #1a1717;
 }
 
-/* line 61, resources/assets/styles/components/_typography.scss */
+/* line 65, resources/assets/styles/components/_typography.scss */
 
 strong {
   font-weight: 600;
 }
 
-/* line 65, resources/assets/styles/components/_typography.scss */
+/* line 69, resources/assets/styles/components/_typography.scss */
 
 hr {
   border-bottom: 0.1em solid #221f1f;
@@ -836,34 +926,1328 @@ hr {
   margin: 1.5rem 0;
 }
 
-/* line 73, resources/assets/styles/components/_typography.scss */
+/* line 77, resources/assets/styles/components/_typography.scss */
 
 .section-heading {
   font-size: 1.67456em;
   margin-bottom: 2.25rem;
 }
 
-/* line 78, resources/assets/styles/components/_typography.scss */
+/* line 82, resources/assets/styles/components/_typography.scss */
 
 .muted {
   font-size: 0.84211em;
   opacity: 0.75;
 }
 
-/* line 83, resources/assets/styles/components/_typography.scss */
+/* line 87, resources/assets/styles/components/_typography.scss */
 
 .page-title,
-.post-title {
-  font-size: 2.80415em;
+.post-title,
+.entry-header--title,
+.entry-content--number {
+  font-size: 3.95429em;
   font-weight: 700;
-  margin: 3rem 0 1.5rem;
 }
 
-/* line 90, resources/assets/styles/components/_typography.scss */
+/* line 93, resources/assets/styles/components/_typography.scss */
 
 .page-subtitle {
   margin-top: 0.75rem;
   font-size: 1.1875em;
+}
+
+/* line 99, resources/assets/styles/components/_typography.scss */
+
+html:not(.no-js) .home-projects .section-title,
+.home-projects html:not(.no-js) .section-title,
+html:not(.no-js) .home-projects--project,
+html:not(.no-js) .home-blog .section-title,
+.home-blog html:not(.no-js) .section-title {
+  opacity: 0;
+  -webkit-transform: translateY(0.75rem);
+       -o-transform: translateY(0.75rem);
+          transform: translateY(0.75rem);
+  -webkit-transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 750ms cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+/* line 104, resources/assets/styles/components/_typography.scss */
+
+html:not(.no-js) .home-projects .in-view.section-title,
+.home-projects html:not(.no-js) .in-view.section-title,
+html:not(.no-js) .in-view.home-projects--project,
+html:not(.no-js) .home-blog .in-view.section-title,
+.home-blog html:not(.no-js) .in-view.section-title {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+       -o-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* line 111, resources/assets/styles/components/_typography.scss */
+
+.loading--title > * {
+  opacity: 0;
+  -webkit-transform: translateY(0.025em);
+       -o-transform: translateY(0.025em);
+          transform: translateY(0.025em);
+  -moz-transform: translateY(0.025em) rotate(0.02deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation: letterFadeIn cubic-bezier(0.39, 0.58, 0.57, 1) 1.4s forwards;
+       -o-animation: letterFadeIn cubic-bezier(0.39, 0.58, 0.57, 1) 1.4s forwards;
+          animation: letterFadeIn cubic-bezier(0.39, 0.58, 0.57, 1) 1.4s forwards;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(1) {
+  -webkit-animation-delay: 80ms;
+       -o-animation-delay: 80ms;
+          animation-delay: 80ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(2) {
+  -webkit-animation-delay: 160ms;
+       -o-animation-delay: 160ms;
+          animation-delay: 160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(3) {
+  -webkit-animation-delay: 240ms;
+       -o-animation-delay: 240ms;
+          animation-delay: 240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(4) {
+  -webkit-animation-delay: 320ms;
+       -o-animation-delay: 320ms;
+          animation-delay: 320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(5) {
+  -webkit-animation-delay: 400ms;
+       -o-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(6) {
+  -webkit-animation-delay: 480ms;
+       -o-animation-delay: 480ms;
+          animation-delay: 480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(7) {
+  -webkit-animation-delay: 560ms;
+       -o-animation-delay: 560ms;
+          animation-delay: 560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(8) {
+  -webkit-animation-delay: 640ms;
+       -o-animation-delay: 640ms;
+          animation-delay: 640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(9) {
+  -webkit-animation-delay: 720ms;
+       -o-animation-delay: 720ms;
+          animation-delay: 720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(10) {
+  -webkit-animation-delay: 800ms;
+       -o-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(11) {
+  -webkit-animation-delay: 880ms;
+       -o-animation-delay: 880ms;
+          animation-delay: 880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(12) {
+  -webkit-animation-delay: 960ms;
+       -o-animation-delay: 960ms;
+          animation-delay: 960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(13) {
+  -webkit-animation-delay: 1040ms;
+       -o-animation-delay: 1040ms;
+          animation-delay: 1040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(14) {
+  -webkit-animation-delay: 1120ms;
+       -o-animation-delay: 1120ms;
+          animation-delay: 1120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(15) {
+  -webkit-animation-delay: 1200ms;
+       -o-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(16) {
+  -webkit-animation-delay: 1280ms;
+       -o-animation-delay: 1280ms;
+          animation-delay: 1280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(17) {
+  -webkit-animation-delay: 1360ms;
+       -o-animation-delay: 1360ms;
+          animation-delay: 1360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(18) {
+  -webkit-animation-delay: 1440ms;
+       -o-animation-delay: 1440ms;
+          animation-delay: 1440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(19) {
+  -webkit-animation-delay: 1520ms;
+       -o-animation-delay: 1520ms;
+          animation-delay: 1520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(20) {
+  -webkit-animation-delay: 1600ms;
+       -o-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(21) {
+  -webkit-animation-delay: 1680ms;
+       -o-animation-delay: 1680ms;
+          animation-delay: 1680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(22) {
+  -webkit-animation-delay: 1760ms;
+       -o-animation-delay: 1760ms;
+          animation-delay: 1760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(23) {
+  -webkit-animation-delay: 1840ms;
+       -o-animation-delay: 1840ms;
+          animation-delay: 1840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(24) {
+  -webkit-animation-delay: 1920ms;
+       -o-animation-delay: 1920ms;
+          animation-delay: 1920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(25) {
+  -webkit-animation-delay: 2000ms;
+       -o-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(26) {
+  -webkit-animation-delay: 2080ms;
+       -o-animation-delay: 2080ms;
+          animation-delay: 2080ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(27) {
+  -webkit-animation-delay: 2160ms;
+       -o-animation-delay: 2160ms;
+          animation-delay: 2160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(28) {
+  -webkit-animation-delay: 2240ms;
+       -o-animation-delay: 2240ms;
+          animation-delay: 2240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(29) {
+  -webkit-animation-delay: 2320ms;
+       -o-animation-delay: 2320ms;
+          animation-delay: 2320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(30) {
+  -webkit-animation-delay: 2400ms;
+       -o-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(31) {
+  -webkit-animation-delay: 2480ms;
+       -o-animation-delay: 2480ms;
+          animation-delay: 2480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(32) {
+  -webkit-animation-delay: 2560ms;
+       -o-animation-delay: 2560ms;
+          animation-delay: 2560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(33) {
+  -webkit-animation-delay: 2640ms;
+       -o-animation-delay: 2640ms;
+          animation-delay: 2640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(34) {
+  -webkit-animation-delay: 2720ms;
+       -o-animation-delay: 2720ms;
+          animation-delay: 2720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(35) {
+  -webkit-animation-delay: 2800ms;
+       -o-animation-delay: 2800ms;
+          animation-delay: 2800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(36) {
+  -webkit-animation-delay: 2880ms;
+       -o-animation-delay: 2880ms;
+          animation-delay: 2880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(37) {
+  -webkit-animation-delay: 2960ms;
+       -o-animation-delay: 2960ms;
+          animation-delay: 2960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(38) {
+  -webkit-animation-delay: 3040ms;
+       -o-animation-delay: 3040ms;
+          animation-delay: 3040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(39) {
+  -webkit-animation-delay: 3120ms;
+       -o-animation-delay: 3120ms;
+          animation-delay: 3120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(40) {
+  -webkit-animation-delay: 3200ms;
+       -o-animation-delay: 3200ms;
+          animation-delay: 3200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(41) {
+  -webkit-animation-delay: 3280ms;
+       -o-animation-delay: 3280ms;
+          animation-delay: 3280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(42) {
+  -webkit-animation-delay: 3360ms;
+       -o-animation-delay: 3360ms;
+          animation-delay: 3360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(43) {
+  -webkit-animation-delay: 3440ms;
+       -o-animation-delay: 3440ms;
+          animation-delay: 3440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(44) {
+  -webkit-animation-delay: 3520ms;
+       -o-animation-delay: 3520ms;
+          animation-delay: 3520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(45) {
+  -webkit-animation-delay: 3600ms;
+       -o-animation-delay: 3600ms;
+          animation-delay: 3600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(46) {
+  -webkit-animation-delay: 3680ms;
+       -o-animation-delay: 3680ms;
+          animation-delay: 3680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(47) {
+  -webkit-animation-delay: 3760ms;
+       -o-animation-delay: 3760ms;
+          animation-delay: 3760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(48) {
+  -webkit-animation-delay: 3840ms;
+       -o-animation-delay: 3840ms;
+          animation-delay: 3840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(49) {
+  -webkit-animation-delay: 3920ms;
+       -o-animation-delay: 3920ms;
+          animation-delay: 3920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(50) {
+  -webkit-animation-delay: 4000ms;
+       -o-animation-delay: 4000ms;
+          animation-delay: 4000ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(51) {
+  -webkit-animation-delay: 4080ms;
+       -o-animation-delay: 4080ms;
+          animation-delay: 4080ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(52) {
+  -webkit-animation-delay: 4160ms;
+       -o-animation-delay: 4160ms;
+          animation-delay: 4160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(53) {
+  -webkit-animation-delay: 4240ms;
+       -o-animation-delay: 4240ms;
+          animation-delay: 4240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(54) {
+  -webkit-animation-delay: 4320ms;
+       -o-animation-delay: 4320ms;
+          animation-delay: 4320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(55) {
+  -webkit-animation-delay: 4400ms;
+       -o-animation-delay: 4400ms;
+          animation-delay: 4400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(56) {
+  -webkit-animation-delay: 4480ms;
+       -o-animation-delay: 4480ms;
+          animation-delay: 4480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(57) {
+  -webkit-animation-delay: 4560ms;
+       -o-animation-delay: 4560ms;
+          animation-delay: 4560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(58) {
+  -webkit-animation-delay: 4640ms;
+       -o-animation-delay: 4640ms;
+          animation-delay: 4640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(59) {
+  -webkit-animation-delay: 4720ms;
+       -o-animation-delay: 4720ms;
+          animation-delay: 4720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(60) {
+  -webkit-animation-delay: 4800ms;
+       -o-animation-delay: 4800ms;
+          animation-delay: 4800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(61) {
+  -webkit-animation-delay: 4880ms;
+       -o-animation-delay: 4880ms;
+          animation-delay: 4880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(62) {
+  -webkit-animation-delay: 4960ms;
+       -o-animation-delay: 4960ms;
+          animation-delay: 4960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(63) {
+  -webkit-animation-delay: 5040ms;
+       -o-animation-delay: 5040ms;
+          animation-delay: 5040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(64) {
+  -webkit-animation-delay: 5120ms;
+       -o-animation-delay: 5120ms;
+          animation-delay: 5120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(65) {
+  -webkit-animation-delay: 5200ms;
+       -o-animation-delay: 5200ms;
+          animation-delay: 5200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(66) {
+  -webkit-animation-delay: 5280ms;
+       -o-animation-delay: 5280ms;
+          animation-delay: 5280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(67) {
+  -webkit-animation-delay: 5360ms;
+       -o-animation-delay: 5360ms;
+          animation-delay: 5360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(68) {
+  -webkit-animation-delay: 5440ms;
+       -o-animation-delay: 5440ms;
+          animation-delay: 5440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(69) {
+  -webkit-animation-delay: 5520ms;
+       -o-animation-delay: 5520ms;
+          animation-delay: 5520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(70) {
+  -webkit-animation-delay: 5600ms;
+       -o-animation-delay: 5600ms;
+          animation-delay: 5600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(71) {
+  -webkit-animation-delay: 5680ms;
+       -o-animation-delay: 5680ms;
+          animation-delay: 5680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(72) {
+  -webkit-animation-delay: 5760ms;
+       -o-animation-delay: 5760ms;
+          animation-delay: 5760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(73) {
+  -webkit-animation-delay: 5840ms;
+       -o-animation-delay: 5840ms;
+          animation-delay: 5840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(74) {
+  -webkit-animation-delay: 5920ms;
+       -o-animation-delay: 5920ms;
+          animation-delay: 5920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(75) {
+  -webkit-animation-delay: 6000ms;
+       -o-animation-delay: 6000ms;
+          animation-delay: 6000ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(76) {
+  -webkit-animation-delay: 6080ms;
+       -o-animation-delay: 6080ms;
+          animation-delay: 6080ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(77) {
+  -webkit-animation-delay: 6160ms;
+       -o-animation-delay: 6160ms;
+          animation-delay: 6160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(78) {
+  -webkit-animation-delay: 6240ms;
+       -o-animation-delay: 6240ms;
+          animation-delay: 6240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(79) {
+  -webkit-animation-delay: 6320ms;
+       -o-animation-delay: 6320ms;
+          animation-delay: 6320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(80) {
+  -webkit-animation-delay: 6400ms;
+       -o-animation-delay: 6400ms;
+          animation-delay: 6400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(81) {
+  -webkit-animation-delay: 6480ms;
+       -o-animation-delay: 6480ms;
+          animation-delay: 6480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(82) {
+  -webkit-animation-delay: 6560ms;
+       -o-animation-delay: 6560ms;
+          animation-delay: 6560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(83) {
+  -webkit-animation-delay: 6640ms;
+       -o-animation-delay: 6640ms;
+          animation-delay: 6640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(84) {
+  -webkit-animation-delay: 6720ms;
+       -o-animation-delay: 6720ms;
+          animation-delay: 6720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(85) {
+  -webkit-animation-delay: 6800ms;
+       -o-animation-delay: 6800ms;
+          animation-delay: 6800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(86) {
+  -webkit-animation-delay: 6880ms;
+       -o-animation-delay: 6880ms;
+          animation-delay: 6880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(87) {
+  -webkit-animation-delay: 6960ms;
+       -o-animation-delay: 6960ms;
+          animation-delay: 6960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(88) {
+  -webkit-animation-delay: 7040ms;
+       -o-animation-delay: 7040ms;
+          animation-delay: 7040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(89) {
+  -webkit-animation-delay: 7120ms;
+       -o-animation-delay: 7120ms;
+          animation-delay: 7120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(90) {
+  -webkit-animation-delay: 7200ms;
+       -o-animation-delay: 7200ms;
+          animation-delay: 7200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(91) {
+  -webkit-animation-delay: 7280ms;
+       -o-animation-delay: 7280ms;
+          animation-delay: 7280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(92) {
+  -webkit-animation-delay: 7360ms;
+       -o-animation-delay: 7360ms;
+          animation-delay: 7360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(93) {
+  -webkit-animation-delay: 7440ms;
+       -o-animation-delay: 7440ms;
+          animation-delay: 7440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(94) {
+  -webkit-animation-delay: 7520ms;
+       -o-animation-delay: 7520ms;
+          animation-delay: 7520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(95) {
+  -webkit-animation-delay: 7600ms;
+       -o-animation-delay: 7600ms;
+          animation-delay: 7600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(96) {
+  -webkit-animation-delay: 7680ms;
+       -o-animation-delay: 7680ms;
+          animation-delay: 7680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(97) {
+  -webkit-animation-delay: 7760ms;
+       -o-animation-delay: 7760ms;
+          animation-delay: 7760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(98) {
+  -webkit-animation-delay: 7840ms;
+       -o-animation-delay: 7840ms;
+          animation-delay: 7840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(99) {
+  -webkit-animation-delay: 7920ms;
+       -o-animation-delay: 7920ms;
+          animation-delay: 7920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(100) {
+  -webkit-animation-delay: 8000ms;
+       -o-animation-delay: 8000ms;
+          animation-delay: 8000ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(101) {
+  -webkit-animation-delay: 8080ms;
+       -o-animation-delay: 8080ms;
+          animation-delay: 8080ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(102) {
+  -webkit-animation-delay: 8160ms;
+       -o-animation-delay: 8160ms;
+          animation-delay: 8160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(103) {
+  -webkit-animation-delay: 8240ms;
+       -o-animation-delay: 8240ms;
+          animation-delay: 8240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(104) {
+  -webkit-animation-delay: 8320ms;
+       -o-animation-delay: 8320ms;
+          animation-delay: 8320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(105) {
+  -webkit-animation-delay: 8400ms;
+       -o-animation-delay: 8400ms;
+          animation-delay: 8400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(106) {
+  -webkit-animation-delay: 8480ms;
+       -o-animation-delay: 8480ms;
+          animation-delay: 8480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(107) {
+  -webkit-animation-delay: 8560ms;
+       -o-animation-delay: 8560ms;
+          animation-delay: 8560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(108) {
+  -webkit-animation-delay: 8640ms;
+       -o-animation-delay: 8640ms;
+          animation-delay: 8640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(109) {
+  -webkit-animation-delay: 8720ms;
+       -o-animation-delay: 8720ms;
+          animation-delay: 8720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(110) {
+  -webkit-animation-delay: 8800ms;
+       -o-animation-delay: 8800ms;
+          animation-delay: 8800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(111) {
+  -webkit-animation-delay: 8880ms;
+       -o-animation-delay: 8880ms;
+          animation-delay: 8880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(112) {
+  -webkit-animation-delay: 8960ms;
+       -o-animation-delay: 8960ms;
+          animation-delay: 8960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(113) {
+  -webkit-animation-delay: 9040ms;
+       -o-animation-delay: 9040ms;
+          animation-delay: 9040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(114) {
+  -webkit-animation-delay: 9120ms;
+       -o-animation-delay: 9120ms;
+          animation-delay: 9120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(115) {
+  -webkit-animation-delay: 9200ms;
+       -o-animation-delay: 9200ms;
+          animation-delay: 9200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(116) {
+  -webkit-animation-delay: 9280ms;
+       -o-animation-delay: 9280ms;
+          animation-delay: 9280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(117) {
+  -webkit-animation-delay: 9360ms;
+       -o-animation-delay: 9360ms;
+          animation-delay: 9360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(118) {
+  -webkit-animation-delay: 9440ms;
+       -o-animation-delay: 9440ms;
+          animation-delay: 9440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(119) {
+  -webkit-animation-delay: 9520ms;
+       -o-animation-delay: 9520ms;
+          animation-delay: 9520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(120) {
+  -webkit-animation-delay: 9600ms;
+       -o-animation-delay: 9600ms;
+          animation-delay: 9600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(121) {
+  -webkit-animation-delay: 9680ms;
+       -o-animation-delay: 9680ms;
+          animation-delay: 9680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(122) {
+  -webkit-animation-delay: 9760ms;
+       -o-animation-delay: 9760ms;
+          animation-delay: 9760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(123) {
+  -webkit-animation-delay: 9840ms;
+       -o-animation-delay: 9840ms;
+          animation-delay: 9840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(124) {
+  -webkit-animation-delay: 9920ms;
+       -o-animation-delay: 9920ms;
+          animation-delay: 9920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(125) {
+  -webkit-animation-delay: 10000ms;
+       -o-animation-delay: 10000ms;
+          animation-delay: 10000ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(126) {
+  -webkit-animation-delay: 10080ms;
+       -o-animation-delay: 10080ms;
+          animation-delay: 10080ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(127) {
+  -webkit-animation-delay: 10160ms;
+       -o-animation-delay: 10160ms;
+          animation-delay: 10160ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(128) {
+  -webkit-animation-delay: 10240ms;
+       -o-animation-delay: 10240ms;
+          animation-delay: 10240ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(129) {
+  -webkit-animation-delay: 10320ms;
+       -o-animation-delay: 10320ms;
+          animation-delay: 10320ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(130) {
+  -webkit-animation-delay: 10400ms;
+       -o-animation-delay: 10400ms;
+          animation-delay: 10400ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(131) {
+  -webkit-animation-delay: 10480ms;
+       -o-animation-delay: 10480ms;
+          animation-delay: 10480ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(132) {
+  -webkit-animation-delay: 10560ms;
+       -o-animation-delay: 10560ms;
+          animation-delay: 10560ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(133) {
+  -webkit-animation-delay: 10640ms;
+       -o-animation-delay: 10640ms;
+          animation-delay: 10640ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(134) {
+  -webkit-animation-delay: 10720ms;
+       -o-animation-delay: 10720ms;
+          animation-delay: 10720ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(135) {
+  -webkit-animation-delay: 10800ms;
+       -o-animation-delay: 10800ms;
+          animation-delay: 10800ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(136) {
+  -webkit-animation-delay: 10880ms;
+       -o-animation-delay: 10880ms;
+          animation-delay: 10880ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(137) {
+  -webkit-animation-delay: 10960ms;
+       -o-animation-delay: 10960ms;
+          animation-delay: 10960ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(138) {
+  -webkit-animation-delay: 11040ms;
+       -o-animation-delay: 11040ms;
+          animation-delay: 11040ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(139) {
+  -webkit-animation-delay: 11120ms;
+       -o-animation-delay: 11120ms;
+          animation-delay: 11120ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(140) {
+  -webkit-animation-delay: 11200ms;
+       -o-animation-delay: 11200ms;
+          animation-delay: 11200ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(141) {
+  -webkit-animation-delay: 11280ms;
+       -o-animation-delay: 11280ms;
+          animation-delay: 11280ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(142) {
+  -webkit-animation-delay: 11360ms;
+       -o-animation-delay: 11360ms;
+          animation-delay: 11360ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(143) {
+  -webkit-animation-delay: 11440ms;
+       -o-animation-delay: 11440ms;
+          animation-delay: 11440ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(144) {
+  -webkit-animation-delay: 11520ms;
+       -o-animation-delay: 11520ms;
+          animation-delay: 11520ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(145) {
+  -webkit-animation-delay: 11600ms;
+       -o-animation-delay: 11600ms;
+          animation-delay: 11600ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(146) {
+  -webkit-animation-delay: 11680ms;
+       -o-animation-delay: 11680ms;
+          animation-delay: 11680ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(147) {
+  -webkit-animation-delay: 11760ms;
+       -o-animation-delay: 11760ms;
+          animation-delay: 11760ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(148) {
+  -webkit-animation-delay: 11840ms;
+       -o-animation-delay: 11840ms;
+          animation-delay: 11840ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(149) {
+  -webkit-animation-delay: 11920ms;
+       -o-animation-delay: 11920ms;
+          animation-delay: 11920ms;
+}
+
+/* line 119, resources/assets/styles/components/_typography.scss */
+
+.loading--title > :nth-child(150) {
+  -webkit-animation-delay: 12000ms;
+       -o-animation-delay: 12000ms;
+          animation-delay: 12000ms;
+}
+
+@-webkit-keyframes letterFadeIn {
+  75% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes letterFadeIn {
+  75% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+  }
+
+  100% {
+    -o-transform: translateY(0);
+       transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+    opacity: 1;
+  }
+}
+
+@keyframes letterFadeIn {
+  75% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+         -o-transform: translateY(0);
+            transform: translateY(0);
+    -moz-transform: translateY(0) rotate(0.02deg);
+    opacity: 1;
+  }
 }
 
 /**
@@ -1147,6 +2531,172 @@ header.banner .menu-icon {
   font-weight: 500;
 }
 
+/* line 1, resources/assets/styles/layouts/_loading.scss */
+
+.pageload--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  pointer-events: none;
+}
+
+/* line 11, resources/assets/styles/layouts/_loading.scss */
+
+.pageload--wipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 16, resources/assets/styles/layouts/_loading.scss */
+
+.pageload--wipe circle {
+  -webkit-transition: r 1s;
+  -o-transition: r 1s;
+  transition: r 1s;
+  fill: #d2bfab;
+}
+
+/* line 21, resources/assets/styles/layouts/_loading.scss */
+
+.pageload--wipe .triggered {
+  -webkit-animation: explode 1s forwards;
+       -o-animation: explode 1s forwards;
+          animation: explode 1s forwards;
+}
+
+@-webkit-keyframes explode {
+  0% {
+    r: 0;
+    opacity: 1;
+  }
+
+  75% {
+    r: 110vmax;
+    opacity: 1;
+  }
+
+  100% {
+    r: 110vmax;
+    opacity: 0;
+  }
+}
+
+@-o-keyframes explode {
+  0% {
+    r: 0;
+    opacity: 1;
+  }
+
+  75% {
+    r: 110vmax;
+    opacity: 1;
+  }
+
+  100% {
+    r: 110vmax;
+    opacity: 0;
+  }
+}
+
+@keyframes explode {
+  0% {
+    r: 0;
+    opacity: 1;
+  }
+
+  75% {
+    r: 110vmax;
+    opacity: 1;
+  }
+
+  100% {
+    r: 110vmax;
+    opacity: 0;
+  }
+}
+
+/* line 43, resources/assets/styles/layouts/_loading.scss */
+
+.pageload--logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+  color: #fff;
+}
+
+/* line 2, resources/assets/styles/layouts/_projects.scss */
+
+.entry-header--title {
+  margin: 3rem 0 1.5rem;
+}
+
+/* line 9, resources/assets/styles/layouts/_projects.scss */
+
+.entry-header--image img {
+  width: 100%;
+}
+
+/* line 15, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 2.25rem;
+}
+
+/* line 20, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content--project {
+  margin-bottom: 4.5rem;
+}
+
+/* line 26, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content--sidebar {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  padding-right: 1.5rem;
+  margin-right: 1.5rem;
+  border-right: 0.1em solid #221f1f;
+}
+
+/* line 33, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content--meta {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0.75rem;
+}
+
+/* line 38, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content--number {
+  line-height: 1;
+}
+
+/* line 44, resources/assets/styles/layouts/_projects.scss */
+
+.entry-content p {
+  max-width: 40em;
+  font-size: 0.84211em;
+  font-weight: 500;
+}
+
 /* line 1, resources/assets/styles/layouts/_tinymce.scss */
 
 body#tinymce {
@@ -1185,13 +2735,7 @@ body#tinymce {
           user-select: none;
 }
 
-/* line 2, resources/assets/styles/layouts/_home-loading.scss */
-
-body.internal-referer .loading {
-  display: none;
-}
-
-/* line 23, resources/assets/styles/layouts/_home-loading.scss */
+/* line 19, resources/assets/styles/layouts/_home-loading.scss */
 
 .loading::after {
   content: "";
@@ -1204,12 +2748,12 @@ body.internal-referer .loading {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: loadingWipe 1.5s 4.5s ease-in forwards;
-       -o-animation: loadingWipe 1.5s 4.5s ease-in forwards;
-          animation: loadingWipe 1.5s 4.5s ease-in forwards;
+  -webkit-animation: loadingWipe 2s 5s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+       -o-animation: loadingWipe 2s 5s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+          animation: loadingWipe 2s 5s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
 }
 
-/* line 35, resources/assets/styles/layouts/_home-loading.scss */
+/* line 31, resources/assets/styles/layouts/_home-loading.scss */
 
 .loading .container {
   width: 100%;
@@ -1217,1281 +2761,26 @@ body.internal-referer .loading {
   position: relative;
 }
 
-/* line 41, resources/assets/styles/layouts/_home-loading.scss */
+/* line 37, resources/assets/styles/layouts/_home-loading.scss */
 
 .loading--title {
   text-transform: lowercase;
   font-weight: 700;
+  -webkit-font-smoothing: antialiased;
   letter-spacing: 0.01em;
-  font-size: 3.32993em;
+  font-size: 3.95429em;
   color: white;
   width: 8.5em;
   margin-bottom: 0;
-  -webkit-animation: titleExit 1.5s 4s ease forwards;
-       -o-animation: titleExit 1.5s 4s ease forwards;
-          animation: titleExit 1.5s 4s ease forwards;
+  -webkit-animation: titleExit 1.5s 4.25s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+       -o-animation: titleExit 1.5s 4.25s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+          animation: titleExit 1.5s 4.25s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
 }
 
-/* line 51, resources/assets/styles/layouts/_home-loading.scss */
+/* line 54, resources/assets/styles/layouts/_home-loading.scss */
 
-.loading--title > * {
-  opacity: 0;
-  -webkit-transform: translateY(0.025em);
-       -o-transform: translateY(0.025em);
-          transform: translateY(0.025em);
-  -moz-transform: translateY(0.025em) rotate(0.02deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-animation: letterFadeIn ease 1s forwards;
-       -o-animation: letterFadeIn ease 1s forwards;
-          animation: letterFadeIn ease 1s forwards;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(1) {
-  -webkit-animation-delay: 80ms;
-       -o-animation-delay: 80ms;
-          animation-delay: 80ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(2) {
-  -webkit-animation-delay: 160ms;
-       -o-animation-delay: 160ms;
-          animation-delay: 160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(3) {
-  -webkit-animation-delay: 240ms;
-       -o-animation-delay: 240ms;
-          animation-delay: 240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(4) {
-  -webkit-animation-delay: 320ms;
-       -o-animation-delay: 320ms;
-          animation-delay: 320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(5) {
-  -webkit-animation-delay: 400ms;
-       -o-animation-delay: 400ms;
-          animation-delay: 400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(6) {
-  -webkit-animation-delay: 480ms;
-       -o-animation-delay: 480ms;
-          animation-delay: 480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(7) {
-  -webkit-animation-delay: 560ms;
-       -o-animation-delay: 560ms;
-          animation-delay: 560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(8) {
-  -webkit-animation-delay: 640ms;
-       -o-animation-delay: 640ms;
-          animation-delay: 640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(9) {
-  -webkit-animation-delay: 720ms;
-       -o-animation-delay: 720ms;
-          animation-delay: 720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(10) {
-  -webkit-animation-delay: 800ms;
-       -o-animation-delay: 800ms;
-          animation-delay: 800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(11) {
-  -webkit-animation-delay: 880ms;
-       -o-animation-delay: 880ms;
-          animation-delay: 880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(12) {
-  -webkit-animation-delay: 960ms;
-       -o-animation-delay: 960ms;
-          animation-delay: 960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(13) {
-  -webkit-animation-delay: 1040ms;
-       -o-animation-delay: 1040ms;
-          animation-delay: 1040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(14) {
-  -webkit-animation-delay: 1120ms;
-       -o-animation-delay: 1120ms;
-          animation-delay: 1120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(15) {
-  -webkit-animation-delay: 1200ms;
-       -o-animation-delay: 1200ms;
-          animation-delay: 1200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(16) {
-  -webkit-animation-delay: 1280ms;
-       -o-animation-delay: 1280ms;
-          animation-delay: 1280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(17) {
-  -webkit-animation-delay: 1360ms;
-       -o-animation-delay: 1360ms;
-          animation-delay: 1360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(18) {
-  -webkit-animation-delay: 1440ms;
-       -o-animation-delay: 1440ms;
-          animation-delay: 1440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(19) {
-  -webkit-animation-delay: 1520ms;
-       -o-animation-delay: 1520ms;
-          animation-delay: 1520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(20) {
-  -webkit-animation-delay: 1600ms;
-       -o-animation-delay: 1600ms;
-          animation-delay: 1600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(21) {
-  -webkit-animation-delay: 1680ms;
-       -o-animation-delay: 1680ms;
-          animation-delay: 1680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(22) {
-  -webkit-animation-delay: 1760ms;
-       -o-animation-delay: 1760ms;
-          animation-delay: 1760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(23) {
-  -webkit-animation-delay: 1840ms;
-       -o-animation-delay: 1840ms;
-          animation-delay: 1840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(24) {
-  -webkit-animation-delay: 1920ms;
-       -o-animation-delay: 1920ms;
-          animation-delay: 1920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(25) {
-  -webkit-animation-delay: 2000ms;
-       -o-animation-delay: 2000ms;
-          animation-delay: 2000ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(26) {
-  -webkit-animation-delay: 2080ms;
-       -o-animation-delay: 2080ms;
-          animation-delay: 2080ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(27) {
-  -webkit-animation-delay: 2160ms;
-       -o-animation-delay: 2160ms;
-          animation-delay: 2160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(28) {
-  -webkit-animation-delay: 2240ms;
-       -o-animation-delay: 2240ms;
-          animation-delay: 2240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(29) {
-  -webkit-animation-delay: 2320ms;
-       -o-animation-delay: 2320ms;
-          animation-delay: 2320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(30) {
-  -webkit-animation-delay: 2400ms;
-       -o-animation-delay: 2400ms;
-          animation-delay: 2400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(31) {
-  -webkit-animation-delay: 2480ms;
-       -o-animation-delay: 2480ms;
-          animation-delay: 2480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(32) {
-  -webkit-animation-delay: 2560ms;
-       -o-animation-delay: 2560ms;
-          animation-delay: 2560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(33) {
-  -webkit-animation-delay: 2640ms;
-       -o-animation-delay: 2640ms;
-          animation-delay: 2640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(34) {
-  -webkit-animation-delay: 2720ms;
-       -o-animation-delay: 2720ms;
-          animation-delay: 2720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(35) {
-  -webkit-animation-delay: 2800ms;
-       -o-animation-delay: 2800ms;
-          animation-delay: 2800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(36) {
-  -webkit-animation-delay: 2880ms;
-       -o-animation-delay: 2880ms;
-          animation-delay: 2880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(37) {
-  -webkit-animation-delay: 2960ms;
-       -o-animation-delay: 2960ms;
-          animation-delay: 2960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(38) {
-  -webkit-animation-delay: 3040ms;
-       -o-animation-delay: 3040ms;
-          animation-delay: 3040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(39) {
-  -webkit-animation-delay: 3120ms;
-       -o-animation-delay: 3120ms;
-          animation-delay: 3120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(40) {
-  -webkit-animation-delay: 3200ms;
-       -o-animation-delay: 3200ms;
-          animation-delay: 3200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(41) {
-  -webkit-animation-delay: 3280ms;
-       -o-animation-delay: 3280ms;
-          animation-delay: 3280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(42) {
-  -webkit-animation-delay: 3360ms;
-       -o-animation-delay: 3360ms;
-          animation-delay: 3360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(43) {
-  -webkit-animation-delay: 3440ms;
-       -o-animation-delay: 3440ms;
-          animation-delay: 3440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(44) {
-  -webkit-animation-delay: 3520ms;
-       -o-animation-delay: 3520ms;
-          animation-delay: 3520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(45) {
-  -webkit-animation-delay: 3600ms;
-       -o-animation-delay: 3600ms;
-          animation-delay: 3600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(46) {
-  -webkit-animation-delay: 3680ms;
-       -o-animation-delay: 3680ms;
-          animation-delay: 3680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(47) {
-  -webkit-animation-delay: 3760ms;
-       -o-animation-delay: 3760ms;
-          animation-delay: 3760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(48) {
-  -webkit-animation-delay: 3840ms;
-       -o-animation-delay: 3840ms;
-          animation-delay: 3840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(49) {
-  -webkit-animation-delay: 3920ms;
-       -o-animation-delay: 3920ms;
-          animation-delay: 3920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(50) {
-  -webkit-animation-delay: 4000ms;
-       -o-animation-delay: 4000ms;
-          animation-delay: 4000ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(51) {
-  -webkit-animation-delay: 4080ms;
-       -o-animation-delay: 4080ms;
-          animation-delay: 4080ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(52) {
-  -webkit-animation-delay: 4160ms;
-       -o-animation-delay: 4160ms;
-          animation-delay: 4160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(53) {
-  -webkit-animation-delay: 4240ms;
-       -o-animation-delay: 4240ms;
-          animation-delay: 4240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(54) {
-  -webkit-animation-delay: 4320ms;
-       -o-animation-delay: 4320ms;
-          animation-delay: 4320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(55) {
-  -webkit-animation-delay: 4400ms;
-       -o-animation-delay: 4400ms;
-          animation-delay: 4400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(56) {
-  -webkit-animation-delay: 4480ms;
-       -o-animation-delay: 4480ms;
-          animation-delay: 4480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(57) {
-  -webkit-animation-delay: 4560ms;
-       -o-animation-delay: 4560ms;
-          animation-delay: 4560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(58) {
-  -webkit-animation-delay: 4640ms;
-       -o-animation-delay: 4640ms;
-          animation-delay: 4640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(59) {
-  -webkit-animation-delay: 4720ms;
-       -o-animation-delay: 4720ms;
-          animation-delay: 4720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(60) {
-  -webkit-animation-delay: 4800ms;
-       -o-animation-delay: 4800ms;
-          animation-delay: 4800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(61) {
-  -webkit-animation-delay: 4880ms;
-       -o-animation-delay: 4880ms;
-          animation-delay: 4880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(62) {
-  -webkit-animation-delay: 4960ms;
-       -o-animation-delay: 4960ms;
-          animation-delay: 4960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(63) {
-  -webkit-animation-delay: 5040ms;
-       -o-animation-delay: 5040ms;
-          animation-delay: 5040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(64) {
-  -webkit-animation-delay: 5120ms;
-       -o-animation-delay: 5120ms;
-          animation-delay: 5120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(65) {
-  -webkit-animation-delay: 5200ms;
-       -o-animation-delay: 5200ms;
-          animation-delay: 5200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(66) {
-  -webkit-animation-delay: 5280ms;
-       -o-animation-delay: 5280ms;
-          animation-delay: 5280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(67) {
-  -webkit-animation-delay: 5360ms;
-       -o-animation-delay: 5360ms;
-          animation-delay: 5360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(68) {
-  -webkit-animation-delay: 5440ms;
-       -o-animation-delay: 5440ms;
-          animation-delay: 5440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(69) {
-  -webkit-animation-delay: 5520ms;
-       -o-animation-delay: 5520ms;
-          animation-delay: 5520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(70) {
-  -webkit-animation-delay: 5600ms;
-       -o-animation-delay: 5600ms;
-          animation-delay: 5600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(71) {
-  -webkit-animation-delay: 5680ms;
-       -o-animation-delay: 5680ms;
-          animation-delay: 5680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(72) {
-  -webkit-animation-delay: 5760ms;
-       -o-animation-delay: 5760ms;
-          animation-delay: 5760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(73) {
-  -webkit-animation-delay: 5840ms;
-       -o-animation-delay: 5840ms;
-          animation-delay: 5840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(74) {
-  -webkit-animation-delay: 5920ms;
-       -o-animation-delay: 5920ms;
-          animation-delay: 5920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(75) {
-  -webkit-animation-delay: 6000ms;
-       -o-animation-delay: 6000ms;
-          animation-delay: 6000ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(76) {
-  -webkit-animation-delay: 6080ms;
-       -o-animation-delay: 6080ms;
-          animation-delay: 6080ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(77) {
-  -webkit-animation-delay: 6160ms;
-       -o-animation-delay: 6160ms;
-          animation-delay: 6160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(78) {
-  -webkit-animation-delay: 6240ms;
-       -o-animation-delay: 6240ms;
-          animation-delay: 6240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(79) {
-  -webkit-animation-delay: 6320ms;
-       -o-animation-delay: 6320ms;
-          animation-delay: 6320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(80) {
-  -webkit-animation-delay: 6400ms;
-       -o-animation-delay: 6400ms;
-          animation-delay: 6400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(81) {
-  -webkit-animation-delay: 6480ms;
-       -o-animation-delay: 6480ms;
-          animation-delay: 6480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(82) {
-  -webkit-animation-delay: 6560ms;
-       -o-animation-delay: 6560ms;
-          animation-delay: 6560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(83) {
-  -webkit-animation-delay: 6640ms;
-       -o-animation-delay: 6640ms;
-          animation-delay: 6640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(84) {
-  -webkit-animation-delay: 6720ms;
-       -o-animation-delay: 6720ms;
-          animation-delay: 6720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(85) {
-  -webkit-animation-delay: 6800ms;
-       -o-animation-delay: 6800ms;
-          animation-delay: 6800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(86) {
-  -webkit-animation-delay: 6880ms;
-       -o-animation-delay: 6880ms;
-          animation-delay: 6880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(87) {
-  -webkit-animation-delay: 6960ms;
-       -o-animation-delay: 6960ms;
-          animation-delay: 6960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(88) {
-  -webkit-animation-delay: 7040ms;
-       -o-animation-delay: 7040ms;
-          animation-delay: 7040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(89) {
-  -webkit-animation-delay: 7120ms;
-       -o-animation-delay: 7120ms;
-          animation-delay: 7120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(90) {
-  -webkit-animation-delay: 7200ms;
-       -o-animation-delay: 7200ms;
-          animation-delay: 7200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(91) {
-  -webkit-animation-delay: 7280ms;
-       -o-animation-delay: 7280ms;
-          animation-delay: 7280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(92) {
-  -webkit-animation-delay: 7360ms;
-       -o-animation-delay: 7360ms;
-          animation-delay: 7360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(93) {
-  -webkit-animation-delay: 7440ms;
-       -o-animation-delay: 7440ms;
-          animation-delay: 7440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(94) {
-  -webkit-animation-delay: 7520ms;
-       -o-animation-delay: 7520ms;
-          animation-delay: 7520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(95) {
-  -webkit-animation-delay: 7600ms;
-       -o-animation-delay: 7600ms;
-          animation-delay: 7600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(96) {
-  -webkit-animation-delay: 7680ms;
-       -o-animation-delay: 7680ms;
-          animation-delay: 7680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(97) {
-  -webkit-animation-delay: 7760ms;
-       -o-animation-delay: 7760ms;
-          animation-delay: 7760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(98) {
-  -webkit-animation-delay: 7840ms;
-       -o-animation-delay: 7840ms;
-          animation-delay: 7840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(99) {
-  -webkit-animation-delay: 7920ms;
-       -o-animation-delay: 7920ms;
-          animation-delay: 7920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(100) {
-  -webkit-animation-delay: 8000ms;
-       -o-animation-delay: 8000ms;
-          animation-delay: 8000ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(101) {
-  -webkit-animation-delay: 8080ms;
-       -o-animation-delay: 8080ms;
-          animation-delay: 8080ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(102) {
-  -webkit-animation-delay: 8160ms;
-       -o-animation-delay: 8160ms;
-          animation-delay: 8160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(103) {
-  -webkit-animation-delay: 8240ms;
-       -o-animation-delay: 8240ms;
-          animation-delay: 8240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(104) {
-  -webkit-animation-delay: 8320ms;
-       -o-animation-delay: 8320ms;
-          animation-delay: 8320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(105) {
-  -webkit-animation-delay: 8400ms;
-       -o-animation-delay: 8400ms;
-          animation-delay: 8400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(106) {
-  -webkit-animation-delay: 8480ms;
-       -o-animation-delay: 8480ms;
-          animation-delay: 8480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(107) {
-  -webkit-animation-delay: 8560ms;
-       -o-animation-delay: 8560ms;
-          animation-delay: 8560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(108) {
-  -webkit-animation-delay: 8640ms;
-       -o-animation-delay: 8640ms;
-          animation-delay: 8640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(109) {
-  -webkit-animation-delay: 8720ms;
-       -o-animation-delay: 8720ms;
-          animation-delay: 8720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(110) {
-  -webkit-animation-delay: 8800ms;
-       -o-animation-delay: 8800ms;
-          animation-delay: 8800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(111) {
-  -webkit-animation-delay: 8880ms;
-       -o-animation-delay: 8880ms;
-          animation-delay: 8880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(112) {
-  -webkit-animation-delay: 8960ms;
-       -o-animation-delay: 8960ms;
-          animation-delay: 8960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(113) {
-  -webkit-animation-delay: 9040ms;
-       -o-animation-delay: 9040ms;
-          animation-delay: 9040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(114) {
-  -webkit-animation-delay: 9120ms;
-       -o-animation-delay: 9120ms;
-          animation-delay: 9120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(115) {
-  -webkit-animation-delay: 9200ms;
-       -o-animation-delay: 9200ms;
-          animation-delay: 9200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(116) {
-  -webkit-animation-delay: 9280ms;
-       -o-animation-delay: 9280ms;
-          animation-delay: 9280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(117) {
-  -webkit-animation-delay: 9360ms;
-       -o-animation-delay: 9360ms;
-          animation-delay: 9360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(118) {
-  -webkit-animation-delay: 9440ms;
-       -o-animation-delay: 9440ms;
-          animation-delay: 9440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(119) {
-  -webkit-animation-delay: 9520ms;
-       -o-animation-delay: 9520ms;
-          animation-delay: 9520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(120) {
-  -webkit-animation-delay: 9600ms;
-       -o-animation-delay: 9600ms;
-          animation-delay: 9600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(121) {
-  -webkit-animation-delay: 9680ms;
-       -o-animation-delay: 9680ms;
-          animation-delay: 9680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(122) {
-  -webkit-animation-delay: 9760ms;
-       -o-animation-delay: 9760ms;
-          animation-delay: 9760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(123) {
-  -webkit-animation-delay: 9840ms;
-       -o-animation-delay: 9840ms;
-          animation-delay: 9840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(124) {
-  -webkit-animation-delay: 9920ms;
-       -o-animation-delay: 9920ms;
-          animation-delay: 9920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(125) {
-  -webkit-animation-delay: 10000ms;
-       -o-animation-delay: 10000ms;
-          animation-delay: 10000ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(126) {
-  -webkit-animation-delay: 10080ms;
-       -o-animation-delay: 10080ms;
-          animation-delay: 10080ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(127) {
-  -webkit-animation-delay: 10160ms;
-       -o-animation-delay: 10160ms;
-          animation-delay: 10160ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(128) {
-  -webkit-animation-delay: 10240ms;
-       -o-animation-delay: 10240ms;
-          animation-delay: 10240ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(129) {
-  -webkit-animation-delay: 10320ms;
-       -o-animation-delay: 10320ms;
-          animation-delay: 10320ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(130) {
-  -webkit-animation-delay: 10400ms;
-       -o-animation-delay: 10400ms;
-          animation-delay: 10400ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(131) {
-  -webkit-animation-delay: 10480ms;
-       -o-animation-delay: 10480ms;
-          animation-delay: 10480ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(132) {
-  -webkit-animation-delay: 10560ms;
-       -o-animation-delay: 10560ms;
-          animation-delay: 10560ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(133) {
-  -webkit-animation-delay: 10640ms;
-       -o-animation-delay: 10640ms;
-          animation-delay: 10640ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(134) {
-  -webkit-animation-delay: 10720ms;
-       -o-animation-delay: 10720ms;
-          animation-delay: 10720ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(135) {
-  -webkit-animation-delay: 10800ms;
-       -o-animation-delay: 10800ms;
-          animation-delay: 10800ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(136) {
-  -webkit-animation-delay: 10880ms;
-       -o-animation-delay: 10880ms;
-          animation-delay: 10880ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(137) {
-  -webkit-animation-delay: 10960ms;
-       -o-animation-delay: 10960ms;
-          animation-delay: 10960ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(138) {
-  -webkit-animation-delay: 11040ms;
-       -o-animation-delay: 11040ms;
-          animation-delay: 11040ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(139) {
-  -webkit-animation-delay: 11120ms;
-       -o-animation-delay: 11120ms;
-          animation-delay: 11120ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(140) {
-  -webkit-animation-delay: 11200ms;
-       -o-animation-delay: 11200ms;
-          animation-delay: 11200ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(141) {
-  -webkit-animation-delay: 11280ms;
-       -o-animation-delay: 11280ms;
-          animation-delay: 11280ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(142) {
-  -webkit-animation-delay: 11360ms;
-       -o-animation-delay: 11360ms;
-          animation-delay: 11360ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(143) {
-  -webkit-animation-delay: 11440ms;
-       -o-animation-delay: 11440ms;
-          animation-delay: 11440ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(144) {
-  -webkit-animation-delay: 11520ms;
-       -o-animation-delay: 11520ms;
-          animation-delay: 11520ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(145) {
-  -webkit-animation-delay: 11600ms;
-       -o-animation-delay: 11600ms;
-          animation-delay: 11600ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(146) {
-  -webkit-animation-delay: 11680ms;
-       -o-animation-delay: 11680ms;
-          animation-delay: 11680ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(147) {
-  -webkit-animation-delay: 11760ms;
-       -o-animation-delay: 11760ms;
-          animation-delay: 11760ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(148) {
-  -webkit-animation-delay: 11840ms;
-       -o-animation-delay: 11840ms;
-          animation-delay: 11840ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(149) {
-  -webkit-animation-delay: 11920ms;
-       -o-animation-delay: 11920ms;
-          animation-delay: 11920ms;
-}
-
-/* line 60, resources/assets/styles/layouts/_home-loading.scss */
-
-.loading--title > *:nth-child(150) {
-  -webkit-animation-delay: 12000ms;
-       -o-animation-delay: 12000ms;
-          animation-delay: 12000ms;
-}
-
-@-webkit-keyframes letterFadeIn {
-  75% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-    opacity: 1;
-  }
-}
-
-@-o-keyframes letterFadeIn {
-  75% {
-    -o-transform: translateY(0);
-       transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-  }
-
-  100% {
-    -o-transform: translateY(0);
-       transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-    opacity: 1;
-  }
-}
-
-@keyframes letterFadeIn {
-  75% {
-    -webkit-transform: translateY(0);
-         -o-transform: translateY(0);
-            transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-  }
-
-  100% {
-    -webkit-transform: translateY(0);
-         -o-transform: translateY(0);
-            transform: translateY(0);
-    -moz-transform: translateY(0) rotate(0.02deg);
-    opacity: 1;
-  }
+body.barba-loaded .loading {
+  display: none;
 }
 
 @-webkit-keyframes loadingWipe {
@@ -2588,15 +2877,15 @@ body.internal-referer .loading {
 /* line 12, resources/assets/styles/layouts/_home-hero.scss */
 
 .home-hero--text {
-  width: 70%;
+  width: 65%;
   margin-bottom: 8.25rem;
 }
 
 /* line 17, resources/assets/styles/layouts/_home-hero.scss */
 
 .home-hero--title {
-  font-size: 2.80415em;
-  font-weight: 900;
+  font-size: 3.32993em;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
@@ -2611,25 +2900,24 @@ body.internal-referer .loading {
 
 .home-hero--image {
   position: absolute;
-  width: 90%;
-  right: -10%;
-  top: 3rem;
+  width: 85%;
+  left: 25%;
+  bottom: -1.5rem;
   z-index: -1;
-  -webkit-animation: loadHeroImage 5.5s 5s forwards;
-       -o-animation: loadHeroImage 5.5s 5s forwards;
-          animation: loadHeroImage 5.5s 5s forwards;
+  -webkit-animation: loadHeroImage 5.5s 5.5s forwards;
+       -o-animation: loadHeroImage 5.5s 5.5s forwards;
+          animation: loadHeroImage 5.5s 5.5s forwards;
   -webkit-filter: grayscale(1) contrast(0.25) brightness(1.9);
           filter: grayscale(1) contrast(0.25) brightness(1.9);
 }
 
 /* line 37, resources/assets/styles/layouts/_home-hero.scss */
 
-body.internal-referer .home-hero--image {
-  -webkit-filter: none;
-          filter: none;
-  -webkit-animation: none;
-       -o-animation: none;
-          animation: none;
+.internal-referer .home-hero--image,
+.barba-loaded .home-hero--image {
+  -webkit-animation: loadHeroImage 2.75s 0s forwards;
+       -o-animation: loadHeroImage 2.75s 0s forwards;
+          animation: loadHeroImage 2.75s 0s forwards;
 }
 
 @-webkit-keyframes loadHeroImage {
@@ -2679,24 +2967,33 @@ body.internal-referer .home-hero--image {
   position: absolute;
   width: calc(200vw + 100vh - 6rem);
   height: 100%;
-  left: 0;
+  right: 0;
   z-index: -9;
   background-color: #d2bfab;
-  -webkit-transition: opacity 1500ms ease-out, -webkit-transform 1500ms ease-out;
-  transition: opacity 1500ms ease-out, -webkit-transform 1500ms ease-out;
-  -o-transition: opacity 1500ms ease-out, -o-transform 1500ms ease-out;
-  transition: transform 1500ms ease-out, opacity 1500ms ease-out;
-  transition: transform 1500ms ease-out, opacity 1500ms ease-out, -webkit-transform 1500ms ease-out, -o-transform 1500ms ease-out;
+  -webkit-transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), opacity 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -webkit-transform: translateX(calc(100vw + 100vh));
+       -o-transform: translateX(calc(100vw + 100vh));
+          transform: translateX(calc(100vw + 100vh));
+  opacity: 0;
+  background-image: -webkit-linear-gradient(315deg, white calc(50% + 4.5rem), #d2bfab calc(50% + 4.5rem));
+  background-image: -o-linear-gradient(315deg, white calc(50% + 4.5rem), #d2bfab calc(50% + 4.5rem));
+  background-image: linear-gradient(135deg, white calc(50% + 4.5rem), #d2bfab calc(50% + 4.5rem));
+}
+
+/* line 23, resources/assets/styles/layouts/_home-about.scss */
+
+html.no-js .home-about::after {
   -webkit-transform: translateX(0);
        -o-transform: translateX(0);
           transform: translateX(0);
-  opacity: 0;
-  background-image: -webkit-linear-gradient(315deg, white 50%, #d2bfab 50%);
-  background-image: -o-linear-gradient(315deg, white 50%, #d2bfab 50%);
-  background-image: linear-gradient(135deg, white 50%, #d2bfab 50%);
+  opacity: 1;
 }
 
-/* line 24, resources/assets/styles/layouts/_home-about.scss */
+/* line 29, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about::before {
   content: "";
@@ -2706,6 +3003,7 @@ body.internal-referer .home-hero--image {
   z-index: 99;
   right: 5vw;
   width: 60vw;
+  opacity: 0.5;
   background-image: -webkit-radial-gradient(#fff 20%, transparent 20%);
   background-image: -o-radial-gradient(#fff 20%, transparent 20%);
   background-image: radial-gradient(#fff 20%, transparent 20%);
@@ -2714,7 +3012,7 @@ body.internal-referer .home-hero--image {
 }
 
 @media screen and (min-width: 720px) {
-  /* line 24, resources/assets/styles/layouts/_home-about.scss */
+  /* line 29, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about::before {
     will-change: transform;
@@ -2725,14 +3023,14 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 43, resources/assets/styles/layouts/_home-about.scss */
+/* line 49, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about .container {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
-/* line 46, resources/assets/styles/layouts/_home-about.scss */
+/* line 52, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about .container::after {
   content: "";
@@ -2747,7 +3045,7 @@ body.internal-referer .home-hero--image {
   background-repeat: no-repeat;
 }
 
-/* line 60, resources/assets/styles/layouts/_home-about.scss */
+/* line 66, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--text {
   position: relative;
@@ -2755,14 +3053,22 @@ body.internal-referer .home-hero--image {
   margin-top: 12rem;
   margin-bottom: 6rem;
   opacity: 0;
-  -webkit-transition: opacity 1500ms 500ms ease-out;
-  -o-transition: opacity 1500ms 500ms ease-out;
-  transition: opacity 1500ms 500ms ease-out;
+  -webkit-transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
   text-shadow: 0 0 4.5rem #523f2c;
 }
 
+/* line 75, resources/assets/styles/layouts/_home-about.scss */
+
+html.no-js .home-about--text {
+  opacity: 1;
+}
+
 @media screen and (min-width: 720px) {
-  /* line 60, resources/assets/styles/layouts/_home-about.scss */
+  /* line 66, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--text {
     will-change: transform;
@@ -2770,22 +3076,22 @@ body.internal-referer .home-hero--image {
             transform-style: preserve-3d;
     -webkit-perspective-origin: center center;
             perspective-origin: center center;
-    -webkit-transform: translate3d(0, 0, 0.2px) scale(0.8);
-            transform: translate3d(0, 0, 0.2px) scale(0.8);
+    -webkit-transform: translate3d(0, 0.75rem, 0.2px) scale(0.8);
+            transform: translate3d(0, 0.75rem, 0.2px) scale(0.8);
   }
 }
 
-/* line 77, resources/assets/styles/layouts/_home-about.scss */
+/* line 87, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--title {
   font-size: 2.80415em;
   font-weight: 400;
   color: white;
-  width: 70%;
+  width: 65%;
   margin-bottom: 1.5rem;
 }
 
-/* line 85, resources/assets/styles/layouts/_home-about.scss */
+/* line 95, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about--image {
   position: absolute;
@@ -2793,33 +3099,59 @@ body.internal-referer .home-hero--image {
   bottom: -3rem;
   width: 55%;
   height: auto;
+  opacity: 0;
+  -webkit-transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  -o-transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: opacity 1500ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+  text-shadow: 0 0 4.5rem #523f2c;
+  -webkit-transform: translate(0, 0.75rem);
+       -o-transform: translate(0, 0.75rem);
+          transform: translate(0, 0.75rem);
+}
+
+/* line 106, resources/assets/styles/layouts/_home-about.scss */
+
+html.no-js .home-about--image {
+  opacity: 1;
 }
 
 @media screen and (min-width: 720px) {
-  /* line 85, resources/assets/styles/layouts/_home-about.scss */
+  /* line 95, resources/assets/styles/layouts/_home-about.scss */
 
   .home-about--image {
     will-change: transform;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0.1px) scale(0.9);
-            transform: translate3d(0, 0, 0.1px) scale(0.9);
+    -webkit-transform: translate3d(0, 1.5rem, 0.1px) scale(0.9);
+            transform: translate3d(0, 1.5rem, 0.1px) scale(0.9);
   }
 }
 
-/* line 100, resources/assets/styles/layouts/_home-about.scss */
+/* line 118, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view::after {
-  -webkit-transform: translateX(calc(6rem - 100vw - 100vh));
-       -o-transform: translateX(calc(6rem - 100vw - 100vh));
-          transform: translateX(calc(6rem - 100vw - 100vh));
+  -webkit-transform: translateX(0);
+       -o-transform: translateX(0);
+          transform: translateX(0);
   opacity: 1;
 }
 
-/* line 105, resources/assets/styles/layouts/_home-about.scss */
+/* line 123, resources/assets/styles/layouts/_home-about.scss */
 
 .home-about.in-view .home-about--text {
   opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0.2px) scale(0.8);
+          transform: translate3d(0, 0, 0.2px) scale(0.8);
+}
+
+/* line 128, resources/assets/styles/layouts/_home-about.scss */
+
+.home-about.in-view .home-about--image {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0.1px) scale(0.9);
+          transform: translate3d(0, 0, 0.1px) scale(0.9);
 }
 
 /* line 1, resources/assets/styles/layouts/_home-projects.scss */
@@ -2843,6 +3175,7 @@ body.internal-referer .home-hero--image {
   font-weight: 500;
   line-height: 0.8;
   text-transform: lowercase;
+  margin-left: -0.75rem;
 }
 
 @supports (mix-blend-mode: difference) {
@@ -2853,7 +3186,7 @@ body.internal-referer .home-hero--image {
     will-change: transform;
   }
 
-  /* line 20, resources/assets/styles/layouts/_home-projects.scss */
+  /* line 23, resources/assets/styles/layouts/_home-projects.scss */
 
   .home-projects .section-title::before,
   .home-projects .section-title::after {
@@ -2869,15 +3202,15 @@ body.internal-referer .home-hero--image {
     mix-blend-mode: difference;
   }
 
-  /* line 35, resources/assets/styles/layouts/_home-projects.scss */
+  /* line 38, resources/assets/styles/layouts/_home-projects.scss */
 
   .home-projects .section-title::after {
-    width: calc(50% + 0.75rem);
+    width: calc(50% + 1.125rem);
     top: 0.8em;
   }
 }
 
-/* line 42, resources/assets/styles/layouts/_home-projects.scss */
+/* line 45, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--title-image {
   position: absolute;
@@ -2888,29 +3221,23 @@ body.internal-referer .home-hero--image {
   width: calc(50% + 2.25rem);
 }
 
-/* line 51, resources/assets/styles/layouts/_home-projects.scss */
+/* line 54, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--intro {
   width: 50%;
   padding-right: 1.5rem;
   margin-top: 1.5rem;
-  margin-bottom: 8.25rem;
+  margin-bottom: calc(27% - 6.75rem);
 }
 
-/* line 58, resources/assets/styles/layouts/_home-projects.scss */
+/* line 61, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--tag {
-  display: inline-block;
-  background-color: #221f1f;
-  color: white;
-  text-transform: uppercase;
   margin-top: 0.75rem;
-  padding: 0.375rem 0.75rem;
   font-size: 0.70914em;
-  letter-spacing: 0.15em;
 }
 
-/* line 73, resources/assets/styles/layouts/_home-projects.scss */
+/* line 71, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--wrapper {
   display: -webkit-box;
@@ -2927,7 +3254,7 @@ body.internal-referer .home-hero--image {
   border-top: 0.1em solid #221f1f;
 }
 
-/* line 85, resources/assets/styles/layouts/_home-projects.scss */
+/* line 83, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--project {
   -webkit-box-flex: 0;
@@ -2938,14 +3265,38 @@ body.internal-referer .home-hero--image {
 
 /* line 89, resources/assets/styles/layouts/_home-projects.scss */
 
-.home-projects--project:nth-child(1),
-.home-projects--project:nth-child(6) {
+.home-projects--project:nth-child(3n) {
+  -webkit-transition-delay: 500ms !important;
+       -o-transition-delay: 500ms !important;
+          transition-delay: 500ms !important;
+}
+
+/* line 93, resources/assets/styles/layouts/_home-projects.scss */
+
+.home-projects--project:nth-child(3n - 1) {
+  -webkit-transition-delay: 250ms !important;
+       -o-transition-delay: 250ms !important;
+          transition-delay: 250ms !important;
+}
+
+/* line 97, resources/assets/styles/layouts/_home-projects.scss */
+
+.home-projects--project:nth-child(3n - 2) {
+  -webkit-transition-delay: 0 !important;
+       -o-transition-delay: 0 !important;
+          transition-delay: 0 !important;
+}
+
+/* line 101, resources/assets/styles/layouts/_home-projects.scss */
+
+.home-projects--project:first-child,
+.home-projects--project:last-child {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(50% - 1.5rem);
           flex: 0 0 calc(50% - 1.5rem);
 }
 
-/* line 95, resources/assets/styles/layouts/_home-projects.scss */
+/* line 107, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--read-more {
   margin: -1.5rem auto 0;
@@ -2956,14 +3307,14 @@ body.internal-referer .home-hero--image {
           transform: translateX(-50%);
 }
 
-/* line 102, resources/assets/styles/layouts/_home-projects.scss */
+/* line 114, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--image {
   display: block;
   margin-bottom: 1.5rem;
 }
 
-/* line 107, resources/assets/styles/layouts/_home-projects.scss */
+/* line 119, resources/assets/styles/layouts/_home-projects.scss */
 
 .home-projects--excerpt {
   font-size: 0.84211em;
@@ -2982,6 +3333,7 @@ body.internal-referer .home-hero--image {
 /* line 7, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog::after {
+  opacity: 0.65;
   content: "";
   height: 20em;
   position: absolute;
@@ -3011,18 +3363,18 @@ body.internal-referer .home-hero--image {
     -webkit-transform: translate3d(-70vw, 0, 0.2px) scale(0.8);
             transform: translate3d(-70vw, 0, 0.2px) scale(0.8);
     opacity: 0;
-    -webkit-transition: opacity 1000ms 500ms ease-out, -webkit-transform 1000ms 500ms ease-out;
-    transition: opacity 1000ms 500ms ease-out, -webkit-transform 1000ms 500ms ease-out;
-    -o-transition: opacity 1000ms 500ms ease-out, -o-transform 1000ms 500ms ease-out;
-    transition: transform 1000ms 500ms ease-out, opacity 1000ms 500ms ease-out;
-    transition: transform 1000ms 500ms ease-out, opacity 1000ms 500ms ease-out, -webkit-transform 1000ms 500ms ease-out, -o-transform 1000ms 500ms ease-out;
+    -webkit-transition: opacity 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition: opacity 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    -o-transition: opacity 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition: transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), opacity 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition: transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), opacity 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -webkit-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1), -o-transform 1000ms 500ms cubic-bezier(0.39, 0.58, 0.57, 1);
     -webkit-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center;
   }
 }
 
-/* line 31, resources/assets/styles/layouts/_home-blog.scss */
+/* line 32, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog .section-title {
   font-size: 7.86327em;
@@ -3036,14 +3388,14 @@ body.internal-referer .home-hero--image {
 }
 
 @supports (mix-blend-mode: difference) {
-  /* line 31, resources/assets/styles/layouts/_home-blog.scss */
+  /* line 32, resources/assets/styles/layouts/_home-blog.scss */
 
   .home-blog .section-title {
     color: white;
   }
 }
 
-/* line 66, resources/assets/styles/layouts/_home-blog.scss */
+/* line 69, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog .container {
   display: -webkit-box;
@@ -3055,7 +3407,7 @@ body.internal-referer .home-hero--image {
           flex-direction: row-reverse;
 }
 
-/* line 71, resources/assets/styles/layouts/_home-blog.scss */
+/* line 74, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--image {
   display: block;
@@ -3063,7 +3415,7 @@ body.internal-referer .home-hero--image {
   z-index: -9;
 }
 
-/* line 77, resources/assets/styles/layouts/_home-blog.scss */
+/* line 80, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--text {
   width: 75%;
@@ -3071,27 +3423,21 @@ body.internal-referer .home-hero--image {
   z-index: 99;
 }
 
-/* line 83, resources/assets/styles/layouts/_home-blog.scss */
+/* line 86, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--tag {
-  display: inline-block;
-  background-color: #221f1f;
-  color: white;
-  text-transform: uppercase;
   margin: 1.5rem 0 1.125rem;
-  padding: 0.375rem 0.75rem;
   font-size: 0.70914em;
-  letter-spacing: 0.15em;
 }
 
-/* line 94, resources/assets/styles/layouts/_home-blog.scss */
+/* line 93, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--read-more {
   font-size: 0.84211em;
   text-transform: lowercase;
 }
 
-/* line 98, resources/assets/styles/layouts/_home-blog.scss */
+/* line 97, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--read-more::after {
   content: "\2192";
@@ -3099,7 +3445,7 @@ body.internal-referer .home-hero--image {
   margin-left: 0.375rem;
 }
 
-/* line 105, resources/assets/styles/layouts/_home-blog.scss */
+/* line 104, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--read-all {
   float: right;
@@ -3112,7 +3458,7 @@ body.internal-referer .home-hero--image {
   font-size: 1.1875em;
 }
 
-/* line 115, resources/assets/styles/layouts/_home-blog.scss */
+/* line 114, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog--read-all::after {
   content: "\2192";
@@ -3120,7 +3466,7 @@ body.internal-referer .home-hero--image {
   margin-left: 0.375rem;
 }
 
-/* line 122, resources/assets/styles/layouts/_home-blog.scss */
+/* line 121, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog .column {
   -webkit-box-flex: 0;
@@ -3130,7 +3476,7 @@ body.internal-referer .home-hero--image {
 }
 
 @supports (mix-blend-mode: difference) {
-  /* line 128, resources/assets/styles/layouts/_home-blog.scss */
+  /* line 127, resources/assets/styles/layouts/_home-blog.scss */
 
   .home-blog .column:first-child .home-blog--mask {
     display: block;
@@ -3144,7 +3490,7 @@ body.internal-referer .home-hero--image {
   }
 }
 
-/* line 142, resources/assets/styles/layouts/_home-blog.scss */
+/* line 141, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog .column:last-child .home-blog--mask {
   height: 50vh;
@@ -3156,11 +3502,58 @@ body.internal-referer .home-hero--image {
   mix-blend-mode: difference;
 }
 
-/* line 155, resources/assets/styles/layouts/_home-blog.scss */
+/* line 154, resources/assets/styles/layouts/_home-blog.scss */
 
 .home-blog.in-view::after {
   -webkit-transform: translate3d(0, 0, 0.2px) scale(0.8);
           transform: translate3d(0, 0, 0.2px) scale(0.8);
+  opacity: 0.35;
+}
+
+/* transition active state (same for leave and enter) */
+
+/* line 48, stdin */
+
+.barba-leave-active,
+.barba-enter-active {
+  -webkit-transition: opacity 850ms ease, -webkit-transform 650ms ease;
+  transition: opacity 850ms ease, -webkit-transform 650ms ease;
+  -o-transition: opacity 850ms ease, -o-transform 650ms ease;
+  transition: opacity 850ms ease, transform 650ms ease;
+  transition: opacity 850ms ease, transform 650ms ease, -webkit-transform 650ms ease, -o-transform 650ms ease;
+}
+
+/* initial state */
+
+/* line 54, stdin */
+
+.barba-leave {
+  opacity: 1;
+}
+
+/* line 58, stdin */
+
+.barba-enter {
+  -webkit-transform: translateY(0.75rem);
+       -o-transform: translateY(0.75rem);
+          transform: translateY(0.75rem);
+  opacity: 0;
+}
+
+/* ending state */
+
+/* line 64, stdin */
+
+.barba-leave-to {
+  opacity: 0;
+}
+
+/* line 68, stdin */
+
+.barba-enter-to {
+  -webkit-transform: translateY(0);
+       -o-transform: translateY(0);
+          transform: translateY(0);
   opacity: 1;
 }
 

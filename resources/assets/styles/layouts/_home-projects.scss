@@ -12,6 +12,9 @@
     font-weight: 500;
     line-height: 0.8;
     text-transform: lowercase;
+    margin-left: -$small-spacing;
+
+    @extend %fade-into-view;
 
     @supports (mix-blend-mode: difference) {
       color: white;
@@ -33,7 +36,7 @@
       }
 
       &::after {
-        width: calc(50% + #{$small-spacing});
+        width: calc(50% + #{1.5 * $small-spacing});
         top: 1em * 0.8;
       }
     }
@@ -52,19 +55,14 @@
     width: 50%;
     padding-right: $base-spacing;
     margin-top: $base-spacing;
-    margin-bottom: 5.5 * $base-spacing;
+    margin-bottom: calc(27% - #{4.5 * $base-spacing});
   }
 
   &--tag {
-    display: inline-block;
-    background-color: $base-font-color;
-    color: white;
-    text-transform: uppercase;
-    // margin: $base-spacing 0 $small-spacing;
+    @extend .tag;
+
     margin-top: $small-spacing;
-    padding: $small-spacing/2 $small-spacing;
     font-size: modular-scale(-2);
-    letter-spacing: $wide-letter-spacing;
   }
 
   // &--image {
@@ -86,8 +84,22 @@
     flex: 0 0 calc(25% - #{$base-spacing});
     margin: $small-spacing;
 
-    &:nth-child(1),
-    &:nth-child(6) {
+    @extend %fade-into-view;
+
+    &:nth-child(3n) {
+      transition-delay: $base-duration !important;
+    }
+
+    &:nth-child(3n - 1) {
+      transition-delay: $base-duration/2 !important;
+    }
+
+    &:nth-child(3n - 2) {
+      transition-delay: 0 !important;
+    }
+
+    &:first-child,
+    &:last-child {
       flex: 0 0 calc(50% - #{$base-spacing});
     }
   }

@@ -7,7 +7,7 @@ $large-screen: 1120px;
 $xl-screen: 1300px;
 
 // Typography
-$base-font-family: "Avenir", "Avenir Next", "Nunito", $font-stack-system;
+$base-font-family: "Avenir Next", "Avenir", "Nunito", $font-stack-system;
 $heading-font-family: $base-font-family;
 
 $max-line-length: 45rem;
@@ -53,4 +53,4 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 
 // Animations
 $base-duration: 500ms;
-$base-timing: ease-out;
+$base-timing: cubic-bezier(0.39, 0.58, 0.57, 1);

@@ -1,5 +1,7 @@
 // import external dependencies
 require('intersection-observer');
+import barba from '@barba/core';
+import barbaCss from '@barba/css';
 
 // Import everything from autoload
 import './autoload/**/*'
@@ -8,17 +10,38 @@ import './autoload/**/*'
 import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
-import aboutUs from './routes/about';
+import singleProjects from './routes/project';
 
 /** Populate Router instance with DOM routes */
-const routes = new Router({
+window.routes = new Router({
   // All pages
   common,
   // Home page
   home,
-  // About Us page, note the change from about-us to aboutUs.
-  aboutUs,
+  // Project pages
+  singleProjects,
 });
 
 // Load Events
-document.addEventListener('DOMContentLoaded', ()=> routes.loadEvents());
+document.addEventListener('DOMContentLoaded', ()=> window.routes.loadEvents());
+
+document.addEventListener('DOMContentLoaded', () => {
+  let wipe = document.querySelector('.pageload--wipe circle');
+  barba.use(barbaCss);
+  barba.init({
+    debug: true,
+    transitions: [{
+      before(e) {
+        wipe.setAttribute('cx', e.trigger.offsetLeft);
+        wipe.setAttribute('cy', e.trigger.offsetTop);
+        wipe.setAttribute('class','triggered');
+      },
+      after() {
+        document.body.className = document.querySelector('main').dataset.barbaClass; // copy new classes onto body class
+        console.log('after');
+        wipe.removeAttribute('class');
+        window.routes.loadEvents();
+      },
+    }],
+  });
+});
