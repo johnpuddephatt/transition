@@ -5,7 +5,7 @@
       <a href="#" class="home-blog--read-all">Read all</a>
       <div class="home-blog--article">
         <div class="home-blog--mask"></div>
-        <img src="/app/themes/transition/dist/images/writing.jpg" alt="">
+        <img src="@asset('images/writing.jpg')" alt="">
         <div class="home-blog--text">
           <div class="home-blog--tag">Writing</div>
           <h3>Writing piece 1</h3>
@@ -16,7 +16,7 @@
     </div>
     <div class="column">
       <div class="home-blog--article">
-        <img class="home-blog--image" src="/app/themes/transition/dist/images/research.jpg" alt="">
+        <img class="home-blog--image" src="@asset('images/research.jpg')" alt="">
         <div class="home-blog--mask"></div>
         <div class="home-blog--text">
           <div class="home-blog--tag">Research</div>
