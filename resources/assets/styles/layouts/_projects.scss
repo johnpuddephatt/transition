@@ -16,6 +16,11 @@
   display: flex;
   flex-direction: row;
   margin-top: 1.5 * $base-spacing;
+  transform-style: preserve-3d;
+
+  .wp-block-image {
+    @extend %fade-into-view;
+  }
 
   &--project {
     @extend .tag;
@@ -26,6 +31,7 @@
   &--sidebar {
     flex: 0 0 20%;
     padding-right: $base-spacing;
+    padding-bottom: $base-spacing;
     margin-right: $base-spacing;
     border-right: $base-border;
     display: flex;
@@ -34,6 +40,8 @@
 
   main {
     margin-bottom: $small-spacing;
+    padding-bottom: $base-spacing;
+    transform-style: preserve-3d;
 
     > *:last-child {
       margin-bottom: 0;
@@ -53,6 +61,14 @@
 
   &--meta-bottom {
     margin-top: auto;
+
+    h3 {
+      font-size: modular-scale(0);
+    }
+
+    p {
+      font-style: italic;
+    }
   }
 
   p {

@@ -43,6 +43,8 @@ p.is-style-two-columns {
 */
 
 .wp-block-quote {
+  transform-style: preserve-3d;
+
   &.is-style-large {
     padding: 0;
     margin: 2 * $base-spacing 0;
@@ -56,11 +58,39 @@ p.is-style-two-columns {
     }
 
     cite {
-      font-size: modular-scale(1);
+      font-size: modular-scale(0);
       font-weight: 700;
       font-style: normal;
     }
+
+    &::before {
+      content: "";
+      height: 120%;
+      position: absolute;
+      top: 45%;
+      z-index: 99;
+      right: 20vw;
+      width: 80vw;
+      opacity: 0.65;
+      background-image: radial-gradient($base-font-color 20%, transparent 20%);
+      background-position: 10px 10px;
+      background-size: 7px 7px;
+
+      @media screen and (min-width: $medium-screen) {
+        will-change: transform;
+        transform-style: preserve-3d;
+        transform: translate3d(0, 0, 0.25px) scale(0.75);
+      }
+    }
   }
+}
+
+/*
+** Spacer block
+*/
+
+.wp-block-image {
+  margin-bottom: 2 * $base-spacing;
 }
 
 /*
@@ -68,7 +98,7 @@ p.is-style-two-columns {
 */
 
 .wp-block-gallery {
-  margin: 1.5 * $base-spacing 0;
+  margin: 2 * $base-spacing 0;
 }
 
 /*
@@ -77,7 +107,7 @@ p.is-style-two-columns {
 
 .wp-block-spacer {
   border-bottom: $base-border;
-  margin-bottom: 1.5 * $base-spacing;
+  margin-bottom: 2 * $base-spacing;
 }
 
 /*
@@ -85,7 +115,7 @@ p.is-style-two-columns {
 */
 
 .wp-block-columns {
-  margin: 1.5 * $base-spacing 0;
+  margin: 2 * $base-spacing 0;
 
   .wp-block-image {
     margin-bottom: 0;

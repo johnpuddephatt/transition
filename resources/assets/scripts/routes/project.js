@@ -1,6 +1,4 @@
-// import 'typesplit';
-
-// const SplitType = window.SplitType;
+import inView from '../util/inView';
 
 export default {
   init() {
@@ -8,6 +6,6 @@ export default {
   },
   finalize() {
     // JavaScript to be fired on the home page, after the init JS
-    // new SplitType('.entry-header--title', { split: 'words,chars', tagName: 'span' });
+    inView('.wp-block-image', 0.2);
   },
 };
