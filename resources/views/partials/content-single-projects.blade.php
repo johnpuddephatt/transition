@@ -11,14 +11,11 @@
 
     <div class="entry-content">
       <aside class="entry-content--sidebar">
-        <div class="entry-content--meta">
-          <div class="entry-content--number">01</div>
-        </div>
+        @include('partials/entry-meta')
       </aside>
       <main>
         <div class="entry-content--project">{{ $project_name }}</div>
         @php the_content() @endphp
-        @include('partials/entry-meta')
       </main>
     </div>
 

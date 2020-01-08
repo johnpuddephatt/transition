@@ -42,6 +42,16 @@ add_filter('excerpt_more', function () {
 });
 
 /**
+ * Image sizes
+ */
+add_image_size( 'wide', 800, 400, true );
+
+add_filter( 'image_size_names_choose', function ( $sizes ) {
+    $sizes['wide'] = 'Wide';
+    return $sizes;
+}, 11, 1 );
+
+/**
  * Template Hierarchy should search for .blade.php files
  */
 collect([

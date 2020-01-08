@@ -6,6 +6,10 @@
     ],
     "customizer": [
       "./scripts/customizer.js"
+    ],
+    "gutenberg": [
+      "./scripts/gutenberg.js",
+      "./styles/gutenberg.scss"
     ]
   },
   "publicPath": "/app/themes/transition",

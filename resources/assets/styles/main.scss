@@ -22,6 +22,7 @@
 @import "components/layout";
 @import "components/lists";
 @import "components/media";
+@import "components/page-transitions";
 @import "components/tables";
 @import "components/tags";
 @import "components/typography";
@@ -43,29 +44,3 @@
 @import "layouts/home-about";
 @import "layouts/home-projects";
 @import "layouts/home-blog";
-
-/* transition active state (same for leave and enter) */
-.barba-leave-active,
-.barba-enter-active {
-  transition: opacity 850ms ease, transform 650ms ease;
-}
-
-/* initial state */
-.barba-leave {
-  opacity: 1;
-}
-
-.barba-enter {
-  transform: translateY($small-spacing);
-  opacity: 0;
-}
-
-/* ending state */
-.barba-leave-to {
-  opacity: 0;
-}
-
-.barba-enter-to {
-  transform: translateY(0);
-  opacity: 1;
-}

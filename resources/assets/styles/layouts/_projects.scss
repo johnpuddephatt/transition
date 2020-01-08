@@ -28,9 +28,19 @@
     padding-right: $base-spacing;
     margin-right: $base-spacing;
     border-right: $base-border;
+    display: flex;
+    flex-direction: column;
   }
 
-  &--meta {
+  main {
+    margin-bottom: $small-spacing;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--meta-top {
     position: sticky;
     top: $small-spacing;
   }
@@ -41,9 +51,21 @@
     line-height: 1;
   }
 
+  &--meta-bottom {
+    margin-top: auto;
+  }
+
   p {
-    max-width: 40em;
+    max-width: 31rem;
     font-size: modular-scale(-1);
     font-weight: 500;
+  }
+
+  blockquote {
+    margin: 2 * $base-spacing 0;
+
+    p {
+      font-size: modular-scale(0);
+    }
   }
 }
