@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     debug: true,
     transitions: [{
       before(e) {
-        wipe.setAttribute('cx', e.trigger.offsetLeft);
-        wipe.setAttribute('cy', e.trigger.offsetTop);
+        wipe.setAttribute('cx', (e.trigger.offsetLeft || 0));
+        wipe.setAttribute('cy', (e.trigger.offsetTop || 0));
         wipe.setAttribute('class','triggered');
       },
       after() {
