@@ -75,6 +75,8 @@ p.is-style-two-columns {
       background-image: radial-gradient($base-font-color 20%, transparent 20%);
       background-position: 10px 10px;
       background-size: 7px 7px;
+      pointer-events: none;
+      user-select: none;
 
       @media screen and (min-width: $medium-screen) {
         will-change: transform;
