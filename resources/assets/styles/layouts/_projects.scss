@@ -73,7 +73,7 @@
   }
 
   p {
-    max-width: 31rem;
+    max-width: $max-line-length;
     font-size: modular-scale(-1);
     font-weight: 500;
   }

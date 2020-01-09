@@ -75,5 +75,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 });
 
 add_action( 'enqueue_block_assets', function() {
-    wp_enqueue_style( 'myguten-style', asset_path('styles/gutenberg.css') );
+    if(is_admin()) {
+        wp_enqueue_style( 'myguten-style', asset_path('styles/gutenberg.css') );
+    }
 } );

@@ -17,6 +17,8 @@ wp.domReady( function() {
   wp.blocks.unregisterBlockType( 'core/shortcode' );
   wp.blocks.unregisterBlockType( 'core/latest-posts' );
   wp.blocks.unregisterBlockType( 'core/latest-comments' );
+  wp.blocks.unregisterBlockType( 'core/spacer' );
+
   wp.blocks.unregisterBlockStyle( 'core/quote', 'default' );
 
   wp.blocks.registerBlockStyle( 'core/paragraph', {

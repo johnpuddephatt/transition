@@ -45,9 +45,12 @@ add_filter('excerpt_more', function () {
  * Image sizes
  */
 add_image_size( 'wide', 800, 400, true );
+add_image_size( 'wide-large', 1600, 800, true );
+add_image_size( 'tall', 360, 640, true );
 
 add_filter( 'image_size_names_choose', function ( $sizes ) {
     $sizes['wide'] = 'Wide';
+    $sizes['tall'] = 'Tall';
     return $sizes;
 }, 11, 1 );
 

@@ -10,7 +10,7 @@ class Single extends Controller
 
     public function featured_image()
    {
-       return get_the_post_thumbnail();
+       return get_the_post_thumbnail(null,'wide-large');
    }
 
    public function excerpt()

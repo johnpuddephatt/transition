@@ -2,7 +2,8 @@ $bourbon: (
   "modular-scale-ratio": 1.1875
 );
 
-$medium-screen: 720px;
+$small-screen: 600px;
+$medium-screen: 782px;
 $large-screen: 1120px;
 $xl-screen: 1300px;
 
@@ -10,7 +11,7 @@ $xl-screen: 1300px;
 $base-font-family: "Avenir Next", "Avenir", "Nunito", $font-stack-system;
 $heading-font-family: $base-font-family;
 
-$max-line-length: 45rem;
+$max-line-length: 31rem;
 
 // Font Sizes
 $base-font-size: 1em;
