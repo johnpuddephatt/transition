@@ -1,5 +1,8 @@
 /* transition active state (same for leave and enter) */
-.barba-leave-active,
+.barba-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
 .barba-enter-active {
   transition: opacity 0.75s ease, transform 0.75s ease;
 }

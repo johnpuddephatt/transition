@@ -13,7 +13,7 @@ export default {
     console.log('home.js');
 
     new SplitType('.loading--title', { split: 'chars', tagName: 'span' });
-    new SplitType('.home-projects .section-title', { split: 'chars', tagName: 'span' });
+    // new SplitType('.home-projects .section-title', { split: 'chars', tagName: 'span' });
 
     inView('.home-about', 0.1);
     inView('.home-blog', 0.1);

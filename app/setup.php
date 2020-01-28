@@ -94,7 +94,7 @@ function create_project_post_type() {
           'menu_icon' => 'dashicons-camera-alt',
           'menu_position' => 4,
           'show_in_rest' => true,
-          'supports' => array('title','thumbnail','excerpt','editor'),
+          'supports' => array('title','thumbnail','excerpt','editor', 'revisions'),
        )
     );
 }
@@ -125,22 +125,21 @@ add_action('init', 'App\create_scrap_post_type');
 /**
  * Trying out gutenberg templates...
  */
-
-// function myplugin_register_template() {
-//     $post_type_object = get_post_type_object( 'projects' );
-//     $post_type_object->template = array(
-//         array( 'core/image', array(
-//         ) ),
-//         array( 'core/heading', array(
-//           'placeholder' => 'Add Author...',
-//         ) ),
-//         array( 'core/paragraph', array(
-//           'placeholder' => 'Add Description...',
-//         ) ),
-//     );
-//     $post_type_object->template_lock = 'all';
-// }
-// add_action( 'init', 'App\myplugin_register_template' );
+add_action( 'init', function() {
+    $post_type_object = get_post_type_object( 'projects' );
+    $post_type_object->template = array(
+        array( 'core/paragraph', array(
+          'placeholder' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        ) ),
+        array( 'core/paragraph', array(
+          'placeholder' => ' Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        ) ),
+        array( 'core/separator', array(
+            'className' => 'is-style-wide'
+        ) ),
+    );
+    // $post_type_object->template_lock = 'all';
+});
 
 /**
  * Remove comments

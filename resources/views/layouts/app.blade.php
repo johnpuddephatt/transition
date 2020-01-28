@@ -18,15 +18,18 @@
 
 @endif
 
-        <main data-barba-class="{{ join( ' ', get_body_class()) }}" data-barba="container" data-barba-namespace="{{ basename( get_permalink() ) }}">
-          @yield('content')
-        </main>
+        <div data-barba-class="{{ join( ' ', get_body_class()) }}" data-barba="container" data-barba-namespace="{{ basename( get_permalink() ) }}">
+
+          <main>
+            @yield('content')
+          </main>
+          @php do_action('get_footer') @endphp
+          @include('partials.footer')
+        </div>
 
 @if(!isset($_SERVER['HTTP_X_BARBA']))
 
-        {{-- @php do_action('get_footer') @endphp --}}
-        {{-- @include('partials.footer') --}}
-        {{-- @php wp_footer() @endphp --}}
+        @php wp_footer() @endphp
       </div>
     </body>
   </html>

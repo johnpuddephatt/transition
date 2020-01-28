@@ -1,5 +1,6 @@
 @import "bourbon/bourbon";
 @import "common/variables";
+@import "common/extends";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -35,7 +36,6 @@
 @import "layouts/loading";
 @import "layouts/pages";
 @import "layouts/posts";
-@import "layouts/projects";
 @import "layouts/tinymce";
 
 /** Home page **/

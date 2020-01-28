@@ -18,7 +18,11 @@
     transition: transform 3 * $base-duration $base-timing, opacity 3 * $base-duration $base-timing;
     transform: translateX(calc(100vw + 100vh));
     opacity: 0;
-    background-image: linear-gradient(135deg, white calc(50% + #{3 * $base-spacing}), $vanilla calc(50% + #{3 * $base-spacing}));
+    background-image: linear-gradient(135deg, white calc(50% + #{$base-spacing}), $vanilla calc(50% + #{$base-spacing}));
+
+    @media screen and (min-width: $medium-screen) {
+      background-image: linear-gradient(135deg, white calc(50% + #{3 * $base-spacing}), $vanilla calc(50% + #{3 * $base-spacing}));
+    }
 
     html.no-js & {
       transform: translateX(0);
@@ -30,19 +34,18 @@
     content: "";
     height: 50%;
     position: absolute;
-    top: 55%;
+    top: 62.5%;
     z-index: 99;
     right: 5vw;
     width: 60vw;
     opacity: 0.5;
-    background-image: radial-gradient(#fff 20%, transparent 20%);
-    background-position: 10px 10px;
-    background-size: 7px 7px;
+
+    @include has-background-dots(#fff);
 
     @media screen and (min-width: $medium-screen) {
       will-change: transform;
       transform-style: preserve-3d;
-      transform: translate3d(0, 0, 0.25px) scale(0.75);
+      transform: translate3d(0, 0, 0.15px) scale(0.85);
     }
   }
 
@@ -66,7 +69,7 @@
   &--text {
     position: relative;
     z-index: 9;
-    margin-top: 8 * $base-spacing;
+    margin-top: 4 * $base-spacing;
     margin-bottom: 4 * $base-spacing;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
@@ -77,6 +80,7 @@
     }
 
     @media screen and (min-width: $medium-screen) {
+      margin-top: 8 * $base-spacing;
       will-change: transform;
       transform-style: preserve-3d;
       perspective-origin: center center;
@@ -85,11 +89,15 @@
   }
 
   &--title {
-    font-size: modular-scale(6);
+    font-size: modular-scale(5);
     font-weight: 400;
     color: white;
-    width: 65%;
     margin-bottom: $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      width: 65%;
+      font-size: modular-scale(6);
+    }
   }
 
   &--image {
@@ -122,12 +130,18 @@
 
     .home-about--text {
       opacity: 1;
-      transform: translate3d(0, 0, 0.2px) scale(0.8);
+
+      @media screen and (min-width: $medium-screen) {
+        transform: translate3d(0, 0, 0.2px) scale(0.8);
+      }
     }
 
     .home-about--image {
       opacity: 1;
-      transform: translate3d(0, 0, 0.1px) scale(0.9);
+
+      @media screen and (min-width: $medium-screen) {
+        transform: translate3d(0, 0, 0.1px) scale(0.9);
+      }
     }
   }
 }

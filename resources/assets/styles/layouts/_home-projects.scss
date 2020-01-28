@@ -8,51 +8,65 @@
   }
 
   .section-title {
-    font-size: modular-scale(12);
+    font-size: modular-scale(8);
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(12);
+
+      @supports (mix-blend-mode: difference) {
+        color: white;
+        will-change: transform;
+
+        &::before,
+        &::after {
+          // outline: 1px solid red;
+          height: 1em * 0.8;
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 9;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: #fff;
+          mix-blend-mode: difference;
+        }
+
+        &::after {
+          width: calc(50% + #{1.5 * $small-spacing});
+          top: 1em * 0.8;
+        }
+      }
+    }
+
     font-weight: 500;
     line-height: 0.8;
     text-transform: lowercase;
     margin-left: -$small-spacing;
 
     @extend %fade-into-view;
-
-    @supports (mix-blend-mode: difference) {
-      color: white;
-      will-change: transform;
-
-      &::before,
-      &::after {
-        // outline: 1px solid red;
-        height: 1em * 0.8;
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 9;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        mix-blend-mode: difference;
-      }
-
-      &::after {
-        width: calc(50% + #{1.5 * $small-spacing});
-        top: 1em * 0.8;
-      }
-    }
   }
 
   &--title-image {
     position: absolute;
     z-index: -1;
     top: (modular-scale(12) - 1em);
+    display: none;
+
+    @media screen and (min-width: $medium-screen) {
+      display: block;
+    }
+
     bottom: 0;
     right: -2 * $base-spacing;
     width: calc(50% + #{1.5 * $base-spacing});
   }
 
   &--intro {
-    width: 50%;
+    @media screen and (min-width: $medium-screen) {
+      width: 50%;
+    }
+
     padding-right: $base-spacing;
     margin-top: $base-spacing;
     margin-bottom: calc(27% - #{4.5 * $base-spacing});
@@ -81,8 +95,12 @@
   }
 
   &--project {
-    flex: 0 0 calc(25% - #{$base-spacing});
+    flex: 0 0 calc(50% - #{$base-spacing});
     margin: $small-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      flex: 0 0 calc(25% - #{$base-spacing});
+    }
 
     @extend %fade-into-view;
 
@@ -100,7 +118,11 @@
 
     &:first-child,
     &:last-child {
-      flex: 0 0 calc(50% - #{$base-spacing});
+      flex: 0 0 calc(100% - #{$base-spacing});
+
+      @media screen and (min-width: $medium-screen) {
+        flex: 0 0 calc(50% - #{$base-spacing});
+      }
     }
   }
 

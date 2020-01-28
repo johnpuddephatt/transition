@@ -1,20 +1,25 @@
 <article @php post_class() @endphp>
   <div class="container">
-    <header>
-      <h1 class="post-title">{!! get_the_title() !!}</h1>
-      @if( has_post_thumbnail() )
+    <header class="entry-header entry-header__single-post">
+      <div>
+        <span class="tag">{{$post->category->name}}</span>
+        <h1 class="entry-header--title">{!! $post->title !!}</h1>
+      </div>
+      @if( $post->thumbnail )
         <figure class="entry-image">
-          {{ the_post_thumbnail( 'large' ) }}
+          {{ $post->thumbnail }}
         </figure>
       @endif
-      @include('partials/entry-meta')
     </header>
-    <div class="entry-content">
-      @php the_content() @endphp
+    <div class="entry-content entry-content__single-post">
+      <div class="entry-content--sidebar">
+        @include('partials/post-meta')
+      </div>
+
+      <main class="entry-content--main">
+        {!! the_content() !!}
+      </main>
     </div>
-    <footer>
-      {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
-    </footer>
-    @php comments_template('/partials/comments.blade.php') @endphp
+
   </div>
 </article>

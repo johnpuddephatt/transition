@@ -1,11 +1,19 @@
 header.banner {
-  margin-top: 1.5 * $base-spacing;
+  margin-top: $base-spacing;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding-left: 2 * $base-spacing;
-  padding-right: 2 * $base-spacing;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+  padding-bottom: $base-spacing;
+
+  @media screen and (min-width: $medium-screen) {
+    margin-top: 1.5 * $base-spacing;
+    padding-left: 2 * $base-spacing;
+    padding-right: 2 * $base-spacing;
+    padding-bottom: 0;
+  }
 
   // .container {
   //   display: flex;
@@ -16,8 +24,8 @@ header.banner {
   //
   .brand {
     img {
-      width: 3.5 * $base-spacing;
-      height: 3.5 * $base-spacing;
+      width: 4 * $base-spacing;
+      height: 4 * $base-spacing;
     }
   }
 
@@ -56,8 +64,18 @@ header.banner {
   }
 
   @media screen and (max-width: $medium-screen) {
-    .nav a {
-      color: white;
+    .nav {
+      flex-direction: column;
+
+      li {
+        margin-left: 0 !important;
+        margin-bottom: $base-spacing;
+      }
+
+      a {
+        color: white;
+        font-size: modular-scale(3);
+      }
     }
 
     label[for="nav-trigger"] {

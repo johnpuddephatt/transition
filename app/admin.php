@@ -42,6 +42,14 @@ add_filter('acf/settings/show_admin', function ($show) {
  */
 add_action( 'after_setup_theme', function() {
     add_theme_support( 'disable-custom-colors' );
+    add_theme_support('disable-custom-font-sizes');
+    add_theme_support('editor-font-sizes', array(
+        array(
+            'name' => 'Normal',
+            'size' => '1em',
+            'slug' => 'normal'
+        )
+    ));
     add_theme_support(
 		'editor-color-palette', array(
 			array(

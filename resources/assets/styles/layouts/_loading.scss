@@ -1,4 +1,5 @@
 .pageload--overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -6,6 +7,10 @@
   bottom: 0;
   z-index: 900;
   pointer-events: none;
+
+  @media screen and (min-width: $medium-screen) {
+    display: block;
+  }
 }
 
 .pageload--wipe {
@@ -26,12 +31,15 @@
 @keyframes explode {
   0% {
     r: 0;
+    opacity: 0;
+  }
+
+  35% {
     opacity: 1;
   }
 
-  75% {
+  85% {
     r: 110vmax;
-    opacity: 1;
   }
 
   100% {

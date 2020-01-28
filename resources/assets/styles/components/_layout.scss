@@ -57,12 +57,16 @@ body.home:not(.internal-referer, .barba-loaded) #app {
   }
 }
 
-main {
+main,
+div[data-barba] {
   // position: relative;
-
   @media screen and (min-width: $large-screen) {
     transform-style: preserve-3d;
   }
+}
+
+main {
+  min-height: 80vh;
 }
 
 .container {

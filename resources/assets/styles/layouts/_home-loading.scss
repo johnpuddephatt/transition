@@ -25,7 +25,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: loadingWipe 2s 5s $base-timing forwards;
+    animation: loadingWipe 2s 4s $base-timing forwards;
   }
 
   .container {
@@ -39,11 +39,15 @@
     font-weight: 700;
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0.01em;
-    font-size: modular-scale(8);
+    font-size: modular-scale(6);
     color: white;
     width: 8.5em;
     margin-bottom: 0;
-    animation: titleExit 1.5s 4.25s $base-timing forwards;
+    animation: titleExit 1.5s 3.25s $base-timing forwards;
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(8);
+    }
 
     > * {
       @extend %letter-fade-in;
@@ -56,9 +60,12 @@ body.barba-loaded .loading {
 }
 
 @keyframes loadingWipe {
+  50% {
+    opacity: 1;
+  }
+
   99% {
     transform: translate(-200vw, -200vh);
-    opacity: 1;
     z-index: initial;
   }
 

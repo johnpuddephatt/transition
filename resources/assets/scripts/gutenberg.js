@@ -1,5 +1,9 @@
 wp.domReady( function() {
 
+  wp.data.dispatch( 'core/edit-post').removeEditorPanel( 'taxonomy-panel-category' ) ;
+  wp.data.dispatch( 'core/edit-post').removeEditorPanel( 'taxonomy-panel-post_tag' );
+  wp.data.dispatch( 'core/edit-post').removeEditorPanel( 'discussion-panel' );
+
   wp.blocks.unregisterBlockType( 'core/verse' );
   wp.blocks.unregisterBlockType( 'core/cover' );
   wp.blocks.unregisterBlockType( 'core/more' );
@@ -20,10 +24,17 @@ wp.domReady( function() {
   wp.blocks.unregisterBlockType( 'core/spacer' );
 
   wp.blocks.unregisterBlockStyle( 'core/quote', 'default' );
+  wp.blocks.unregisterBlockStyle( 'core/image', 'circle-mask' );
+  wp.blocks.unregisterBlockStyle( 'core/pullquote', 'solid-color' );
 
   wp.blocks.registerBlockStyle( 'core/paragraph', {
       name: 'two-columns',
       label: 'Two columns',
+  } );
+
+  wp.blocks.registerBlockStyle( 'core/image', {
+      name: 'full-width',
+      label: 'Full width',
   } );
 
 });

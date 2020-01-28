@@ -44,13 +44,21 @@ add_filter('excerpt_more', function () {
 /**
  * Image sizes
  */
-add_image_size( 'wide', 800, 400, true );
-add_image_size( 'wide-large', 1600, 800, true );
-add_image_size( 'tall', 360, 640, true );
+add_image_size( 'wide', 1600, 800, true );
+add_image_size( 'wide_s', 1200, 600, true );
+add_image_size( 'wide_s', 800, 400, true );
+
+add_image_size( 'tall', 540, 960, true );
+add_image_size( 'tall_s', 360, 640, true );
+
+add_image_size( 'square', 640, 640, true );
+add_image_size( 'square_m', 480, 480, true );
+add_image_size( 'square_s', 240, 240, true );
 
 add_filter( 'image_size_names_choose', function ( $sizes ) {
     $sizes['wide'] = 'Wide';
     $sizes['tall'] = 'Tall';
+    $sizes['square'] = 'Square';
     return $sizes;
 }, 11, 1 );
 

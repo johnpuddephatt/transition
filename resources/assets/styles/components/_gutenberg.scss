@@ -67,12 +67,46 @@ p.is-style-two-columns {
 */
 
 .wp-block-image {
-  margin-bottom: 2 * $base-spacing;
+  max-width: $max-line-length;
+
+  &.size-wide,
+  &.size-large {
+    margin-bottom: 2 * $base-spacing;
+
+    p + & {
+      margin-top: 2 * $base-spacing;
+    }
+  }
+
+  &.is-style-full-width {
+    max-width: none;
+  }
 
   img {
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  figure {
+    &.alignright,
+    &.alignleft {
+      width: 100%;
+      margin-top: $small-spacing/2;
+
+      @media (min-width: $medium-screen) {
+        width: 9 * $base-spacing;
+      }
+    }
+  }
+
+  figcaption {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: modular-scale(-2);
+    font-weight: 400;
+    padding: $small-spacing/2 $small-spacing;
+    text-align: center;
   }
 }
 
@@ -128,31 +162,92 @@ p.is-style-two-columns {
     display: flex;
     flex-direction: column;
 
-    .wp-block-column:not(:first-child) {
-      margin-left: $base-spacing;
-    }
-
-    > *:last-child {
-      margin-top: auto;
-      margin-bottom: 0;
-    }
-
     > *:first-child {
       margin-top: 0;
     }
 
-    p + p {
+    // Contents of column
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    > *:last-child:not(p) {
+      margin-top: auto !important;
+    }
+
+    > p + p {
       margin-top: 0 !important;
     }
+  }
+
+  // The columns
+  &:not(:first-child) {
+    margin-top: $base-spacing;
+
+    @media (min-width: $medium-screen) {
+      margin-top: 0;
+      margin-left: $base-spacing;
+    }
+  }
+}
+
+/*
+** Pullquote block
+*/
+.wp-block-pullquote {
+  border-top: $base-border;
+  border-bottom: $base-border;
+  text-align: left;
+  padding: 0;
+  margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
+
+  @media (min-width: $medium-screen) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  blockquote {
+    margin: 1.5 * $base-spacing $base-spacing;
+
+    cite {
+      font-size: modular-scale(-1);
+      font-weight: 700;
+      font-style: normal;
+    }
+  }
+
+  &.alignright,
+  &.alignleft {
+    width: 100%;
+    margin-top: $small-spacing/2;
+
+    @media (min-width: $medium-screen) {
+      width: 9 * $base-spacing;
+    }
+  }
+
+  &.alignright {
+    margin-left: 1.5 * $base-spacing;
+    margin-right: 0;
+  }
+
+  &.alignleft {
+    margin-left: 0;
+    margin-right: $base-spacing;
   }
 }
 
 /*
 ** Blockquote block
 */
-
 .wp-block-quote {
+  margin: 2 * $base-spacing 0;
   transform-style: preserve-3d;
+
+  p {
+    font-size: modular-scale(0);
+  }
 
   &.is-style-large {
     padding: 0;
@@ -161,9 +256,13 @@ p.is-style-two-columns {
     p {
       font-style: normal;
       line-height: $heading-line-height;
-      font-size: modular-scale(6);
+      font-size: modular-scale(5);
       font-weight: 500;
       max-width: none;
+
+      @media (min-width: $medium-screen) {
+        font-size: modular-scale(6);
+      }
     }
 
     cite {
@@ -176,21 +275,16 @@ p.is-style-two-columns {
       content: "";
       height: 120%;
       position: absolute;
-      top: 45%;
-      z-index: 99;
+      top: -35%;
       right: 20vw;
       width: 80vw;
-      opacity: 0.65;
-      background-image: radial-gradient($base-font-color 20%, transparent 20%);
-      background-position: 10px 10px;
-      background-size: 7px 7px;
-      pointer-events: none;
-      user-select: none;
+
+      @include has-background-dots($medium-gray);
 
       @media screen and (min-width: $medium-screen) {
         will-change: transform;
         transform-style: preserve-3d;
-        transform: translate3d(0, 0, 0.25px) scale(0.75);
+        transform: translate3d(0, 0, -0.1px) scale(1.1);
       }
     }
   }

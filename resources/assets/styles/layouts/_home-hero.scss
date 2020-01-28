@@ -10,14 +10,21 @@
   }
 
   &--text {
-    width: 65%;
     margin-bottom: 5.5 * $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      width: 65%;
+    }
   }
 
   &--title {
-    font-size: modular-scale(7);
+    font-size: modular-scale(6);
     font-weight: 700;
     margin-bottom: $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(7);
+    }
   }
 
   &--excerpt {
@@ -27,16 +34,24 @@
 
   &--image {
     position: absolute;
-    width: 85%;
-    left: 25%;
-    bottom: -$base-spacing;
+    width: 110%;
+    max-width: none;
+    left: 5%;
+    bottom: -$small-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      width: 85%;
+      left: 25%;
+      bottom: -$base-spacing;
+    }
+
     z-index: -1;
-    animation: loadHeroImage 5.5s 5.5s forwards;
+    animation: loadHeroImage 3.5s 4.75s forwards;
     filter: grayscale(1) contrast(0.25) brightness(1.9);
 
     .internal-referer &,
     .barba-loaded & {
-      animation: loadHeroImage 2.75s 0s forwards;
+      animation: loadHeroImage 3.5s 0s forwards;
     }
   }
 }

@@ -8,13 +8,12 @@ class Single extends Controller
 {
     protected $acf = true;
 
-    public function featured_image()
-   {
-       return get_the_post_thumbnail(null,'wide-large');
-   }
+    public function post() {
+        $this->title = get_the_title();
+        $this->excerpt = get_the_excerpt();
+        $this->thumbnail = get_the_post_thumbnail(null, 'wide-large');
+        $this->category = get_the_terms(null, 'category')[0];
+        return $this;
+    }
 
-   public function excerpt()
-   {
-       return get_the_excerpt();
-   }
 }

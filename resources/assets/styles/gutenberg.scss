@@ -1,6 +1,16 @@
 @import "bourbon/bourbon";
 @import "common/variables";
+@import "common/extends";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
 @import "components/gutenberg";
+
+/*
+ * Style overrides to fix gutenberg quirks
+ */
+
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="right"] > .block-editor-block-list__block-edit,
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="left"] > .block-editor-block-list__block-edit {
+  max-width: 50%;
+}

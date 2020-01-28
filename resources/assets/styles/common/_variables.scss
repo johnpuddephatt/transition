@@ -33,6 +33,9 @@ $base-z-index: 0;
 // Colors
 $black: #221f1f;
 $vanilla: #d2bfab;
+$dark-gray: #bebebe;
+$medium-gray: #e4e4e4;
+$light-gray: #f9f7f6;
 
 // Font Colors
 $base-font-color: $black;
@@ -40,7 +43,7 @@ $action-color: $black;
 $light-color: tint($base-font-color, 75%);
 
 // Border
-$base-border-color: $black;
+$base-border-color: $dark-gray;
 $base-border-width: 1px;
 $base-border: $base-border-width solid $base-border-color;
 

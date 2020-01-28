@@ -32,6 +32,10 @@ u {
   box-shadow: inset 0 0 #fff, inset 0 -0.4rem $action-color;
 }
 
+em {
+  text-shadow: 0 0 0.3px $base-font-color;
+}
+
 h1,
 h2,
 h3,
@@ -63,7 +67,7 @@ a {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 hr {
@@ -86,8 +90,12 @@ hr {
 
 .page-title,
 .post-title {
-  font-size: modular-scale(8);
+  font-size: modular-scale(6);
   font-weight: 700;
+
+  @media screen and (min-width: $medium-screen) {
+    font-size: modular-scale(8);
+  }
 }
 
 .page-subtitle {
@@ -115,9 +123,9 @@ hr {
   backface-visibility: hidden;
   animation: letterFadeIn $base-timing 1.4s forwards;
 
-  @for $i from 1 through 150 {
+  @for $i from 1 through 250 {
     &:nth-child(#{$i}) {
-      animation-delay: #{$i * 80}ms;
+      animation-delay: #{$i * 60}ms;
     }
   }
 }
