@@ -50,16 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
       before(e) {
         navTrigger.checked = false;
         if(e.trigger.classList.contains('brand')){
-          console.log('hello');
           let triggerBounds = e.trigger.getBoundingClientRect();
           wipe.setAttribute('cx', (triggerBounds.x + triggerBounds.width/2 || 0));
           wipe.setAttribute('cy', (triggerBounds.y + triggerBounds.height/2 || 0));
           wipe.setAttribute('class','triggered');
         }
       },
+      afterLeave() {
+        history.scrollRestoration = 'manual';
+        wrapper.scrollTop = 0;
+      },
       after() {
         document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
-        wrapper.scrollTop = 0;
         wipe.removeAttribute('class');
         window.routes.loadEvents();
       },
@@ -75,11 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
       before() {
         navTrigger.checked = false;
       },
+      afterLeave() {
+        history.scrollRestoration = 'manual';
+        wrapper.scrollTop = 0;
+      },
       after() {
         document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
-        wrapper.scrollTop = 0;
         window.routes.loadEvents();
       },
     }],
   });
+
 });
