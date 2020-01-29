@@ -11,7 +11,7 @@ class Single extends Controller
     public function post() {
         $this->title = get_the_title();
         $this->excerpt = get_the_excerpt();
-        $this->thumbnail = get_the_post_thumbnail(null, 'wide-large');
+        $this->thumbnail = get_the_post_thumbnail(null, 'wide');
         $this->category = get_the_terms(null, 'category')[0];
         return $this;
     }
