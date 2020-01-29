@@ -34,21 +34,50 @@ document.addEventListener('DOMContentLoaded', ()=> window.routes.loadEvents());
 document.addEventListener('DOMContentLoaded', () => {
   let wipe = document.querySelector('.pageload--wipe circle');
   let navTrigger = document.querySelector('.nav-trigger');
+  let wrapper = document.querySelector('#app');
+
   barba.use(barbaCss);
   barba.init({
+    debug: true,
     transitions: [{
+      name: 'fade',
+      from: {
+        // define a custom rule based on the trigger class
+        custom: ({ trigger }) => {
+          return trigger != 'back' && trigger != 'forward';
+        },
+      },
       before(e) {
-        if(e.trigger != ('back' || 'forward')) {
+        navTrigger.checked = false;
+        if(e.trigger.classList.contains('brand')){
+          console.log('hello');
           let triggerBounds = e.trigger.getBoundingClientRect();
           wipe.setAttribute('cx', (triggerBounds.x + triggerBounds.width/2 || 0));
           wipe.setAttribute('cy', (triggerBounds.y + triggerBounds.height/2 || 0));
           wipe.setAttribute('class','triggered');
-          navTrigger.checked = false;
         }
       },
       after() {
         document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
+        wrapper.scrollTop = 0;
         wipe.removeAttribute('class');
+        window.routes.loadEvents();
+      },
+    },
+    {
+      name: 'default',
+      from: {
+        // define a custom rule based on the trigger class
+        custom: ({ trigger }) => {
+          return trigger == 'back' || trigger == 'forward';
+        },
+      },
+      before() {
+        navTrigger.checked = false;
+      },
+      after() {
+        document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
+        wrapper.scrollTop = 0;
         window.routes.loadEvents();
       },
     }],

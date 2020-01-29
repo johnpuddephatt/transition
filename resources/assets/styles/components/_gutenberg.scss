@@ -214,6 +214,7 @@ p.is-style-two-columns {
       font-size: modular-scale(-1);
       font-weight: 700;
       font-style: normal;
+      line-height: $heading-line-height;
     }
   }
 
@@ -268,6 +269,7 @@ p.is-style-two-columns {
     cite {
       font-size: modular-scale(0);
       font-weight: 700;
+      line-height: $heading-line-height;
       font-style: normal;
     }
 
