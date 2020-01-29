@@ -13,9 +13,10 @@
 
     @foreach($projects as $project)
       <a href="{!! $project->link !!}">
-        {!! $project->thumbnail !!}
+        {{-- {!! $project->thumbnail !!} --}}
         <h2 class="projects--title">{!! $project->title !!}</h2>
-        <p>{!! $project->excerpt !!}</p>
+        <br>
+        {{-- <p>{!! $project->excerpt !!}</p> --}}
       </a>
     @endforeach
 
