@@ -45,7 +45,7 @@ add_filter('excerpt_more', function () {
  * Image sizes
  */
 add_image_size( 'wide', 1600, 800, true );
-add_image_size( 'wide_s', 1200, 600, true );
+add_image_size( 'wide_m', 1200, 600, true );
 add_image_size( 'wide_s', 800, 400, true );
 
 add_image_size( 'tall', 540, 960, true );
