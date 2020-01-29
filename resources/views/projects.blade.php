@@ -10,6 +10,7 @@
     @include('partials.page-header')
 
     <h2>In progress...</h2>
+    <br><br><br><br>
 
     @foreach($projects as $project)
       <a href="{!! $project->link !!}">
