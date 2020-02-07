@@ -13,6 +13,7 @@ import home from './routes/home';
 import singleProjects from './routes/project';
 import singlePost from './routes/post';
 import page from './routes/page';
+import projects from './routes/projects';
 
 /** Populate Router instance with DOM routes */
 window.routes = new Router({
@@ -20,6 +21,8 @@ window.routes = new Router({
   common,
   // Home page
   home,
+  // Projects index page
+  projects,
   // Project pages
   singleProjects,
   // Post pages

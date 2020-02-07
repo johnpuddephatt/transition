@@ -38,8 +38,12 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">Read more &rarr;</a>';
 });
+
+add_filter( 'excerpt_length', function($length) {
+    return 20;
+} );
 
 /**
  * Image sizes
@@ -51,8 +55,8 @@ add_image_size( 'wide_s', 800, 400, true );
 add_image_size( 'tall', 540, 960, true );
 add_image_size( 'tall_s', 360, 640, true );
 
-add_image_size( 'square', 640, 640, true );
-add_image_size( 'square_m', 480, 480, true );
+add_image_size( 'square_l', 640, 640, true );
+add_image_size( 'square', 480, 480, true );
 add_image_size( 'square_s', 240, 240, true );
 
 add_filter( 'image_size_names_choose', function ( $sizes ) {

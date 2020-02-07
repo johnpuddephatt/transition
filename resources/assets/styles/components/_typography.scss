@@ -98,6 +98,19 @@ hr {
   }
 }
 
+.entry-header__section {
+  .entry-header--title {
+    text-align: right;
+    font-weight: 600;
+    text-transform: lowercase;
+    font-size: modular-scale(8);
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(10);
+    }
+  }
+}
+
 .page-subtitle {
   margin-top: $small-spacing;
   font-size: modular-scale(1);

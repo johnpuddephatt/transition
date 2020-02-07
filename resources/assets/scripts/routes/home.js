@@ -10,17 +10,14 @@ export default {
   finalize() {
     // JavaScript to be fired on the home page, after the init JS
 
-    console.log('home.js');
-
     new SplitType('.loading--title', { split: 'chars', tagName: 'span' });
-    // new SplitType('.home-projects .section-title', { split: 'chars', tagName: 'span' });
 
     inView('.home-about', 0.1);
     inView('.home-blog', 0.1);
 
     inView('.home-projects .section-title', 1);
     inView('.home-blog .section-title', 1);
-    inView('.home-projects--project', 0.5);
+    inView('.projects-grid--project', 0.5);
 
     // Not in use, was for experimental project list layout
     // (function projectsIntersectionObserver() {

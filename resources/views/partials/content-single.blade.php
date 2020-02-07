@@ -5,11 +5,6 @@
         <span class="tag">{{$post->category->name}}</span>
         <h1 class="entry-header--title">{!! $post->title !!}</h1>
       </div>
-      @if( $post->thumbnail )
-        <figure class="entry-image">
-          {{ $post->thumbnail }}
-        </figure>
-      @endif
     </header>
     <div class="entry-content entry-content__single-post">
       <div class="entry-content--sidebar">
