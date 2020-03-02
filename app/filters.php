@@ -38,7 +38,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">Read more &rarr;</a>';
+    return ' &hellip; Read more&nbsp;&rarr;';
 });
 
 add_filter( 'excerpt_length', function($length) {
@@ -51,9 +51,11 @@ add_filter( 'excerpt_length', function($length) {
 add_image_size( 'wide', 1600, 800, true );
 add_image_size( 'wide_m', 1200, 600, true );
 add_image_size( 'wide_s', 800, 400, true );
+add_image_size( 'wide_xs', 400, 200, true );
 
-add_image_size( 'tall', 540, 960, true );
-add_image_size( 'tall_s', 360, 640, true );
+add_image_size( 'tall', 480, 648, true );
+add_image_size( 'tall_m', 360, 486, true );
+add_image_size( 'tall_s', 240, 324, true );
 
 add_image_size( 'square_l', 640, 640, true );
 add_image_size( 'square', 480, 480, true );

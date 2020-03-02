@@ -34,10 +34,11 @@
   }
 
   &--excerpt {
+    font-size: modular-scale(-1);
+
     a {
       display: block;
       text-transform: lowercase;
-      font-size: modular-scale(-1);
       margin-top: $small-spacing;
     }
   }

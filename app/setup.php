@@ -79,8 +79,6 @@ add_action('after_setup_theme', function () {
  * Register custom post types
  */
 
-add_action('init', 'App\create_project_post_type');
-
 function create_project_post_type() {
     register_post_type('projects',
        array(
@@ -100,6 +98,25 @@ function create_project_post_type() {
 }
 
 add_action('init', 'App\create_project_post_type');
+
+function add_acf_columns ( $columns ) {
+   return array_merge ( $columns, array (
+        'project_name'   => __ ( 'Project name' )
+   ) );
+ }
+ add_filter( 'manage_projects_posts_columns', 'App\add_acf_columns');
+
+/*
+ * Add columns to project post list
+ */
+ function project_custom_column ( $column, $post_id ) {
+   switch ( $column ) {
+      case 'project_name':
+       echo get_post_meta ( $post_id, 'project_name', true );
+       break;
+   }
+ }
+add_action ( 'manage_projects_posts_custom_column', 'App\project_custom_column', -50, 3 );
 
 function create_scrap_post_type() {
     register_post_type('scraps',

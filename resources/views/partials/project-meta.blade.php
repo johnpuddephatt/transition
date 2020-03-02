@@ -3,7 +3,7 @@
 </div>
 
 <div class="entry-content--meta-bottom">
-  @if(isset($project_footnotes))
+  @if($project_footnotes)
     <h3>Project notes</h3>
     {!! $project_footnotes !!}
   @endif

@@ -85,6 +85,10 @@
     z-index: 99;
   }
 
+  &--excerpt {
+    font-size: modular-scale(-1);
+  }
+
   &--tag {
     @extend .tag;
 

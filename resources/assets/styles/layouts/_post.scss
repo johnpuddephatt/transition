@@ -168,6 +168,7 @@
 
   &--main {
     // margin-bottom: $small-spacing;
+    flex: 1;
     transform-style: preserve-3d;
 
     > *:last-child {
@@ -253,6 +254,11 @@
         content: "";
         background-color: $base-font-color;
       }
+    }
+
+    a {
+      background: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='1px' height='1px' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23d2bfab' /%3E%3C/svg%3E") no-repeat 100% 100%;
+      background-size: 100% 20%;
     }
   }
 
