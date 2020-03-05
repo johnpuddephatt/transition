@@ -2,7 +2,7 @@
   &--title {
     @extend .post-title;
 
-    margin: 3 * $base-spacing 0 2 * $base-spacing;
+    padding: 3 * $base-spacing 0 2 * $base-spacing;
   }
 
   &--image {
@@ -83,13 +83,19 @@
   }
 
   &--meta-top {
-    position: sticky;
-    top: $small-spacing;
     display: none;
 
     @media screen and (min-width: $medium-screen) {
       display: block;
+      flex: 1;
     }
+  }
+
+  &--meta-top--inner {
+    position: sticky;
+    z-index: 9;
+    top: $small-spacing;
+    padding-bottom: $base-spacing;
   }
 
   &--author {

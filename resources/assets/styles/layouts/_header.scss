@@ -27,6 +27,7 @@ header.banner {
     margin-top: -$small-spacing;
 
     img {
+      display: block;
       width: 4 * $base-spacing;
       height: 4 * $base-spacing;
     }

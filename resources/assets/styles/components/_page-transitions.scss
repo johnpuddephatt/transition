@@ -1,3 +1,7 @@
+/****
+** FADE
+*****/
+
 /* transition active state (same for leave and enter) */
 .fade-leave-active {
   transition: opacity 0.25s ease;
@@ -25,4 +29,48 @@
 .fade-enter-to {
   transform: translateY(0);
   opacity: 1;
+}
+
+/****
+** LEFT
+*****/
+
+/* transition active state (same for leave and enter) */
+.right-leave-active,
+.left-leave-active {
+  transition: transform 0.75s ease;
+}
+
+.right-enter-active,
+.left-enter-active {
+  transition: transform 0.75s ease;
+}
+
+.is-animating {
+  .right-enter-active,
+  .left-enter-active {
+    position: absolute;
+    width: 100%;
+    top: 6 * $base-spacing;
+  }
+}
+
+.right-leave,
+.left-leave,
+.left-enter-to,
+.right-enter-to {
+  transform: translateX(0);
+  // opacity: 1;
+}
+
+.left-enter,
+.right-leave-to {
+  transform: translateX(100%);
+  // opacity: 0;
+}
+
+.right-enter,
+.left-leave-to {
+  transform: translateX(-100%);
+  // opacity: 0;
 }

@@ -1,0 +1,22 @@
+.project-navigation {
+  margin-top: $small-spacing/2;
+
+  .previous-project,
+  .next-project {
+    border-radius: 50%;
+    line-height: 1.25 * $base-spacing;
+    width: 1.25 * $base-spacing;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid $light-gray;
+    transition: background-color $base-duration $base-timing;
+  }
+
+  a {
+    background-color: $light-gray;
+
+    &:hover {
+      background-color: $medium-gray;
+    }
+  }
+}

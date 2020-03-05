@@ -8,7 +8,10 @@ class Single extends Controller
 {
     public function post() {
         if(get_post_type() == 'projects') {
-            $this->relative_id = $this->get_relative_id();
+            $navigation = $this->project_navigation();
+            $this->relative_id = $navigation->relative_id;
+            $this->next_post = $navigation->next_post;
+            $this->previous_post = $navigation->previous_post;
             $this->client = get_field('project_name');
             $this->footnotes = get_field('project_footnotes');
         }
@@ -19,14 +22,20 @@ class Single extends Controller
         return $this;
     }
 
-    private function get_relative_id() {
+    private function project_navigation() {
         $project_ids = get_posts([
             'fields' => 'ids',
             'posts_per_page'  => -1,
-            'post_type' => 'Projects'
+            'post_type' => 'Projects',
+            'orderby' => 'date',
+            'order' => 'ASC'
         ]);
-
-        return sprintf("%02d", (array_search(get_the_ID(), $project_ids) + 1));
+        $navigation = new \stdClass();
+        $post_index = array_search(get_the_ID(), $project_ids);
+        $navigation->relative_id = sprintf("%02d", ($post_index + 1));
+        $navigation->next_post = ($post_index + 1) > (count($project_ids) - 1) ? null : get_permalink($project_ids[$post_index + 1]);
+        $navigation->previous_post = ($post_index - 1) < 0 ? null : get_permalink($project_ids[$post_index - 1]);
+        return $navigation;
     }
 
 }
