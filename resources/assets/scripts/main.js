@@ -42,28 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   try {
 
-    barba.hooks.before((data) => {
+    barba.hooks.before(() => {
       navTrigger.checked = false;
       barba.wrapper.classList.add('is-animating');
-      let currentScroll = barba.wrapper.scrollTop;
-      data.next.container.style.top = currentScroll + 'px';
     });
 
-    barba.hooks.after((data) => {
+    barba.hooks.after(() => {
       barba.wrapper.classList.remove('is-animating');
-      barba.wrapper.scrollTop = data.next.container.offsetTop;
       document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
       window.routes.loadEvents();
     });
 
     barba.hooks.enter(() => {
       history.scrollRestoration = 'manual';
-      // data.current.container.scrollIntoView({
-      //   behavior: 'smooth',
-      // });
-      // data.next.container.scrollIntoView({
-      //   behavior: 'smooth',
-      // });
     });
 
     barba.init({
@@ -74,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
             custom: ({ trigger }) => { return trigger.classList.contains('next-project')},
           },
           sync: true,
+          before(data) {
+            let currentScroll = barba.wrapper.scrollTop;
+            data.next.container.style.top = currentScroll + 'px';
+          },
+          after(data) {
+            barba.wrapper.scrollTop = data.next.container.offsetTop;
+          },
         },
         {
             name: 'right',
@@ -81,6 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
               custom: ({ trigger }) => { return trigger.classList.contains('previous-project') },
             },
             sync: true,
+            before(data) {
+              let currentScroll = barba.wrapper.scrollTop;
+              data.next.container.style.top = currentScroll + 'px';
+            },
+            after(data) {
+              barba.wrapper.scrollTop = data.next.container.offsetTop;
+            },
           },
         {
         name: 'fade',
