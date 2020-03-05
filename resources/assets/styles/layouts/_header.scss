@@ -1,5 +1,6 @@
 header.banner {
   margin-top: $base-spacing;
+  margin-bottom: $base-spacing;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,6 +24,8 @@ header.banner {
   // }
   //
   .brand {
+    margin-top: -$small-spacing;
+
     img {
       width: 4 * $base-spacing;
       height: 4 * $base-spacing;

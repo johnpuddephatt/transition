@@ -15,7 +15,7 @@
         @include('partials/project-meta')
       </aside>
       <main class="entry-content--main">
-        <div class="entry-content--project">{{ $project_name }}</div>
+        @if($post->client)<div class="entry-content--project">{{ $post->client }}</div>@endif
           {!! the_content() !!}
       </main>
     </div>

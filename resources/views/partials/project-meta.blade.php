@@ -1,10 +1,10 @@
 <div class="entry-content--meta-top">
-  <div class="entry-content--number">01</div>
+  <div class="entry-content--number">{{ $post->relative_id }}</div>
 </div>
 
 <div class="entry-content--meta-bottom">
-  @if($project_footnotes)
+  @if($post->footnotes)
     <h3>Project notes</h3>
-    {!! $project_footnotes !!}
+    {!! $post->footnotes !!}
   @endif
 </div>

@@ -32,7 +32,7 @@
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
     "test": "npm run -s lint",
-    "media": "rsync -r -a -z -v -e ssh --delete ssh ~/Sites/transition/web/app/uploads/2020 jdpuddephatt@jdpuddephatt.webfactional.com:~/apps/transition/web/app/uploads/"
+    "media": "rsync --progress -ravz --delete /Users/johnpuddephatt/Sites/transition/web/app/uploads jdpuddephatt@jdpuddephatt.webfactional.com:~/apps/transition/web/app/"
   },
   "engines": {
     "node": ">= 8.0.0"

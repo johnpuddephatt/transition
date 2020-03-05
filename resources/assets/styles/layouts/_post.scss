@@ -27,7 +27,7 @@
         height: 125%;
         width: 100%;
         top: 0;
-        right: -2 * $base-spacing;
+        right: -1 * $base-spacing;
 
         @extend .has-background-arrow;
 
@@ -257,8 +257,14 @@
     }
 
     a {
-      background: url("data:image/svg+xml;charset=utf8,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='1px' height='1px' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Crect x='0' y='0' width='1' height='1' fill='%23d2bfab' /%3E%3C/svg%3E") no-repeat 100% 100%;
+      background-image: linear-gradient(to top, transparentize($vanilla, 0.7) 50%, transparent);
       background-size: 100% 20%;
+      background-repeat: no-repeat;
+      background-position: bottom;
+
+      &:hover {
+        background-image: linear-gradient(to top, $vanilla 50%, transparent);
+      }
     }
   }
 

@@ -11,9 +11,10 @@ class Projects extends Controller
 
     public function projects()
     {
+
         $projects = get_posts([
             'post_type' => 'Projects',
-            'posts_per_page'=>'8',
+            'posts_per_page'=>'24',
         ]);
 
         $loop_index = 0;
