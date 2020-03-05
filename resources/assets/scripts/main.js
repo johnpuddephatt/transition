@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
 
+        afterLeave() {
+          barba.wrapper.scrollTop = 0;
+        },
+
         after() {
           wipe.removeAttribute('class');
         },
@@ -109,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
         name: 'default',
         from: {
           custom: ({ trigger }) => { return trigger == 'back' || trigger == 'forward' },
+        },
+        afterLeave() {
+          barba.wrapper.scrollTop = 0;
         },
       }],
     });
