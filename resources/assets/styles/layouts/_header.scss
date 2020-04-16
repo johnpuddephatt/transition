@@ -5,8 +5,8 @@ header.banner {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding-left: $base-spacing;
-  padding-right: $base-spacing;
+  padding-left: $small-spacing;
+  padding-right: $small-spacing;
   padding-bottom: $base-spacing;
 
   @media screen and (min-width: $medium-screen) {

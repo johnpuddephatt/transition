@@ -17,7 +17,6 @@ export default {
 
     inView('.home-projects .section-title', 1);
     inView('.home-blog .section-title', 1);
-    inView('.projects-grid--project', 0.5);
 
     // Not in use, was for experimental project list layout
     // (function projectsIntersectionObserver() {

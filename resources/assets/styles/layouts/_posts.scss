@@ -4,19 +4,29 @@
 }
 
 .posts-list--post {
-  padding: 0 0 3 * $base-spacing 1.5 * $base-spacing;
-  border-left: $base-border;
-  margin-left: 20%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  margin-bottom: 2 * $base-spacing;
+  display: block;
+
+  @media screen and (min-width: $medium-screen) {
+    margin-bottom: 0;
+    padding: 0 0 3 * $base-spacing 1.5 * $base-spacing;
+    border-left: $base-border;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
   &--image {
     display: block;
-    margin-right: 1.5 * $base-spacing;
-    flex: 0 0 auto;
-    width: 9 * $base-spacing;
-    margin-bottom: auto;
+    margin-bottom: $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      margin-right: 1.5 * $base-spacing;
+      flex: 0 0 auto;
+      width: 9 * $base-spacing;
+      margin-bottom: auto;
+    }
 
     img {
       display: block;

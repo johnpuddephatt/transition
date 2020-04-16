@@ -8,7 +8,7 @@
         <img src="@asset('images/writing.jpg')" alt="">
         <div class="home-blog--text">
           <div class="home-blog--tag">Writing</div>
-          <h3>Writing piece 1</h3>
+          <h3>Placeholder writing 1</h3>
           <p class="home-blog--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit consectetur est, tincidunt faucibus nibh pellentesqu.</p>
           <a href="/articles/" class="home-blog--read-more">Read more</a>
         </div>
@@ -20,7 +20,7 @@
         <div class="home-blog--mask"></div>
         <div class="home-blog--text">
           <div class="home-blog--tag">Research</div>
-          <h3>Research piece 1</h3>
+          <h3>Placeholder Research piece 1</h3>
           <p class="home-blog--excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit consectetur est, tincidunt faucibus nibh pellentesqu.</p>
           <a href="/articles/" class="home-blog--read-more">Read more</a>
         </div>

@@ -38,7 +38,7 @@ add_filter('body_class', function (array $classes) {
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; Read more&nbsp;&rarr;';
+    return '&hellip;&nbsp;&nbsp; Read more&nbsp;&rarr;';
 });
 
 add_filter( 'excerpt_length', function($length) {

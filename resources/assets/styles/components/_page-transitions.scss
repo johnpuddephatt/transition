@@ -32,21 +32,25 @@
 }
 
 /****
-** LEFT
+** LEFT/RIGHT
 *****/
 
 /* transition active state (same for leave and enter) */
+
+.fade-left-leave-active,
 .right-leave-active,
 .left-leave-active {
   transition: transform 0.75s ease;
 }
 
+.fade-left-enter-active,
 .right-enter-active,
 .left-enter-active {
   transition: transform 0.75s ease;
 }
 
 .is-animating {
+  .fade-left-enter-active,
   .right-enter-active,
   .left-enter-active {
     position: absolute;
@@ -55,20 +59,24 @@
   }
 }
 
+.fade-left-leave,
 .right-leave,
 .left-leave,
+.fade-left-enter-to,
 .left-enter-to,
 .right-enter-to {
   transform: translateX(0);
   // opacity: 1;
 }
 
+.fade-left-enter,
 .left-enter,
 .right-leave-to {
   transform: translateX(100%);
   // opacity: 0;
 }
 
+.fade-left-leave-to,
 .right-enter,
 .left-leave-to {
   transform: translateX(-100%);

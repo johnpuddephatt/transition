@@ -4,5 +4,7 @@
   color: white;
   text-transform: uppercase;
   letter-spacing: $wide-letter-spacing;
-  padding: $small-spacing/2 $small-spacing;
+  padding: $small-spacing/2 $small-spacing $small-spacing/3;
+  z-index: 9;
+  position: relative;
 }

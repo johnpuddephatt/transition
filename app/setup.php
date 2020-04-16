@@ -100,9 +100,8 @@ function create_project_post_type() {
 add_action('init', 'App\create_project_post_type');
 
 function add_acf_columns ( $columns ) {
-   return array_merge ( $columns, array (
-        'project_name'   => __ ( 'Project name' )
-   ) );
+    $position = 2;
+    return array_slice($columns, 0, $position, true) + array('project_name'   => __( 'Project name' )) + array_slice($columns, $position, NULL, true);
  }
  add_filter( 'manage_projects_posts_columns', 'App\add_acf_columns');
 
@@ -138,6 +137,29 @@ function create_scrap_post_type() {
 
 add_action('init', 'App\create_scrap_post_type');
 
+/**
+ * Add services taxonomy to projects
+ */
+
+function project_services_taxonomy() {
+    register_taxonomy(
+        'projectservices',  // The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'projects',             // post type name
+        array(
+            'hierarchical' => false,
+            'label' => 'Services', // display name
+            'query_var' => false,
+            'show_ui' => true,
+            'show_admin_column' => true,
+            'show_in_rest' => true,
+            'rewrite' => array(
+                'slug' => 'service',    // This controls the base slug that will display before each term
+                'with_front' => false  // Don't display the category base before
+            )
+        )
+    );
+}
+add_action( 'init', 'App\project_services_taxonomy');
 
 /**
  * Trying out gutenberg templates...
@@ -205,6 +227,16 @@ add_action('widgets_init', function () {
 add_action('the_post', function ($post) {
     sage('blade')->share('post', $post);
 });
+
+/**
+ * Change URL base for authors
+ */
+
+function custom_author_base() {
+    global $wp_rewrite;
+    $wp_rewrite->author_base = 'about';
+}
+add_action( 'init', 'App\custom_author_base' );
 
 /**
  * Setup Sage options

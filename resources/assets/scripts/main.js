@@ -8,6 +8,7 @@ import './autoload/**/*'
 
 // import local dependencies
 import Router from './util/Router';
+import about from './routes/about';
 import common from './routes/common';
 import home from './routes/home';
 import singleProjects from './routes/project';
@@ -17,6 +18,7 @@ import projects from './routes/projects';
 
 /** Populate Router instance with DOM routes */
 window.routes = new Router({
+  about,
   // All pages
   common,
   // Home page
@@ -59,7 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     barba.init({
       debug: true,
-      transitions: [{
+      transitions: [
+        {
+          name: 'foo',
+          from: {
+            custom: ({ trigger }) => { return trigger == 'back' || trigger == 'forward' },
+          },
+          afterLeave() {
+            barba.wrapper.scrollTop = 0;
+          },
+        },
+        {
           name: 'left',
           from: {
             custom: ({ trigger }) => { return trigger.classList.contains('next-project')},
@@ -86,39 +98,47 @@ document.addEventListener('DOMContentLoaded', () => {
             after(data) {
               barba.wrapper.scrollTop = data.next.container.offsetTop;
             },
+        },
+        {
+          name: 'fade-left',
+          from: {
+            custom: ({ trigger }) => { return (trigger.classList.contains('about-people--grid--item') || trigger.classList.contains('about-services--list--item--anchor')) },
           },
+          sync: true,
+          before(data) {
+            data.trigger.classList.add('fade-left');
+            let currentScroll = barba.wrapper.scrollTop;
+            data.next.container.style.top = currentScroll + 'px';
+          },
+          after(data) {
+            barba.wrapper.scrollTop = data.next.container.offsetTop;
+          },
+        },
         {
         name: 'fade',
-        from: {
-          custom: ({ trigger }) => { return trigger != 'back' && trigger != 'forward' },
-        },
-        before(e) {
-          if(e.trigger.classList.contains('brand')){
-            let triggerBounds = e.trigger.getBoundingClientRect();
-            wipe.setAttribute('cx', (triggerBounds.x + triggerBounds.width/2 || 0));
-            wipe.setAttribute('cy', (triggerBounds.y + triggerBounds.height/2 || 0));
-            wipe.setAttribute('class','triggered');
-          }
-        },
+          from: {
+            custom: ({ trigger }) => { return trigger != 'back' && trigger != 'forward' },
+          },
+          before(e) {
+            if(e.trigger.classList.contains('brand')){
+              let triggerBounds = e.trigger.getBoundingClientRect();
+              wipe.setAttribute('cx', (triggerBounds.x + triggerBounds.width/2 || 0));
+              wipe.setAttribute('cy', (triggerBounds.y + triggerBounds.height/2 || 0));
+              wipe.setAttribute('class','triggered');
+            }
+          },
 
-        afterLeave() {
-          barba.wrapper.scrollTop = 0;
-        },
+          afterLeave() {
+            barba.wrapper.scrollTop = 0;
+          },
 
-        after() {
-          wipe.removeAttribute('class');
+          after() {
+            wipe.removeAttribute('class');
+          },
         },
-      },
-      {
-        name: 'default',
-        from: {
-          custom: ({ trigger }) => { return trigger == 'back' || trigger == 'forward' },
-        },
-        afterLeave() {
-          barba.wrapper.scrollTop = 0;
-        },
-      }],
-    });
+      ],
+    }
+  );
   } catch (err) {
     console.error(err);
   }

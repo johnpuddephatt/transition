@@ -1,0 +1,149 @@
+.about-people {
+  position: relative;
+
+  @media screen and (min-width: $large-screen) {
+    max-width: $large-screen;
+    width: 141%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+
+    .tag {
+      margin-top: 0;
+      margin-bottom: auto;
+      margin-right: 2 * $base-spacing;
+    }
+  }
+
+  padding: 3 * $base-spacing 0 2 * $base-spacing;
+  margin: 2 * $base-spacing 0 $base-spacing;
+
+  .about-people--grid {
+    flex: 1;
+    margin: 0 (-$small-spacing);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .about-people--grid--item {
+    flex: 0 1 33.33%;
+    padding: 0 $small-spacing $base-spacing;
+    background-image: none;
+
+    @extend %fade-into-view;
+
+    &--image {
+      overflow: hidden;
+      position: relative;
+
+      &::before,
+      &::after {
+        position: absolute;
+        z-index: 99;
+        display: block;
+        line-height: 0.8;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        content: "←";
+        opacity: 0;
+        backface-visibility: hidden;
+        font-size: 5em;
+        transform: translate(-80%, -20%) rotate(-45deg);
+        transform-origin: center;
+        transition: transform 3 * $base-duration, opacity 3 * $base-duration;
+      }
+
+      &::after {
+        content: "→";
+        transform: translate(-20%, -80%) rotate(-45deg);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        backface-visibility: hidden;
+        transition: transform 3 * $base-duration $base-timing;
+      }
+    }
+
+    &:hover {
+      background-image: none;
+
+      img {
+        transform: scale(1.025);
+      }
+
+      .about-people--grid--item--image {
+        &::after {
+          opacity: 0.8;
+          transform: translate(0%, -100%) rotate(-45deg);
+        }
+
+        &::before {
+          opacity: 0.8;
+          transform: translate(-100%, 0%) rotate(-45deg);
+        }
+      }
+    }
+
+    h3 {
+      margin: $small-spacing 0 $small-spacing/2;
+      font-weight: 700;
+      font-size: modular-scale(0);
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: modular-scale(0);
+      line-height: $heading-line-height;
+    }
+  }
+}
+
+.about-services {
+  &--list {
+    @media screen and (min-width: $large-screen) {
+      padding: $base-spacing 0 2 * $base-spacing;
+      max-width: $large-screen;
+      width: 141%;
+      background-color: #fff;
+    }
+
+    li {
+      font-size: modular-scale(3);
+      display: inline;
+      padding-left: 0;
+
+      @media screen and (min-width: $medium-screen) {
+        font-size: modular-scale(5);
+      }
+
+      &::before {
+        content: none !important;
+      }
+
+      &::after {
+        content: "//" !important;
+        display: inline-block;
+        font-weight: 700;
+        margin: 0 $small-spacing/1.5;
+      }
+
+      a {
+        background-image: none;
+        font-weight: 700;
+
+        &:hover {
+          background-size: 100% 25%;
+          background-repeat: no-repeat;
+          background-position: left 90%;
+          background-image: linear-gradient(to top, $vanilla 50%, transparent 50%);
+        }
+      }
+    }
+  }
+}

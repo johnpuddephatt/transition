@@ -5,19 +5,30 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 
 
-class Projects extends Controller
+class taxonomyProjectservices extends Controller
 {
     // protected $acf = true;
+
+    public function page() {
+        $service = new \stdClass();
+        $service->description = term_description();
+        return $service;
+    }
 
     public function projects()
     {
 
         $projects = get_posts([
             'post_type' => 'Projects',
-            'posts_per_page'=>'12',
+            'posts_per_page' => '12',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projectservices',
+                    'field'    => 'slug',
+                    'terms'    => get_queried_object()->slug
+                )
+            )
         ]);
-
-        // dd($projects);
 
         $loop_index = 0;
 
