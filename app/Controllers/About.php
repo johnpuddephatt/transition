@@ -21,7 +21,9 @@ class About extends Controller
     public function team()
     {
         $members = get_users([
-            'exclude' => '1'
+            'exclude' => '1',
+            'orderby' => 'meta_value',
+            'meta_key' => 'last_name'
         ]);
 
         return array_map(function ($member) {

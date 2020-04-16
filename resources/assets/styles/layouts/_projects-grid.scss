@@ -86,8 +86,8 @@
       transition-delay: 0 !important;
     }
 
-    &:first-child,
-    &:last-child {
+    &:nth-child(6n+1),
+    &:nth-child(6n) {
       flex: 0 0 calc(100% - #{$base-spacing});
 
       @media screen and (min-width: $medium-screen) {
