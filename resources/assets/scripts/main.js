@@ -60,10 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     barba.init({
-      debug: true,
+      debug: false,
       transitions: [
         {
           name: 'foo',
+          sync: true,
           from: {
             custom: ({ trigger }) => { return trigger == 'back' || trigger == 'forward' },
           },
@@ -119,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
           from: {
             custom: ({ trigger }) => { return trigger != 'back' && trigger != 'forward' },
           },
+          sync: true,
           before(e) {
             if(e.trigger.classList.contains('brand')){
               let triggerBounds = e.trigger.getBoundingClientRect();
