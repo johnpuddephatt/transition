@@ -88,6 +88,16 @@ p.is-style-two-columns {
     height: auto;
   }
 
+  figcaption {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: modular-scale(-2);
+    font-weight: 400;
+    padding: $small-spacing/2 $small-spacing;
+    text-align: center;
+    line-height: $heading-line-height;
+  }
+
   figure {
     &.alignright,
     &.alignleft {
@@ -97,16 +107,13 @@ p.is-style-two-columns {
       @media (min-width: $medium-screen) {
         width: 9 * $base-spacing;
       }
-    }
-  }
 
-  figcaption {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: modular-scale(-2);
-    font-weight: 400;
-    padding: $small-spacing/2 $small-spacing;
-    text-align: center;
+      figcaption {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+      }
+    }
   }
 }
 

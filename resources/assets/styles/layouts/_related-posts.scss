@@ -17,6 +17,8 @@
 
   &--item {
     flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
     margin-right: $base-spacing;
 
     @media screen and (min-width: $medium-screen) {
@@ -24,7 +26,7 @@
     }
 
     &--title {
-      font-size: modular-scale(2);
+      font-size: modular-scale(1);
       margin-bottom: $small-spacing !important;
       padding-bottom: 0;
       color: $black;
@@ -36,6 +38,7 @@
     }
 
     &--author {
+      margin-top: auto;
       display: flex;
       flex-direction: row;
       align-items: center;
