@@ -36,12 +36,15 @@
 @import "layouts/footer";
 @import "layouts/loading";
 @import "layouts/pages";
-@import "layouts/post";
+@import "layouts/post-header";
+@import "layouts/post-content";
 @import "layouts/posts";
 @import "layouts/tinymce";
 
 /** General **/
 @import "layouts/projects-grid";
+@import "layouts/related-posts";
+@import "layouts/newsletter";
 
 /** Home page **/
 @import "layouts/home-loading";

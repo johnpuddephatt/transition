@@ -19,5 +19,20 @@
           {!! the_content() !!}
       </main>
     </div>
+    <div class="projects-grid--wrapper projects-grid--wrapper__related">
+      <h2 class="projects-grid--header">Explore more</h2>
+      <div class="projects-grid projects-grid__related">
+        @foreach($post->related_projects as $project)
+          <a href="{!! $project->link !!}" class="projects-grid--project">
+            <div class="projects-grid--image">
+              {!! $project->thumbnail !!}
+            </div>
+            <h3 class="projects-grid--heading">{!! $project->client !!}</h3>
+            <p class="projects-grid--excerpt">{!! $project->excerpt !!}</p>
+            <p class="projects-grid--read-more">See this project&nbsp;&rarr;</p>
+          </a>
+        @endforeach
+      </div>
+    </div>
   </div>
 </article>

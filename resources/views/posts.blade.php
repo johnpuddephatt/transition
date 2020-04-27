@@ -14,7 +14,9 @@
         <a href="{!! $post->link !!}" class="posts-list--post">
           <div class="posts-list--post--image" >{!! $post->thumbnail !!}</div>
           <div class="posts-list--post--text">
-            <span class="posts-list--post--tag tag">{!! $post->category->name !!}</span>
+            @if($post->category)
+              <span class="posts-list--post--tag tag">{!! $post->category->name !!}</span>
+            @endif
             <h2 class="posts-list--post--title">{!! $post->post_title !!}</h2>
             <div class="posts-list--post--excerpt">{!! $post->excerpt !!}</div>
           </div>

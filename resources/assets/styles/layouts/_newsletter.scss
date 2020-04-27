@@ -1,0 +1,43 @@
+.newsletter-signup {
+  margin: 2 * $base-spacing auto 0;
+  max-width: $large-screen;
+  background-color: $gray;
+  padding: 3 * $base-spacing;
+
+  .entry-content & {
+    @media screen and (min-width: $medium-screen) {
+      margin-left: -3 * $base-spacing;
+      margin-right: $base-spacing;
+    }
+  }
+
+  &--heading {
+    margin-top: 0 !important;
+    font-size: modular-scale(3);
+    font-weight: 700;
+    max-width: $max-line-length;
+  }
+
+  &--form {
+    max-width: $max-line-length;
+    display: flex;
+    margin-bottom: $base-spacing;
+
+    button {
+      flex: 1 0 auto;
+    }
+
+    input {
+      margin-bottom: 0;
+
+      &[type=text] {
+        flex: 0 1 auto;
+        box-shadow: none;
+        margin-right: $small-spacing;
+        border: none;
+        background-color: transparent;
+        border-bottom: 0.15em solid $vanilla;
+      }
+    }
+  }
+}

@@ -14,6 +14,7 @@ class FrontPage extends Controller
         $projects = get_posts([
             'post_type' => 'Projects',
             'posts_per_page'=>'24',
+            'numberposts' => 6
         ]);
 
         $loop_index = 0;

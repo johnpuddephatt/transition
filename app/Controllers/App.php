@@ -24,7 +24,8 @@ class App extends Controller
             return __('Latest Posts', 'sage');
         }
         if (is_archive()) {
-            return single_term_title();
+            return get_queried_object()->name;
+            // return single_term_title();
         }
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'sage'), get_search_query());

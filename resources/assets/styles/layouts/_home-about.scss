@@ -102,9 +102,9 @@
 
   &--image {
     position: absolute;
-    right: -2 * $base-spacing;
-    bottom: -2 * $base-spacing;
-    width: 55%;
+    right: $base-spacing;
+    bottom: -$base-spacing;
+    width: 70%;
     height: auto;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
@@ -116,6 +116,9 @@
     }
 
     @media screen and(min-width: $medium-screen) {
+      right: -2 * $base-spacing;
+      bottom: -2 * $base-spacing;
+      width: 55%;
       will-change: transform;
       transform-style: preserve-3d;
       transform: translate3d(0, $base-spacing, 0.1px) scale(0.9);

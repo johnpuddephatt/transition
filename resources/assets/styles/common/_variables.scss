@@ -3,7 +3,7 @@ $bourbon: (
 );
 
 $small-screen: 600px;
-$medium-screen: 782px;
+$medium-screen: 860px;
 $large-screen: 1120px;
 $xl-screen: 1300px;
 
@@ -18,7 +18,7 @@ $base-font-size: 1em;
 
 // Line height
 $base-line-height: 1.75;
-$heading-line-height: 1.15;
+$heading-line-height: 1.2;
 $big-heading-line-height: 0.8;
 
 // Letter spacing
@@ -36,6 +36,7 @@ $vanilla: #d2bfab;
 $dark-gray: #bebebe;
 $medium-gray: #e4e4e4;
 $light-gray: #f9f7f6;
+$gray: #f2f0ef;
 
 // Font Colors
 $base-font-color: $black;

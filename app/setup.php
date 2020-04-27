@@ -88,7 +88,10 @@ function create_project_post_type() {
           ),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'project'),
+          'rewrite' => array(
+              'slug' => 'projects',
+              'with_front' => false
+          ),
           'menu_icon' => 'dashicons-camera-alt',
           'menu_position' => 4,
           'show_in_rest' => true,

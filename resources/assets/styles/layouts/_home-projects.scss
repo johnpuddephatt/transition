@@ -12,6 +12,7 @@
 
     @media screen and (min-width: $medium-screen) {
       font-size: modular-scale(12);
+      margin-left: -$small-spacing;
 
       @supports (mix-blend-mode: difference) {
         color: white;
@@ -42,7 +43,6 @@
     font-weight: 500;
     line-height: 0.8;
     text-transform: lowercase;
-    margin-left: -$small-spacing;
 
     @extend %fade-into-view;
   }

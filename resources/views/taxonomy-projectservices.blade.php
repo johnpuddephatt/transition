@@ -6,7 +6,7 @@
 
     @include('partials.page-header', ['class' => 'entry-header__services'])
 
-    <div class="projects-grid--wrapper">
+    <div class="projects-grid">
       @foreach($projects as $project)
         <a href="{!! $project->link !!}" class="projects-grid--project">
           <div class="projects-grid--image">

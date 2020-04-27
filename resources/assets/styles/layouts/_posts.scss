@@ -24,7 +24,7 @@
     @media screen and (min-width: $medium-screen) {
       margin-right: 1.5 * $base-spacing;
       flex: 0 0 auto;
-      width: 9 * $base-spacing;
+      width: 8 * $base-spacing;
       margin-bottom: auto;
     }
 
@@ -40,7 +40,7 @@
   }
 
   &--title {
-    font-size: modular-scale(1);
+    font-size: modular-scale(2);
   }
 
   &--excerpt {

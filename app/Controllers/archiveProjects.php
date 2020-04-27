@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Sober\Controller\Controller;
 
 
-class Projects extends Controller
+class archiveProjects extends Controller
 {
     // protected $acf = true;
 

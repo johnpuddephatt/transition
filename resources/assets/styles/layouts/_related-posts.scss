@@ -1,0 +1,66 @@
+.related-posts {
+  border-top: $base-border;
+  margin-top: 3 * $base-spacing;
+  padding-top: $base-spacing;
+  padding-bottom: $base-spacing;
+  margin-left: -$base-spacing;
+  padding-left: $base-spacing;
+  display: flex;
+  flex-wrap: wrap;
+
+  &--title {
+    flex: 0 0 100%;
+    margin-bottom: 0 !important;
+    font-size: modular-scale(5);
+    font-weight: 400;
+  }
+
+  &--item {
+    flex: 0 0 80%;
+    margin-right: $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      flex: 0 0 40%;
+    }
+
+    &--title {
+      font-size: modular-scale(2);
+      margin-bottom: $small-spacing !important;
+      padding-bottom: 0;
+      color: $black;
+    }
+
+    &--excerpt {
+      margin-bottom: $small-spacing;
+      font-weight: 500;
+    }
+
+    &--author {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 700;
+      font-size: modular-scale(-1);
+      padding-right: 1.5 * $base-spacing;
+      position: relative;
+
+      &::after {
+        width: 1.5 * $base-spacing;
+        content: "→";
+        position: absolute;
+        right: 0;
+        font-size: modular-scale(2);
+        text-align: right;
+        color: $dark-gray;
+      }
+
+      img {
+        margin-right: $small-spacing;
+        display: block;
+        border-radius: 50%;
+        width: 1.5 * $base-spacing;
+        height: 1.5 * $base-spacing;
+      }
+    }
+  }
+}

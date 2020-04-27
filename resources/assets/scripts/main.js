@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
           from: {
             custom: ({ trigger }) => { return trigger != 'back' && trigger != 'forward' },
           },
-          sync: true,
+          sync: false,
           before(e) {
             if(e.trigger.classList.contains('brand')){
               let triggerBounds = e.trigger.getBoundingClientRect();

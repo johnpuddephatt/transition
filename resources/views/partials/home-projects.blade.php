@@ -11,18 +11,20 @@
     <img class="home-projects--title-image" src="@asset('images/projects.jpg')">
 
     <div class="projects-grid--wrapper">
+      <div class="projects-grid projects-grid__irregular">
 
-      @foreach($projects as $project)
-        <a href="{!! $project->link !!}" class="projects-grid--project">
-          <div class="projects-grid--image">
-            {!! $project->thumbnail !!}
-          </div>
-          <h3 class="projects-grid--heading">{!! $project->client !!}</h3>
-          <p class="projects-grid--excerpt">{!! $project->excerpt !!}</p>
-          <p class="projects-grid--read-more">See this project&nbsp;&rarr;</p>
-        </a>
-      @endforeach
+        @foreach($projects as $project)
+          <a href="{!! $project->link !!}" class="projects-grid--project">
+            <div class="projects-grid--image">
+              {!! $project->thumbnail !!}
+            </div>
+            <h3 class="projects-grid--heading">{!! $project->client !!}</h3>
+            <p class="projects-grid--excerpt">{!! $project->excerpt !!}</p>
+            <p class="projects-grid--read-more">See this project&nbsp;&rarr;</p>
+          </a>
+        @endforeach
 
+      </div>
     </div>
 
     <a class="button home-projects--read-more" href="/projects/">View all projects</a>

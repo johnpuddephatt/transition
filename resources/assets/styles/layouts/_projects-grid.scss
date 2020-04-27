@@ -1,20 +1,39 @@
 .projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$small-spacing;
+  margin-right: -$small-spacing;
+
   &--wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -$small-spacing;
-    margin-right: -$small-spacing;
-    padding-top: $base-spacing;
-    margin-top: $base-spacing;
-    padding-bottom: 2 * $base-spacing;
-    border-bottom: $base-border;
     border-top: $base-border;
+
+    &__related {
+      @media screen and (max-width: $medium-screen) {
+        .projects-grid--project:nth-child(3) {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: $medium-screen) {
+        margin-left: calc(20% - 1px);
+        padding-left: $base-spacing;
+        border-left: $base-border;
+      }
+    }
+  }
+
+  &--header {
+    flex: 0 0 100%;
+    margin-top: 1.5 * $base-spacing;
+    margin-bottom: $base-spacing;
+    font-size: modular-scale(5);
+    font-weight: 400;
   }
 
   &--image {
     margin-bottom: $base-spacing;
     overflow: hidden;
-    height: 11 * $base-spacing;
+    padding-top: 100%;
     position: relative;
 
     &::before,
@@ -42,12 +61,19 @@
 
     img {
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       backface-visibility: hidden;
       transition: transform 3 * $base-duration $base-timing;
     }
+  }
+
+  &--heading {
+    font-size: modular-scale(2);
   }
 
   &--excerpt {
@@ -69,7 +95,7 @@
     flex-direction: column;
 
     @media screen and (min-width: $medium-screen) {
-      flex: 0 0 calc(25% - #{$base-spacing});
+      flex: 0 0 calc(33.33% - #{$base-spacing});
     }
 
     @extend %fade-into-view;
@@ -86,15 +112,6 @@
       transition-delay: 0 !important;
     }
 
-    &:nth-child(6n+1),
-    &:nth-child(6n) {
-      flex: 0 0 calc(100% - #{$base-spacing});
-
-      @media screen and (min-width: $medium-screen) {
-        flex: 0 0 calc(50% - #{$base-spacing});
-      }
-    }
-
     &:hover {
       img {
         transform: scale(1.025);
@@ -109,6 +126,35 @@
         &::before {
           opacity: 0.8;
           transform: translate(-100%, 0%) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__irregular {
+    border-bottom: $base-border;
+
+    .projects-grid--project {
+      flex: 0 0 calc(50% - #{$base-spacing});
+
+      @media screen and (min-width: $medium-screen) {
+        flex: 0 0 calc(25% - #{$base-spacing});
+      }
+
+      .projects-grid--image {
+        padding-top: 135%;
+      }
+
+      &:nth-child(6n+1),
+      &:nth-child(6n) {
+        flex: 0 0 calc(100% - #{$base-spacing});
+
+        .projects-grid--image {
+          padding-top: 63.25%;
+        }
+
+        @media screen and (min-width: $medium-screen) {
+          flex: 0 0 calc(50% - #{$base-spacing});
         }
       }
     }
