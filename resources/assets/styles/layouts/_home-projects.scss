@@ -65,11 +65,11 @@
   &--intro {
     @media screen and (min-width: $medium-screen) {
       width: 50%;
+      margin-bottom: calc(27% - #{4.5 * $base-spacing});
     }
 
     padding-right: $base-spacing;
     margin-top: $base-spacing;
-    margin-bottom: calc(27% - #{4.5 * $base-spacing});
   }
 
   &--tag {

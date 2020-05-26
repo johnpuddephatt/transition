@@ -2,7 +2,11 @@
   margin: 2 * $base-spacing auto 0;
   max-width: $large-screen;
   background-color: $gray;
-  padding: 3 * $base-spacing;
+  padding: 3 * $base-spacing $small-spacing;
+
+  @media screen and (min-width: $medium-screen) {
+    padding: 3 * $base-spacing;
+  }
 
   .entry-content & {
     @media screen and (min-width: $medium-screen) {
