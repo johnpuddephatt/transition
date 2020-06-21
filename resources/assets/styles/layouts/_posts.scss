@@ -38,6 +38,10 @@
   &--text {
     padding-top: $small-spacing;
     padding-bottom: 3.5 * $base-spacing;
+
+    * {
+      max-width: $max-line-length;
+    }
   }
 
   &--image {
