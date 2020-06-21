@@ -42,12 +42,13 @@ add_filter('acf/settings/show_admin', function ($show) {
  */
 add_action( 'after_setup_theme', function() {
     add_theme_support( 'disable-custom-colors' );
+    add_theme_support( 'disable-custom-gradients' );
     add_theme_support('disable-custom-font-sizes');
     add_theme_support('editor-font-sizes', array(
         array(
-            'name' => 'Normal',
-            'size' => '1em',
-            'slug' => 'normal'
+            'name' => 'Large',
+            'slug' => 'large',
+            'size' => 18
         )
     ));
     add_theme_support(

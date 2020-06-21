@@ -1,0 +1,208 @@
+.scraps-intro {
+  border-top: $base-border;
+  border-bottom: $base-border;
+  padding: $small-spacing 0;
+  margin-bottom: $base-spacing;
+
+  @media screen and (min-width: $large-screen) {
+    padding: $base-spacing 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &--text {
+    flex: 0 0 50%;
+
+    @media screen and (min-width: $large-screen) {
+      padding-right: $base-spacing;
+      margin-right: $base-spacing;
+    }
+
+    .has-large-font-size {
+      font-size: modular-scale(1);
+      font-weight: 600;
+    }
+  }
+
+  &--image {
+    @media screen and (max-width: $large-screen) {
+      img {
+        max-width: 60%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.scraps-grid--row {
+  display: flex;
+  flex-direction: row;
+  height: 0.65 * $large-screen;
+  position: relative;
+  margin-left: -$base-spacing;
+  margin-right: -$base-spacing;
+
+  &__wide {
+    height: 0.525 * $large-screen;
+  }
+}
+
+.scraps-grid--column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 100%;
+
+  @media screen and (min-width: $large-screen) {
+    flex: 1 0 50%;
+  }
+}
+
+.scraps--item {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: contain;
+    object-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    transition: transform 1s ease;
+    backface-visibility: hidden;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: 9;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100%;
+    transition: opacity 1s ease;
+  }
+
+  &.colour {
+    &__feather {
+      background-color: #faf7f2;
+    }
+
+    &__light {
+      background-color: #f6f2e0;
+    }
+
+    &__medium {
+      background-color: #eae5d9;
+    }
+
+    &__heavy {
+      background-color: #d7cbba;
+    }
+  }
+
+  &.size {
+    &__bleed {
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &__pad {
+      &_small {
+        img {
+          padding: 2%;
+        }
+      }
+
+      &_medium {
+        img {
+          padding: 4%;
+        }
+      }
+
+      &_large {
+        img {
+          padding: 10%;
+        }
+      }
+    }
+  }
+
+  &.blend__1 {
+    img {
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &.texture {
+    &__paper {
+      &::after {
+        background-image: url(../images/textures/clean-gray-paper.png);
+        opacity: 0.5;
+        mix-blend-mode: color-dodge;
+      }
+    }
+
+    &__asphalt {
+      &::after {
+        background-image: url(../images/textures/asfalt-dark.png);
+        opacity: 0.2;
+        mix-blend-mode: luminosity;
+      }
+    }
+
+    &__concrete {
+      &::after {
+        background-image: url(../images/textures/concrete-wall.png);
+        opacity: 0.6;
+        background-size: 50%;
+      }
+    }
+
+    &__noise {
+      &::after {
+        background-image: url(../images/textures/noise-overlay.png);
+        opacity: 0.25;
+        image-rendering: pixelated;
+        background-size: 50%;
+      }
+    }
+
+    &__grunge {
+      &::after {
+        background-image: url(../images/textures/mocha-grunge.png);
+        image-rendering: pixelated;
+        background-size: cover;
+        background-size: 50%;
+        mix-blend-mode: color-dodge;
+      }
+    }
+  }
+
+  .scraps-grid & {
+    border: $base-spacing solid white;
+
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.02);
+      }
+
+      &::after {
+        opacity: 0 !important;
+      }
+    }
+  }
+}

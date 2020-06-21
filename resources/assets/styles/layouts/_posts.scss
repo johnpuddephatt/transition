@@ -1,6 +1,10 @@
 .posts-list--wrapper {
   border-top: $base-border;
   padding-top: 3 * $base-spacing;
+
+  &__author {
+    margin-left: 20%;
+  }
 }
 
 .posts-list--post {
@@ -9,23 +13,39 @@
 
   @media screen and (min-width: $medium-screen) {
     margin-bottom: 0;
-    padding: 0 0 3 * $base-spacing 1.5 * $base-spacing;
-    border-left: $base-border;
-    margin-left: 20%;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
+  }
+
+  &--meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: $medium-screen) {
+      display: block;
+      flex: 0 0 20%;
+      padding-right: $base-spacing;
+      border-right: $base-border;
+      margin-right: $base-spacing;
+      text-align: right;
+      padding-top: $small-spacing;
+    }
+  }
+
+  &--text {
+    padding-top: $small-spacing;
+    padding-bottom: 3.5 * $base-spacing;
   }
 
   &--image {
-    display: block;
-    margin-bottom: $base-spacing;
-
     @media screen and (min-width: $medium-screen) {
-      margin-right: 1.5 * $base-spacing;
+      padding-bottom: 3.5 * $base-spacing;
+      margin-right: $base-spacing;
       flex: 0 0 auto;
-      width: 8 * $base-spacing;
-      margin-bottom: auto;
+      width: 12 * $base-spacing;
     }
 
     img {
@@ -36,7 +56,7 @@
 
   &--tag {
     font-size: modular-scale(-2);
-    margin-bottom: 1.5 * $small-spacing;
+    margin-bottom: $small-spacing;
   }
 
   &--title {
@@ -50,6 +70,35 @@
       display: block;
       text-transform: lowercase;
       margin-top: $small-spacing;
+    }
+  }
+
+  &--author {
+    margin-top: $small-spacing;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 700;
+    font-size: modular-scale(-1);
+    padding-right: 1.5 * $base-spacing;
+    position: relative;
+
+    &::after {
+      width: 1.5 * $base-spacing;
+      content: "→";
+      position: absolute;
+      right: 0;
+      font-size: modular-scale(2);
+      text-align: right;
+      color: $dark-gray;
+    }
+
+    img {
+      margin-right: $small-spacing;
+      display: block;
+      border-radius: 50%;
+      width: 1.5 * $base-spacing;
+      height: 1.5 * $base-spacing;
     }
   }
 }

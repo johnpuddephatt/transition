@@ -124,16 +124,19 @@ function create_scrap_post_type() {
     register_post_type('scraps',
        array(
           'labels' => array(
-             'name' => __('Scraps'),
+             'name' => __('Scrapbook'),
              'singular_name' => __('Scrap')
           ),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'scraps'),
+          'rewrite' => array(
+              'slug' => 'scrapbook',
+              'with_front' => false
+          ),
           'menu_icon' => 'dashicons-pressthis',
           'menu_position' => 4,
           'show_in_rest' => true,
-          'supports' => array('title','author','editor'),
+          'supports' => array('title','thumbnail','author','editor'),
        )
     );
 }
@@ -238,7 +241,9 @@ add_action('the_post', function ($post) {
 function custom_author_base() {
     global $wp_rewrite;
     $wp_rewrite->author_base = 'about';
+    $wp_rewrite->author_structure = '/' . $wp_rewrite->author_base . '/%author%';
 }
+
 add_action( 'init', 'App\custom_author_base' );
 
 /**

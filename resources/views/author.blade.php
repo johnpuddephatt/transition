@@ -24,7 +24,7 @@
 
 
     @if(count($posts))
-      <div class="posts-list--wrapper">
+      <div class="posts-list--wrapper posts-list--wrapper__author">
         @foreach($posts as $post)
           <a class="posts-list--post" href="{!! $post->link !!}">
             <div class="posts-list--post--image">{!! $post->thumbnail !!}</div>

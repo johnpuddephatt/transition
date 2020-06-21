@@ -40,13 +40,13 @@
 .fade-left-leave-active,
 .right-leave-active,
 .left-leave-active {
-  transition: transform 0.75s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .fade-left-enter-active,
 .right-enter-active,
 .left-enter-active {
-  transition: transform 0.75s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .is-animating {
@@ -66,19 +66,19 @@
 .left-enter-to,
 .right-enter-to {
   transform: translateX(0);
-  // opacity: 1;
+  opacity: 1;
 }
 
 .fade-left-enter,
 .left-enter,
 .right-leave-to {
   transform: translateX(100%);
-  // opacity: 0;
+  opacity: 0;
 }
 
 .fade-left-leave-to,
 .right-enter,
 .left-leave-to {
   transform: translateX(-100%);
-  // opacity: 0;
+  opacity: 0;
 }

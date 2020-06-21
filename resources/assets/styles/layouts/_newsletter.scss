@@ -20,6 +20,7 @@
     font-size: modular-scale(3);
     font-weight: 700;
     max-width: $max-line-length;
+    margin-bottom: $base-spacing;
   }
 
   &--form {

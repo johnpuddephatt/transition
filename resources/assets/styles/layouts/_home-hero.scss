@@ -7,7 +7,6 @@
   transform-style: preserve-3d;
 
   .container {
-    position: relative;
     transform-style: preserve-3d;
     min-height: 60vh;
   }
@@ -45,8 +44,9 @@
     transform-style: preserve-3d;
 
     @media screen and (min-width: $medium-screen) {
-      width: 75%;
-      left: 40%;
+      width: 70%;
+      right: 0%;
+      left: auto;
     }
 
     img {
@@ -94,7 +94,7 @@
     transform-origin: center;
 
     @media screen and (min-width: $medium-screen) {
-      right: -12.5vw;
+      right: -25vw;
       transform: translate3d(0, 0, 0.2px) scale(0.8) rotate(90deg);
     }
   }
@@ -105,10 +105,10 @@
   display: block;
   content: "";
   bottom: -2 * $base-spacing;
-  top: 0;
-  right: -6 * $base-spacing;
+  top: 2 * $base-spacing;
+  right: 0 * $base-spacing;
   position: absolute;
-  width: 75%;
+  width: 50%;
 
   @include has-background-dots($medium-gray);
 

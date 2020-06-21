@@ -143,6 +143,26 @@
     }
   }
 
+  &__single-scrap {
+    max-width: $small-screen;
+    margin-left: auto;
+    margin-right: auto;
+
+    .entry-header--image {
+      padding-top: 65%;
+
+      @media screen and (min-width: $medium-screen) {
+        margin-left: -2 * $base-spacing;
+        margin-right: -2 * $base-spacing;
+      }
+    }
+
+    .entry-header--title {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
   &__author {
     @media screen and (min-width: $medium-screen) {
       display: flex;

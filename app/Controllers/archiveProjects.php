@@ -13,11 +13,9 @@ class archiveProjects extends Controller
     {
 
         $projects = get_posts([
-            'post_type' => 'Projects',
+            'post_type' => 'projects',
             'posts_per_page'=>'12',
         ]);
-
-        // dd($projects);
 
         $loop_index = 0;
 

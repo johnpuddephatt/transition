@@ -31,7 +31,7 @@ class Author extends Controller
 
         return array_map(function ($post) {
             $post->excerpt = get_the_excerpt($post->ID);
-            $post->thumbnail = get_the_post_thumbnail($post->ID, 'square');
+            $post->thumbnail = get_the_post_thumbnail($post->ID, 'wide', array( 'sizes' => '(min-width: 860px) 336px, 90vw'));
             $post->link = get_the_permalink($post->ID);
             $post->category = get_the_terms($post->ID, 'category')[0];
             return $post;

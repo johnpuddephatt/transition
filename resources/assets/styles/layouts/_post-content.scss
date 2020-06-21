@@ -33,6 +33,7 @@
       max-width: 5.5em;
       width: 100%;
       margin-bottom: $small-spacing;
+      margin-right: -0.5em;
 
       img {
         display: block;
@@ -89,18 +90,6 @@
   margin-top: 1.5 * $base-spacing;
   transform-style: preserve-3d;
 
-  &__single-project {
-    flex-direction: column-reverse;
-  }
-
-  @media screen and (min-width: $medium-screen) {
-    flex-direction: row;
-  }
-
-  &__single-post {
-    margin-top: 0;
-  }
-
   &--sidebar {
     margin-top: 1.5 * $base-spacing;
     padding-bottom: 2 * $base-spacing;
@@ -144,7 +133,6 @@
       @media screen and (min-width: $medium-screen) {
         font-size: modular-scale(-1);
       }
-      // margin-top: $small-spacing;
     }
   }
 
@@ -178,6 +166,11 @@
       max-width: $max-line-length;
       font-size: modular-scale(-1);
       font-weight: 500;
+
+      &.has-large-font-size {
+        font-size: modular-scale(1);
+        font-weight: 600;
+      }
 
       &.has-background {
         position: relative;
@@ -278,6 +271,33 @@
         padding-left: $base-spacing;
       }
     }
+  }
+
+  &__single-project {
+    flex-direction: column-reverse;
+  }
+
+  @media screen and (min-width: $medium-screen) {
+    flex-direction: row;
+  }
+
+  &__single-scrap {
+    max-width: $small-screen;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $base-spacing;
+
+    p {
+      max-width: none !important;
+    }
+
+    .entry-content--main {
+      padding-left: 0;
+    }
+  }
+
+  &__single-post {
+    margin-top: 0;
   }
 }
 

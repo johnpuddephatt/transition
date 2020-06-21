@@ -49,10 +49,10 @@ add_filter( 'excerpt_length', function($length) {
 /**
  * Image sizes
  */
-add_image_size( 'wide', 1600, 800, true );
-add_image_size( 'wide_m', 1200, 600, true );
-add_image_size( 'wide_s', 800, 400, true );
-add_image_size( 'wide_xs', 400, 200, true );
+add_image_size( 'wide', 1480, 800, true );
+add_image_size( 'wide_m', 1110, 600, true );
+add_image_size( 'wide_s', 740, 400, true );
+add_image_size( 'wide_xs', 370, 200, true );
 
 add_image_size( 'tall', 480, 648, true );
 add_image_size( 'tall_m', 360, 486, true );

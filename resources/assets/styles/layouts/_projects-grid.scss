@@ -6,6 +6,7 @@
 
   &--wrapper {
     border-top: $base-border;
+    padding-top: $small-spacing;
 
     &__related {
       @media screen and (max-width: $medium-screen) {
@@ -89,13 +90,13 @@
   }
 
   &--project {
-    flex: 0 0 calc(50% - #{$base-spacing});
+    flex: 0 0 calc(50% - #{$base-spacing} - 1px);
     margin: $small-spacing;
     display: flex;
     flex-direction: column;
 
     @media screen and (min-width: $medium-screen) {
-      flex: 0 0 calc(33.33% - #{$base-spacing});
+      flex: 0 0 calc(33.33% - #{$base-spacing} - 1px);
     }
 
     @extend %fade-into-view;
@@ -135,10 +136,10 @@
     border-bottom: $base-border;
 
     .projects-grid--project {
-      flex: 0 0 calc(50% - #{$base-spacing});
+      flex: 0 0 calc(50% - #{$base-spacing} - 1px);
 
       @media screen and (min-width: $medium-screen) {
-        flex: 0 0 calc(25% - #{$base-spacing});
+        flex: 0 0 calc(25% - #{$base-spacing} - 1px);
       }
 
       .projects-grid--image {
@@ -147,14 +148,14 @@
 
       &:nth-child(6n+1),
       &:nth-child(6n) {
-        flex: 0 0 calc(100% - #{$base-spacing});
+        flex: 0 0 calc(100% - #{$base-spacing} - 1px);
 
         .projects-grid--image {
           padding-top: 63.25%;
         }
 
         @media screen and (min-width: $medium-screen) {
-          flex: 0 0 calc(50% - #{$base-spacing});
+          flex: 0 0 calc(50% - #{$base-spacing} - 1px);
         }
       }
     }

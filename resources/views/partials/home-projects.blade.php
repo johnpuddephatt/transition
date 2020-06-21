@@ -1,14 +1,20 @@
 <section class="home-projects">
   <div class="container">
-    <h2 class="section-title">
-      Our work <br/>
-      Our process
-    </h2>
-    <div class="home-projects--tag">Projects</div>
+    <div class="home-projects--intro">
 
-    <p class="home-projects--intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <h2 class="section-title">
+        Our work <br/>
+        Our process
+      </h2>
+      <div class="home-projects--tag">Projects</div>
 
-    <img class="home-projects--title-image" src="@asset('images/projects.jpg')">
+      <p class="home-projects--intro--text">
+        Our work is motivated by the belief that collaboration combined with good design can solve complex problems and improve the world we live in.
+      </p>
+
+      <img class="home-projects--title-image" src="@asset('images/projects.jpg')">
+
+    </div>
 
     <div class="projects-grid--wrapper">
       <div class="projects-grid projects-grid__irregular">
@@ -27,7 +33,7 @@
       </div>
     </div>
 
-    <a class="button home-projects--read-more" href="/projects/">View all projects</a>
+    <a class="button solid home-projects--read-more" href="/projects/">View all projects</a>
 
   </div>
 </section>

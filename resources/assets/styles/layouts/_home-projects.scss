@@ -28,13 +28,12 @@
           z-index: 9;
           top: 0;
           left: 0;
-          width: 100%;
           background-color: #fff;
           mix-blend-mode: difference;
+          width: calc(50% + #{1.5 * $small-spacing});
         }
 
         &::after {
-          width: calc(50% + #{1.5 * $small-spacing});
           top: 1em * 0.8;
         }
       }
@@ -47,22 +46,24 @@
     @extend %fade-into-view;
   }
 
+  &--intro {
+    position: relative;
+  }
+
   &--title-image {
     position: absolute;
     z-index: -1;
-    top: (modular-scale(12) - 1em);
+    bottom: -4.5 * $base-spacing;
     display: none;
+    right: -2 * $base-spacing;
+    width: calc(50% + #{1.5 * $base-spacing});
 
     @media screen and (min-width: $medium-screen) {
       display: block;
     }
-
-    bottom: 0;
-    right: -2 * $base-spacing;
-    width: calc(50% + #{1.5 * $base-spacing});
   }
 
-  &--intro {
+  &--intro--text {
     @media screen and (min-width: $medium-screen) {
       width: 50%;
       margin-bottom: calc(27% - #{4.5 * $base-spacing});
