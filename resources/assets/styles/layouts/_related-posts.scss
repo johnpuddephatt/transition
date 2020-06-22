@@ -46,6 +46,7 @@
       font-size: modular-scale(-1);
       padding-right: 1.5 * $base-spacing;
       position: relative;
+      height: 1.5 * $base-spacing;
 
       &::after {
         width: 1.5 * $base-spacing;

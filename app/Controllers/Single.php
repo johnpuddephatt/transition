@@ -90,7 +90,6 @@ class Single extends Controller
         ]);
 
         return array_map(function ($post) {
-            $post->title = get_the_title($post->ID);
             $post->post_excerpt = get_the_excerpt($post->ID);
             $post->link = get_the_permalink($post->ID);
             $post->author = get_userdata($post->post_author);
