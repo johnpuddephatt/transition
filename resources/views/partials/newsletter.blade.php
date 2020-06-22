@@ -4,5 +4,5 @@
   <input id="mce-EMAIL" type="text" name="EMAIL">
   <button id="mc-embedded-subscribe" name="subscribe" type="submit">Subscribe</button>
   </form>
-  <p class="newsletter-signup--disclaimer">Clicking ‘subscribe’ confirms you have read and agree to our <a href="/privacy/">privacy policy</a></p>
+  <p class="newsletter-signup--disclaimer">Clicking ‘subscribe’ confirms you have read and agree to our <a href="/privacy-policy/">privacy policy</a></p>
 </section>
