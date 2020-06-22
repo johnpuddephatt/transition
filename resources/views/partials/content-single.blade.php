@@ -21,8 +21,10 @@
               <h3 class="related-posts--item--title">{{ $related_post->title  }}</h3>
               <p class="related-posts--item--excerpt">{!! $related_post->post_excerpt !!}</p>
               <div class="related-posts--item--author">
-                {!! $related_post->author_image !!}
-                <span>{{ $related_post->author->display_name }}</span>
+                @if($post->author->user_login != 'admin')
+                  {!! $related_post->author_image !!}
+                  <span>{{ $related_post->author->display_name }}</span>
+                @endif
               </div>
             </a>
           @endforeach
