@@ -28,7 +28,7 @@
 
     <div class="about-services">
       <h2 class="tag">Our services</h2>
-      <p>As an interdisciplinary co-operative we use a range of skillsets to unlock solutions to complex problems. We’re passionate about making the world a better place by design.</p>
+      <p>As an interdisciplinary co-operative we have access to a range of skillsets that can unlock solutions to complex problems. We’re passionate about making the world a better place by design.</p>
       <ul class="about-services--list">
         @foreach($services as $service)
           <li><a class="about-services--list--item--anchor" href="/service/{{$service->slug }}">{!! $service->name !!}</a></li>
