@@ -110,7 +110,7 @@
   position: absolute;
   width: 50%;
 
-  @include has-background-dots(transparentize($medium-gray,0.7));
+  @include has-background-dots(transparentize($medium-gray,0.3));
 
   @media screen and (min-width: $medium-screen) {
     will-change: transform;
