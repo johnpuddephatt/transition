@@ -1,7 +1,7 @@
 <section class="home-about">
   <div class="container">
     <div class="home-about--text">
-      <h2 class="home-about--title">Transition by Design are a cross-disciplinary design collective operating at the junction of architecture, strategic design and social change.</h2>
+      <h2 class="home-about--title">Transition by Design are a cross-disciplinary design collective at the junction of architecture, strategic design and social change.</h2>
       <a href="/about/" class="button button__ghost">More about who we are &nbsp;&rarr;</a>
     </div>
     <img class="home-about--image" src="@asset('images/about.jpg')" alt="">
