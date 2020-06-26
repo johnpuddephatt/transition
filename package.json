@@ -32,7 +32,8 @@
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles/**/*.{css,sass,scss,sss,less}\"",
     "test": "npm run -s lint",
-    "media": "rsync --progress -ravz --delete /Users/johnpuddephatt/Sites/transition/web/app/uploads jdpuddephatt@jdpuddephatt.webfactional.com:~/apps/transition/web/app/"
+    "media-wf": "rsync --progress -ravz --delete /Users/johnpuddephatt/Sites/transition/web/app/uploads jdpuddephatt@jdpuddephatt.webfactional.com:~/apps/transitionbydesign/web/app/",
+    "media": "rsync --progress -ravz --delete /Users/johnpuddephatt/Sites/transition/web/app/uploads root@178.128.34.22:/var/www/html/wp-content/"
   },
   "engines": {
     "node": ">= 8.0.0"
