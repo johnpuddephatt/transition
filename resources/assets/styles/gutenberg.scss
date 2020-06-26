@@ -17,4 +17,8 @@
 
 .wp-block {
   max-width: $medium-screen;
+
+  p {
+    max-width: $max-line-length;
+  }
 }
