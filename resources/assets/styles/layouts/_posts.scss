@@ -90,6 +90,7 @@
     &::after {
       width: 1.5 * $base-spacing;
       content: "→";
+      font-weight: 400;
       position: absolute;
       right: 0;
       font-size: modular-scale(2);
