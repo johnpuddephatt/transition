@@ -26,7 +26,8 @@ class Author extends Controller
         $posts = get_posts([
             'post_type' => 'Post',
             'author' => get_queried_object()->ID,
-            'posts_per_page'=> get_option( 'posts_per_page' )
+            'posts_per_page'=> get_option( 'posts_per_page' ),
+            'category__and' => array(1,3)
         ]);
 
         return array_map(function ($post) {

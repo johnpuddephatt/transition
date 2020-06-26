@@ -32,9 +32,9 @@ class Single extends Controller
 
         // Else post or page
         else {
-            $post->related_posts = $this->related_posts();
             $post->category = get_the_terms(null, 'category') ? get_the_terms(null, 'category')[0] : '';
             $post->date = get_the_date(null, $post->ID);
+            $post->related_posts = $this->related_posts($post->category->term_id);
 
             $post->author = get_userdata($post->post_author);
             $post->author_image = wp_get_attachment_image( get_field('image', 'user_' . $post->post_author), 'thumbnail');
@@ -81,11 +81,12 @@ class Single extends Controller
 
     }
 
-    public function related_posts() {
+    public function related_posts($category = null) {
 
         $posts = get_posts([
             'post_type' => 'post',
             'numberposts'=>'2',
+            'category' => $category,
             'exclude' => get_the_ID()
         ]);
 

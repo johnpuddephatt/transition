@@ -15,7 +15,7 @@
         {!! the_content() !!}
 
         <div class="related-posts">
-          <h2 class="related-posts--title">More research & writing...</h2>
+          <h2 class="related-posts--title">More {{ strtolower($post->category->name) }}</h2>
           @foreach($post->related_posts as $related_post)
             <a class="related-posts--item" href="{{ $related_post->link }}">
               <h3 class="related-posts--item--title">{{ $related_post->post_title  }}</h3>
