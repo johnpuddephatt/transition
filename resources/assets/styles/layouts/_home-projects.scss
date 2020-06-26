@@ -30,11 +30,12 @@
           left: 0;
           background-color: #fff;
           mix-blend-mode: difference;
-          width: calc(50% + #{1.5 * $small-spacing});
+          width: 4em;
         }
 
         &::after {
           top: 1em * 0.8;
+          width: calc(50% + #{1.5 * $small-spacing});
         }
       }
     }
@@ -66,7 +67,7 @@
   &--intro--text {
     @media screen and (min-width: $medium-screen) {
       width: 50%;
-      margin-bottom: calc(27% - #{4.5 * $base-spacing});
+      margin-bottom: 5.5 * $base-spacing;
     }
 
     padding-right: $base-spacing;

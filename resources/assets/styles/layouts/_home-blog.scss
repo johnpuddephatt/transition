@@ -34,7 +34,7 @@
     text-transform: lowercase;
 
     @media screen and (min-width: $medium-screen) {
-      margin-top: 8 * $base-spacing;
+      margin-top: 6 * $base-spacing;
       margin-left: - 4 * $base-spacing;
       font-size: modular-scale(12);
 
