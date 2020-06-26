@@ -12,7 +12,7 @@
       "./styles/gutenberg.scss"
     ]
   },
-  "publicPath": "/app/themes/transition",
+  "publicPath": "/wp-content/themes/transition",
   "devUrl": "http://web.transition.localhost",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
