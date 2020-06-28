@@ -19,7 +19,7 @@ class Single extends Controller
             $post->related_projects = $this->related_projects();
         }
 
-        if(get_post_type() == 'scraps') {
+        else if(get_post_type() == 'scraps') {
             $navigation = $this->post_navigation('scraps','DESC');
             $post->next_post = $navigation->next_post;
             $post->previous_post = $navigation->previous_post;
