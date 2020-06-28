@@ -6,7 +6,7 @@
     @include('partials.head')
     <body @php body_class() @endphp>
 
-      @if(is_home())
+      @if(is_home() && !is_customize_preview())
         @include('partials.welcome')
       @endif
 
@@ -28,10 +28,8 @@
         </div>
 
 @if(!isset($_SERVER['HTTP_X_BARBA']))
-
-        @php wp_footer() @endphp
       </div>
+      @php wp_footer() @endphp
     </body>
   </html>
-
 @endif

@@ -12,9 +12,9 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), null, true);
+    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), null, null, true);
 
-    if ( !is_admin() ) wp_deregister_script('jquery');
+    if ( !is_admin() && !is_customize_preview() ) wp_deregister_script('jquery');
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -124,13 +124,13 @@ function create_scrap_post_type() {
     register_post_type('scraps',
        array(
           'labels' => array(
-             'name' => __('Scrapbook'),
-             'singular_name' => __('Scrap')
+             'name' => __('Sketchbook'),
+             'singular_name' => __('Sketch')
           ),
           'public' => true,
           'has_archive' => true,
           'rewrite' => array(
-              'slug' => 'scrapbook',
+              'slug' => 'sketchbook',
               'with_front' => false
           ),
           'menu_icon' => 'dashicons-pressthis',
@@ -213,18 +213,18 @@ add_action( 'wp_before_admin_bar_render', 'App\admin_bar_render' );
 /**
  * Register sidebars
  */
-add_action('widgets_init', function () {
-    $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
-    ];
-    register_sidebar([
-        'name'          => __('Footer', 'sage'),
-        'id'            => 'sidebar-footer'
-    ] + $config);
-});
+// add_action('widgets_init', function () {
+//     $config = [
+//         'before_widget' => '<section class="widget %1$s %2$s">',
+//         'after_widget'  => '</section>',
+//         'before_title'  => '<h3>',
+//         'after_title'   => '</h3>'
+//     ];
+//     register_sidebar([
+//         'name'          => __('Footer', 'sage'),
+//         'id'            => 'sidebar-footer'
+//     ] + $config);
+// });
 
 /**
  * Updates the `$post` variable on each iteration of the loop.

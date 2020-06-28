@@ -6,6 +6,14 @@ use Sober\Controller\Controller;
 
 class FrontPage extends Controller
 {
+    public function hero() {
+        $hero = get_post(get_theme_mod('home_hero_project'));
+        $hero->link = get_the_permalink($hero->ID);
+        $hero->excerpt = get_the_excerpt($hero->ID);
+        $hero->image = get_theme_mod('home_hero_image');
+        return $hero;
+    }
+
     public function projects() {
 
         $projects = get_posts([

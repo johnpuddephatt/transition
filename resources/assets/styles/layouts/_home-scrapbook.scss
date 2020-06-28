@@ -1,0 +1,198 @@
+.home-scrapbook {
+  margin-top: 4 * $base-spacing;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 50%;
+    position: absolute;
+    bottom: -4 * $base-spacing;
+    z-index: 99;
+    right: -3 * $base-spacing;
+    opacity: 0.25;
+    width: 40%;
+    padding-top: 40%;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20952%20768%22%3E%3Cpath%20d%3D%22M621.32%20146.02C535.71%20114.16%20503.14%2067.53%20386.5%2040.51S172.23%20125.9%20108.78%20237.36s-.21%20204.31%2022.13%20237.37c41.53%2061.45%20108.86%2095.37%20145.97%20116.24%2078.62%2044.2%2048.55%2092.63%20174.55%20123.95s219.45-119.39%20286.81-210.2c-.01%200%20211.01-236.67-116.92-358.7z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: $medium-screen) {
+      will-change: transform;
+      transform-style: preserve-3d;
+      transform: translate3d(0, 0, 0.08px) scale(0.92);
+    }
+  }
+
+  &::after {
+    right: auto;
+    left: 0;
+    bottom: auto;
+    top: 2 * $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      transform: translate3d(0, 0, 0.2px) scale(0.8);
+    }
+  }
+
+  &--background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: calc(200vw + 100vh - #{4 * $base-spacing});
+      height: 100%;
+      left: 0;
+      z-index: -9;
+      background-color: $medium-gray;
+      transition: transform 3 * $base-duration $base-timing, opacity 3 * $base-duration $base-timing;
+      transform: translateX(calc(-100vw - 100vh));
+      opacity: 0;
+      background-image: linear-gradient(45deg, $medium-gray calc(50% - #{$base-spacing}), white calc(50% - #{$base-spacing}));
+
+      @media screen and (min-width: $medium-screen) {
+        background-image: linear-gradient(45deg, $medium-gray calc(50% - #{6 * $base-spacing}), white calc(50% - #{6 * $base-spacing}));
+      }
+
+      html.no-js & {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .container {
+    transform-style: preserve-3d;
+    width: 100%;
+    // position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      opacity: 0.1;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjAiIHk9IjAiIHZpZXdCb3g9IjAgMCA2MzYgNjEiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZT4uc3Qwe2ZpbGw6IzIyMWUyMH08L3N0eWxlPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC0xODAgNjE2LjE1MiAzMC4xOCkiIGNsYXNzPSJzdDAiIGQ9Ik02MDguMzcgMTIuMzloMTUuNTd2MzUuNTloLTE1LjU3eiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC0xODAgNTY5LjkxNCAzMC4xOCkiIGNsYXNzPSJzdDAiIGQ9Ik01NjIuMTMgMTIuMzloMTUuNTd2MzUuNTloLTE1LjU3eiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC0xODAgNTIzLjY3NiAzMC4xOCkiIGNsYXNzPSJzdDAiIGQ9Ik01MTUuODkgMTIuMzloMTUuNTd2MzUuNTloLTE1LjU3eiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC0xODAgNDc3LjQzOCAzMC4xOCkiIGNsYXNzPSJzdDAiIGQ9Ik00NjkuNjUgMTIuMzloMTUuNTd2MzUuNTloLTE1LjU3eiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKC0xODAgNDMxLjIgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNNDIzLjQyIDEyLjM5aDE1LjU3djM1LjU5aC0xNS41N3oiLz48cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDM4NC45NjIgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNMzc3LjE4IDEyLjM5aDE1LjU3djM1LjU5aC0xNS41N3oiLz48cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDMzOC43MjQgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNMzMwLjk0IDEyLjM5aDE1LjU3djM1LjU5aC0xNS41N3oiLz48cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDI5Mi40ODYgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNMjg0LjcgMTIuMzloMTUuNTd2MzUuNTlIMjg0Ljd6Ii8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCAyNDYuMjQ4IDMwLjE4KSIgY2xhc3M9InN0MCIgZD0iTTIzOC40NiAxMi4zOWgxNS41N3YzNS41OWgtMTUuNTd6Ii8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCAyMDAuMDEgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNMTkyLjIyIDEyLjM5aDE1LjU3djM1LjU5aC0xNS41N3oiLz48cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDE1My43NzEgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNMTQ1Ljk5IDEyLjM5aDE1LjU3djM1LjU5aC0xNS41N3oiLz48cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgtMTgwIDEwNy41MzMgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNOTkuNzUgMTIuMzloMTUuNTd2MzUuNTlIOTkuNzV6Ii8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCA2MS4yOTUgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNNTMuNTEgMTIuMzloMTUuNTd2MzUuNTlINTMuNTF6Ii8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoLTE4MCAxNS4wNTcgMzAuMTgpIiBjbGFzcz0ic3QwIiBkPSJNNy4yNyAxMi4zOWgxNS41N3YzNS41OUg3LjI3eiIvPjwvc3ZnPg==");
+      background-size: 16em auto;
+      background-position: 10% 10%;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      background-position: 70% 85%;
+    }
+  }
+
+  &--text {
+    text-align: right;
+    position: relative;
+    z-index: 9;
+    margin-top: 4 * $base-spacing;
+    margin-bottom: 4 * $base-spacing;
+    opacity: 0;
+    transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
+    text-shadow: 0 0 3 * $base-spacing darken($medium-gray, 25%);
+
+    html.no-js & {
+      opacity: 1;
+    }
+
+    @media screen and (min-width: $medium-screen) {
+      margin-top: 8 * $base-spacing;
+      right: -4 * $base-spacing;
+      will-change: transform;
+      transform-style: preserve-3d;
+      perspective-origin: center center;
+      transform: translate3d(0, $small-spacing, 0.2px) scale(0.8);
+    }
+  }
+
+  &--title {
+    font-size: modular-scale(10);
+    text-transform: lowercase;
+    font-weight: 400;
+    color: white;
+    margin-bottom: $small-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(12);
+    }
+  }
+
+  &--intro {
+    margin-left: auto;
+
+    @media screen and (min-width: $medium-screen) {
+      max-width: 42.5%;
+    }
+  }
+
+  &--image {
+    position: absolute;
+    left: 2 * $base-spacing;
+    bottom: -$base-spacing;
+    max-width: 70%;
+    height: auto;
+    opacity: 0;
+    transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
+    text-shadow: 0 0 3 * $base-spacing darken($vanilla, 50%);
+    transform: translate(0, $small-spacing);
+    background-color: $vanilla;
+    padding: 2 * $base-spacing;
+
+    img {
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    html.no-js & {
+      opacity: 1;
+    }
+
+    @media screen and(min-width: $medium-screen) {
+      left: 2 * $base-spacing;
+      bottom: 0;
+      max-width: 50%;
+      will-change: transform;
+      transform-style: preserve-3d;
+      transform: translate3d(0, $base-spacing, 0.1px) scale(0.9);
+    }
+  }
+
+  &.in-view {
+    .home-scrapbook--background::after {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .home-scrapbook--text {
+      opacity: 1;
+
+      @media screen and (min-width: $medium-screen) {
+        transform: translate3d(0, 0, 0.2px) scale(0.8);
+      }
+    }
+
+    .home-scrapbook--image {
+      opacity: 1;
+
+      @media screen and (min-width: $medium-screen) {
+        transform: translate3d(0, 0, 0.1px) scale(0.9);
+      }
+    }
+  }
+}

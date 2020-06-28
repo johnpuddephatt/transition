@@ -1,5 +1,5 @@
 {{--
-  Template Name: Scrapbook
+  Template Name: Sketchbook
 --}}
 
 @extends('layouts.app')

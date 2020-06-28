@@ -42,15 +42,11 @@
 
   <div class="entry-content--sidebar">
     <h2 class="tag">Contact us</h2>
-    <address class="sidebar--address">
-      Transition by Design<br>
-      Makespace Oxford<br>
-      1 Aristotle Lane<br>
-      Oxford<br>
-      OX2 6TP
+    <address class="sidebar--address contact-address">
+      Transition by Design<br>{!! nl2br(get_theme_mod('contact_address', 'Transition by Design, Makespace Oxford, Aristotle Ln, Oxford OX2 6TP')) !!}
     </address>
-    <a class="sidebar--email" href="mailto:info@transitionbydesign.org">info@transitionbydesign.org</a>
-    <a class="sidebar--phone" href="tel:01865554927">01865 554 927</a>
+    <a class="sidebar--email contact-email" href="mailto:{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}">{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}</a>
+    <a class="sidebar--phone contact-phone" href="telto:{{ get_theme_mod('contact_phone', '00441865554927') }}">{{ get_theme_mod('contact_phone_human', '(+44) 1865 554927') }}</a>
   </div
 
 </div>

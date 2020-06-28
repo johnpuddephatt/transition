@@ -14,7 +14,7 @@ export default {
 
     inView('.home-about', 0.1);
     inView('.home-blog', 0.1);
-
+    inView('.home-scrapbook', 0.1);
     inView('.home-projects .section-title', 1);
     inView('.home-blog .section-title', 1);
 

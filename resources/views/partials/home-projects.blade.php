@@ -9,7 +9,7 @@
       <div class="home-projects--tag">Projects</div>
 
       <p class="home-projects--intro--text">
-        Our work is motivated by the belief that collaboration combined with good design can solve complex problems and improve the world we live in.
+        {{ get_theme_mod('home_projects_text', 'Our work is motivated by the belief that collaboration combined with good design can solve complex problems and improve the world we live in.') }}
       </p>
 
       <img class="home-projects--title-image" src="@asset('images/projects.jpg')">
