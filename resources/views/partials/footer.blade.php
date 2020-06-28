@@ -7,7 +7,7 @@
     <div class="site-footer--brand--text">
       <h3 class="site-footer--title">{{ get_bloginfo('description', 'display') }}</h3>
       <p>
-        <span class="site-footer--address contact-address">{{ get_theme_mod('contact_address', 'Transition by Design, Makespace Oxford, Aristotle Ln, Oxford OX2 6TP') }}</span>
+        <span class="site-footer--address contact-address">{{ get_theme_mod('contact_address', 'Makespace Oxford, Aristotle Ln, Oxford OX2 6TP') }}</span>
       <br><a class="site-footer--email contact-email" href="mailto:{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}">{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}</a>
       <br><a class="site-footer--phone contact-phone" href="telto:{{ get_theme_mod('contact_phone', '00441865554927') }}">{{ get_theme_mod('contact_phone_human', '(+44) 1865 554927') }}</a></p>
     </div>
