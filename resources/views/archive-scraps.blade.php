@@ -25,7 +25,7 @@
         @if( $loop->index % 2)
           <div class="scraps-grid--row">
 
-            <div class="scraps-grid--column">
+            <div class="scraps-grid--column has-two-children">
               @if(isset($row[0]))
                 @include('partials.scraps-grid-item', ['scrap' => $row[0]])
               @endif
@@ -54,7 +54,7 @@
                 @include('partials.scraps-grid-item', ['scrap' => $row[0]])
               @endif
             </div>
-            <div class="scraps-grid--column">
+            <div class="scraps-grid--column has-two-children">
               @if(isset($row[1]))
                 @include('partials.scraps-grid-item', ['scrap' => $row[1]])
               @endif

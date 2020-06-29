@@ -150,6 +150,7 @@
 
     .entry-header--image {
       padding-top: 65%;
+      height: auto !important;
 
       @media screen and (min-width: $medium-screen) {
         margin-left: -2 * $base-spacing;
@@ -158,6 +159,7 @@
     }
 
     .entry-header--title {
+      padding-top: 2 * $base-spacing;
       padding-bottom: 0;
       margin-bottom: 0;
     }
