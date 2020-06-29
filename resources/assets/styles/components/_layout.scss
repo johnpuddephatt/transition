@@ -72,8 +72,8 @@ main {
 .container {
   max-width: $large-screen;
   margin: 0 auto;
-  padding-left: $small-spacing;
-  padding-right: $small-spacing;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
 }
 
 .container__narrow {

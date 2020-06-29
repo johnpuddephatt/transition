@@ -1,5 +1,11 @@
 .home-about {
   margin-top: 4 * $base-spacing;
+  margin-bottom: 6 * $base-spacing;
+
+  @media screen and (min-width: $medium-screen) {
+    margin-bottom: 0;
+  }
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,7 +22,7 @@
     width: 60vw;
     opacity: 0.5;
 
-    @include has-background-dots(#fff);
+    @include has-background-dots(transparentize(#fff, 0.3));
 
     @media screen and (min-width: $medium-screen) {
       will-change: transform;
@@ -48,7 +54,7 @@
       background-image: linear-gradient(135deg, white calc(50% + #{$base-spacing}), $vanilla calc(50% + #{$base-spacing}));
 
       @media screen and (min-width: $medium-screen) {
-        background-image: linear-gradient(135deg, white calc(50% + #{3 * $base-spacing}), $vanilla calc(50% + #{3 * $base-spacing}));
+        background-image: linear-gradient(135deg, white calc(50% + #{4 * $base-spacing}), $vanilla calc(50% + #{4 * $base-spacing}));
       }
 
       html.no-js & {
@@ -100,7 +106,7 @@
   }
 
   &--title {
-    font-size: modular-scale(5);
+    font-size: modular-scale(4);
     font-weight: 400;
     color: white;
     margin-bottom: $base-spacing;
@@ -113,9 +119,9 @@
 
   &--image {
     position: absolute;
-    right: $base-spacing;
-    bottom: -$base-spacing;
-    width: 70%;
+    right: $small-spacing;
+    bottom: -3 * $base-spacing;
+    width: 55%;
     height: auto;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
@@ -129,7 +135,6 @@
     @media screen and(min-width: $medium-screen) {
       right: -2 * $base-spacing;
       bottom: -2 * $base-spacing;
-      width: 55%;
       will-change: transform;
       transform-style: preserve-3d;
       transform: translate3d(0, $base-spacing, 0.1px) scale(0.9);

@@ -80,6 +80,9 @@
     &::before,
     &::after {
       content: "";
+      pointer-events: none;
+      user-select: none;
+      z-index: 9;
       position: absolute;
       display: block;
       height: 100%;
@@ -101,7 +104,7 @@
     text-align: right;
     position: relative;
     z-index: 9;
-    margin-top: 4 * $base-spacing;
+    margin-top: 0;
     margin-bottom: 4 * $base-spacing;
     opacity: 0;
     transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
@@ -122,7 +125,7 @@
   }
 
   &--title {
-    font-size: modular-scale(10);
+    font-size: modular-scale(8);
     text-transform: lowercase;
     font-weight: 400;
     color: white;
@@ -142,17 +145,21 @@
   }
 
   &--image {
-    position: absolute;
-    left: 2 * $base-spacing;
-    bottom: -$base-spacing;
-    max-width: 70%;
-    height: auto;
+    padding: $base-spacing;
     opacity: 0;
+    max-width: 70%;
     transition: opacity ($base-duration * 3) $base-duration $base-timing, transform ($base-duration * 2) $base-duration $base-timing;
     text-shadow: 0 0 3 * $base-spacing darken($vanilla, 50%);
     transform: translate(0, $small-spacing);
     background-color: $vanilla;
-    padding: 2 * $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      position: absolute;
+      left: 2 * $base-spacing;
+      bottom: -$base-spacing;
+      max-width: 70%;
+      padding: 2 * $base-spacing;
+    }
 
     img {
       display: block;

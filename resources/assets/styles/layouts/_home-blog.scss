@@ -209,9 +209,13 @@
   }
 
   .section-title {
-    font-size: modular-scale(9);
+    font-size: modular-scale(6);
     text-transform: lowercase;
     margin-bottom: 2 * $base-spacing;
+
+    @media screen and (min-width: $medium-screen) {
+      font-size: modular-scale(9);
+    }
   }
 
   .container {

@@ -12,9 +12,11 @@
   }
 
   &--text {
-    margin-bottom: 5.5 * $base-spacing;
+    position: relative;
+    z-index: 99;
 
     @media screen and (min-width: $medium-screen) {
+      margin-bottom: 5.5 * $base-spacing;
       width: 65%;
     }
   }
@@ -35,18 +37,16 @@
   }
 
   &--image {
-    position: absolute;
-    width: 110%;
-    max-width: none;
-    left: 5%;
-    bottom: -$base-spacing;
     z-index: -1;
+    margin-top: -4 * $base-spacing;
     transform-style: preserve-3d;
+    width: 110%;
 
     @media screen and (min-width: $medium-screen) {
-      width: 70%;
-      right: 0%;
-      left: auto;
+      position: absolute;
+      width: 66.7%;
+      right: -5%;
+      bottom: -$base-spacing;
     }
 
     img {

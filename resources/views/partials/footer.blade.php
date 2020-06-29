@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <div class="site-footer--brand">
       @if(has_site_icon())
-        <a href="{{ home_url('/') }}">
+        <a class="site-footer--brand--image" href="{{ home_url('/') }}">
           <img src="{{ get_site_icon_url() }}" alt="Transition by Design Logo"/>
         </a>
       @endif

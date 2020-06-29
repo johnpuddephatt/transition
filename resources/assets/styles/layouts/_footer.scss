@@ -24,7 +24,7 @@
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: $base-spacing;
-    padding: 0 $small-spacing;
+    padding: 0 $base-spacing;
 
     @media screen and (min-width: $medium-screen) {
       padding: 0;
@@ -35,6 +35,10 @@
     img {
       width: 4 * $base-spacing;
       height: 4 * $base-spacing;
+    }
+
+    &--image {
+      display: block;
       margin-right: $small-spacing;
 
       @media screen and (min-width: $medium-screen) {
@@ -66,7 +70,7 @@
     justify-content: flex-end;
     align-items: center;
     border-top: 1px solid $medium-gray;
-    padding: $small-spacing $small-spacing 0;
+    padding: $small-spacing $base-spacing 0;
 
     @media screen and (min-width: $medium-screen) {
       padding: 0;

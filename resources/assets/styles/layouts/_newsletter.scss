@@ -2,9 +2,11 @@
   margin: 2 * $base-spacing auto 0;
   max-width: $large-screen;
   background-color: $gray;
-  padding: 3 * $base-spacing $small-spacing;
+  border: $base-spacing solid white;
+  padding: 6 * $base-spacing $base-spacing;
 
   @media screen and (min-width: $medium-screen) {
+    border: none;
     padding: 3 * $base-spacing;
   }
 
@@ -44,5 +46,10 @@
         border-bottom: 0.15em solid $vanilla;
       }
     }
+  }
+
+  &--disclaimer {
+    font-size: modular-scale(-1);
+    line-height: $heading-line-height;
   }
 }

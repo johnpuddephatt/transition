@@ -5,7 +5,7 @@
   &--title {
     @extend .post-title;
 
-    padding: 2 * $base-spacing 0 $base-spacing;
+    padding: 0 0 $base-spacing;
 
     @media screen and (min-width: $medium-screen) {
       padding: 3 * $base-spacing 0 2 * $base-spacing;
