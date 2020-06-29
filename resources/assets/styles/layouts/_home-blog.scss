@@ -28,7 +28,7 @@
   .section-title {
     @extend %fade-into-view;
 
-    font-size: modular-scale(10);
+    font-size: modular-scale(8);
     font-weight: 500;
     line-height: $big-heading-line-height;
     text-transform: lowercase;
