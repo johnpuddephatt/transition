@@ -2,11 +2,14 @@
   <div class="container">
     <div class="home-projects--intro">
 
-      <h2 class="section-title">
-        Our work <br/>
-        Our process
-      </h2>
-      <div class="home-projects--tag">Projects</div>
+      <a href="/projects/">
+        <h2 class="section-title">
+          Our work <br/>
+          Our process
+        </h2>
+      </a>
+
+      <a href="/projects/" class="home-projects--tag">Projects</a>
 
       <p class="home-projects--intro--text">
         {{ get_theme_mod('home_projects_text', 'Our work is motivated by the belief that collaboration combined with good design can solve complex problems and improve the world we live in.') }}

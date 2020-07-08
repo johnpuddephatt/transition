@@ -144,6 +144,7 @@
         &:first-child {
           .home-blog--mask {
             display: block;
+            pointer-events: none;
             position: absolute;
             top: 0;
             height: calc(#{7.5 * $base-spacing} + #{2 * modular-scale(12) * $big-heading-line-height} - 2px);
@@ -158,6 +159,7 @@
 
     &:last-child {
       .home-blog--mask {
+        pointer-events: none;
         height: 50vh;
         display: none;
         position: absolute;
