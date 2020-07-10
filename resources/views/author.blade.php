@@ -1,5 +1,5 @@
 {{--
-  Template Name: About
+  Template Name: Author
 --}}
 
 @extends('layouts.app')

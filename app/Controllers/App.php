@@ -40,11 +40,28 @@ class App extends Controller
 
         $meta = new \stdClass();
         $meta->url = $post_id ? get_permalink($post_id): get_site_url();
-        $meta->title = $this->title();
+        $project_name = get_field('project_name', $post_id);
+        if($post_id && $project_name) {
+            $meta->title = $project_name . ': ' . $this->title();
+        }
+        elseif(is_author()) {
+            $meta->title = get_queried_object()->display_name;
+        }
+        else {
+            $meta->title = $this->title();
+        }
+
+
         $meta->site_name = get_bloginfo('name');
         $meta->image = get_the_post_thumbnail_url($post_id, 'wide_m') ? (get_site_url() . get_the_post_thumbnail_url($post_id, 'wide_m')) : (\App\asset_path('images/opengraph.jpg'));
         $meta->locale = get_locale();
-        $meta->description = $post_id ? wp_trim_words( get_post_field('post_content', $post_id), 25 ) : get_bloginfo('description');
+
+        if(is_author()) {
+            $meta->description = get_queried_object()->description;
+        }
+        else {
+            $meta->description = wp_trim_words( get_the_excerpt($post_id), 25 ) ?? get_bloginfo('description');
+        }
         return $meta;
     }
 }
