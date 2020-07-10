@@ -309,7 +309,7 @@ add_action('wp_head', function(){
     echo '<meta property="og:description" content="' . esc_attr($description) . '" />';
     echo '<meta property="og:url" content="' . esc_url($url) . '" />';
     echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '" />';
-    echo '<meta property="og:image" content="' . (esc_url($image ? ($image) : (asset_path('/dist/images/opengraph.jpg')))) . '" />';
+    echo '<meta property="og:image" content="' . (esc_url($image ? ($image) : (asset_path('images/opengraph.jpg')))) . '" />';
     echo '<meta name="twitter:card" content="summary_large_image" />';
     echo '<meta name="twitter:site" content="@TransitionbyD" />';
 
