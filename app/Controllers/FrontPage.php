@@ -22,6 +22,8 @@ class FrontPage extends Controller
             'numberposts' => 6
         ]);
 
+        wp_reset_postdata();
+
         $loop_index = 0;
 
         return array_map(function ($project) use (&$loop_index) {
@@ -49,6 +51,9 @@ class FrontPage extends Controller
                 )
             )
         ]);
+
+        wp_reset_postdata();
+
         if(count($latest_research)) {
             return array_map(function ($research) {
                 $research->excerpt = get_the_excerpt($research->ID);
@@ -72,6 +77,9 @@ class FrontPage extends Controller
                 )
             )
         ]);
+
+        wp_reset_postdata();
+
         if(count($latest_writing)) {
             return array_map(function ($writing) {
                 $writing->excerpt = get_the_excerpt($writing->ID);
@@ -94,6 +102,9 @@ class FrontPage extends Controller
                 )
             )
         ]);
+
+        wp_reset_postdata();
+
         if(count($latest_updates)) {
             return array_map(function ($update) {
                 $update->excerpt = get_the_excerpt($update->ID);
