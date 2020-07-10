@@ -60,7 +60,7 @@ class App extends Controller
             $meta->description = get_queried_object()->description;
         }
         else {
-            $meta->description = wp_trim_words( get_the_excerpt($post_id), 25 ) ?? get_bloginfo('description');
+            $meta->description = $post_id ? wp_trim_words( get_the_excerpt($post_id), 25 ) : get_bloginfo('description');
         }
         return $meta;
     }
