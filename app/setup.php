@@ -276,3 +276,36 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+
+
+add_action('wp_head', function(){
+
+  // if( is_single() || is_page() ) {
+
+    $post_id = get_queried_object_id();
+
+    $url = get_permalink($post_id);
+    $title = get_the_title($post_id);
+    $site_name = get_bloginfo('name');
+
+    $description = wp_trim_words( get_post_field('post_content', $post_id), 25 );
+
+    $image = get_the_post_thumbnail_url($post_id, '-m');
+    if( !empty( get_post_meta($post_id, 'og_image', true) ) ) $image = get_post_meta($post_id, 'og_image', true);
+
+    $locale = get_locale();
+
+    // Transition by Design og
+    echo '<meta property="og:locale" content="' . esc_attr($locale) . '" />';
+    echo '<meta property="og:type" content="article" />';
+    echo '<meta property="og:title" content="' . esc_attr($title) . ' – ' . esc_attr($site_name) . '" />';
+    echo '<meta property="og:description" content="' . esc_attr($description) . '" />';
+    echo '<meta property="og:url" content="' . esc_url($url) . '" />';
+    echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '" />';
+    echo '<meta property="og:image" content="' . (esc_url($image ? (get_site_url() . $image) : (asset_path('/dist/images/opengraph.jpg')))) . '" />';
+    echo '<meta name="twitter:card" content="summary_large_image" />';
+    echo '<meta name="twitter:site" content="@TransitionbyD" />';
+
+  // }
+});
