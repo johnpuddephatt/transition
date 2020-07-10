@@ -281,6 +281,432 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+
+    add_filter('acf/settings/show_admin', '__return_false');
+
+    if( function_exists('acf_add_local_field_group') ) {
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5e73f7567635f',
+        	'title' => 'User image',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5e73f7600cc5a',
+        			'label' => 'Image',
+        			'name' => 'image',
+        			'type' => 'image',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'return_format' => 'id',
+        			'preview_size' => 'medium',
+        			'library' => 'all',
+        			'min_width' => '',
+        			'min_height' => '',
+        			'min_size' => '',
+        			'max_width' => '',
+        			'max_height' => '',
+        			'max_size' => '',
+        			'mime_types' => '',
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'user_form',
+        				'operator' => '==',
+        				'value' => 'all',
+        			),
+        		),
+        	),
+        	'menu_order' => -1,
+        	'position' => 'acf_after_title',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => '',
+        	'active' => true,
+        	'description' => '',
+        ));
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5e2ae18188f0c',
+        	'title' => 'Category',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5e2ae1cf59e37',
+        			'label' => 'Category',
+        			'name' => 'category',
+        			'type' => 'taxonomy',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'taxonomy' => 'category',
+        			'field_type' => 'radio',
+        			'allow_null' => 0,
+        			'add_term' => 0,
+        			'save_terms' => 1,
+        			'load_terms' => 1,
+        			'return_format' => 'object',
+        			'multiple' => 0,
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'post_type',
+        				'operator' => '==',
+        				'value' => 'post',
+        			),
+        		),
+        	),
+        	'menu_order' => 0,
+        	'position' => 'side',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => array(
+        		0 => 'discussion',
+        		1 => 'comments',
+        		2 => 'categories',
+        		3 => 'tags',
+        		4 => 'send-trackbacks',
+        	),
+        	'active' => true,
+        	'description' => '',
+        ));
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5e729da14c9c9',
+        	'title' => 'Contact details',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5e729da86cc72',
+        			'label' => 'Twitter',
+        			'name' => 'twitter',
+        			'type' => 'text',
+        			'instructions' => 'e.g. TransitionByD',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'placeholder' => '',
+        			'prepend' => '@',
+        			'append' => '',
+        			'maxlength' => '',
+        		),
+        		array(
+        			'key' => 'field_5e729e3b6cc74',
+        			'label' => 'Instagram',
+        			'name' => 'instagram',
+        			'type' => 'text',
+        			'instructions' => 'e.g. TransitionByD',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'placeholder' => '',
+        			'prepend' => '@',
+        			'append' => '',
+        			'maxlength' => '',
+        		),
+        		array(
+        			'key' => 'field_5e729e376cc73',
+        			'label' => 'Phone number',
+        			'name' => 'phone_number',
+        			'type' => 'text',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'placeholder' => '',
+        			'prepend' => '',
+        			'append' => '',
+        			'maxlength' => '',
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'user_form',
+        				'operator' => '==',
+        				'value' => 'all',
+        			),
+        		),
+        	),
+        	'menu_order' => 0,
+        	'position' => 'normal',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => '',
+        	'active' => true,
+        	'description' => 'Additional contact details shown on user\'s public page',
+        ));
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5eee1e4340dba',
+        	'title' => 'Image options',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5eee1e4e8c9df',
+        			'label' => 'Background colour',
+        			'name' => 'image_colour',
+        			'type' => 'select',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'choices' => array(
+        				'white' => 'White',
+        				'feather' => 'Feather',
+        				'light' => 'Light',
+        				'medium' => 'Medium',
+        				'heavy' => 'Heavy',
+        			),
+        			'default_value' => array(
+        				0 => 'white',
+        			),
+        			'allow_null' => 0,
+        			'multiple' => 0,
+        			'ui' => 0,
+        			'return_format' => 'value',
+        			'ajax' => 0,
+        			'placeholder' => '',
+        		),
+        		array(
+        			'key' => 'field_5eee1ee38c9e0',
+        			'label' => 'Texture',
+        			'name' => 'image_texture',
+        			'type' => 'select',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'choices' => array(
+        				'none' => 'None',
+        				'noise' => 'Noise',
+        				'grunge' => 'Grunge',
+        				'concrete' => 'Concrete',
+        				'paper' => 'Paper',
+        				'asphalt' => 'Asphalt',
+        			),
+        			'default_value' => array(
+        				0 => 'none',
+        			),
+        			'allow_null' => 0,
+        			'multiple' => 0,
+        			'ui' => 0,
+        			'return_format' => 'value',
+        			'ajax' => 0,
+        			'placeholder' => '',
+        		),
+        		array(
+        			'key' => 'field_5eee1ef58c9e1',
+        			'label' => 'Size',
+        			'name' => 'image_size',
+        			'type' => 'select',
+        			'instructions' => '‘Bleed’ will extend the image to cover the tile and is recommended for photos. ‘Fit’ will work best with illustrations with a transparent background.',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'choices' => array(
+        				'bleed' => 'Bleed',
+        				'fit' => 'Fit',
+        				'pad_small' => 'Pad (small)',
+        				'pad_medium' => 'Pad (medium)',
+        				'pad_large' => 'Pad (large)',
+        			),
+        			'default_value' => array(
+        				0 => 'pad_small',
+        			),
+        			'allow_null' => 0,
+        			'multiple' => 0,
+        			'ui' => 0,
+        			'return_format' => 'value',
+        			'ajax' => 0,
+        			'placeholder' => '',
+        		),
+        		array(
+        			'key' => 'field_5eee1f7f8c9e2',
+        			'label' => 'Blend',
+        			'name' => 'image_blend',
+        			'type' => 'true_false',
+        			'instructions' => 'Attempts to blend the image with its background.',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'message' => '',
+        			'default_value' => 0,
+        			'ui' => 0,
+        			'ui_on_text' => '',
+        			'ui_off_text' => '',
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'post_type',
+        				'operator' => '==',
+        				'value' => 'scraps',
+        			),
+        		),
+        	),
+        	'menu_order' => 0,
+        	'position' => 'side',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => '',
+        	'active' => true,
+        	'description' => '',
+        ));
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5e72c4fe8c111',
+        	'title' => 'Position',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5e72c50806e45',
+        			'label' => 'Position',
+        			'name' => 'position',
+        			'type' => 'text',
+        			'instructions' => 'Position within organisation, e.g. Housing lead',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'placeholder' => '',
+        			'prepend' => '',
+        			'append' => '',
+        			'maxlength' => '',
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'user_form',
+        				'operator' => '==',
+        				'value' => 'all',
+        			),
+        		),
+        	),
+        	'menu_order' => 0,
+        	'position' => 'acf_after_title',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => '',
+        	'active' => true,
+        	'description' => '',
+        ));
+
+        acf_add_local_field_group(array(
+        	'key' => 'group_5df3d34069244',
+        	'title' => 'Project details',
+        	'fields' => array(
+        		array(
+        			'key' => 'field_5df3d37780a54',
+        			'label' => 'Project name',
+        			'name' => 'project_name',
+        			'type' => 'text',
+        			'instructions' => '',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'placeholder' => 'e.g. Manor Farm',
+        			'prepend' => '',
+        			'append' => '',
+        			'maxlength' => '',
+        		),
+        		array(
+        			'key' => 'field_5df3d4b480a55',
+        			'label' => 'Footnotes',
+        			'name' => 'project_footnotes',
+        			'type' => 'wysiwyg',
+        			'instructions' => 'Displayed at the end of case studies.',
+        			'required' => 0,
+        			'conditional_logic' => 0,
+        			'wrapper' => array(
+        				'width' => '',
+        				'class' => '',
+        				'id' => '',
+        			),
+        			'default_value' => '',
+        			'tabs' => 'all',
+        			'toolbar' => 'basic',
+        			'media_upload' => 0,
+        			'delay' => 1,
+        		),
+        	),
+        	'location' => array(
+        		array(
+        			array(
+        				'param' => 'post_type',
+        				'operator' => '==',
+        				'value' => 'projects',
+        			),
+        		),
+        	),
+        	'menu_order' => 0,
+        	'position' => 'side',
+        	'style' => 'default',
+        	'label_placement' => 'top',
+        	'instruction_placement' => 'label',
+        	'hide_on_screen' => '',
+        	'active' => true,
+        	'description' => '',
+        ));
+    }
+
 });
 
 
