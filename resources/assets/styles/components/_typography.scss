@@ -116,6 +116,17 @@ hr {
   font-size: modular-scale(1);
 }
 
+%underlined-link {
+  background-image: linear-gradient(to top, transparentize($vanilla, 0.5) 50%, transparent 50%);
+  background-size: 100% 25%;
+  background-repeat: no-repeat;
+  background-position: left 90%;
+
+  &:hover {
+    background-image: linear-gradient(to top, $vanilla 50%, transparent 50%);
+  }
+}
+
 %fade-into-view {
   html:not(.no-js) & {
     opacity: 0;
