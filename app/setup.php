@@ -200,7 +200,7 @@ add_action( 'init', function() {
 add_action( 'admin_menu', 'App\remove_admin_menus' );
 function remove_admin_menus() {
   remove_menu_page( 'edit-comments.php' );
-  remove_menu_page( 'upload.php' );
+  // remove_menu_page( 'upload.php' );
 }
 // Removes from post and pages
 add_action('init', 'App\remove_comment_support', 100);
