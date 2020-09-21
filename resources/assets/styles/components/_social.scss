@@ -1,0 +1,18 @@
+.social-icon {
+  display: inline-block;
+
+  svg {
+    display: block;
+    width: $base-spacing;
+    height: $base-spacing;
+    padding: $small-spacing/3;
+    border-radius: 9999px;
+    background-color: $black;
+    margin-top: $small-spacing;
+    fill: #fff;
+  }
+
+  + .social-icon {
+    margin-left: $small-spacing/3;
+  }
+}

@@ -9,8 +9,33 @@
         <h3 class="site-footer--title">{{ get_bloginfo('description', 'display') }}</h3>
         <p>
           <span class="site-footer--address contact-address">{{ get_theme_mod('contact_address', 'Makespace Oxford, Aristotle Ln, Oxford OX2 6TP') }}</span>
-        <br><a class="site-footer--email contact-email" href="mailto:{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}">{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}</a>
-        <br><a class="site-footer--phone contact-phone" href="telto:{{ get_theme_mod('contact_phone', '00441865554927') }}">{{ get_theme_mod('contact_phone_human', '(+44) 1865 554927') }}</a></p>
+          <br><a class="site-footer--email contact-email" href="mailto:{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}">{{ get_theme_mod('contact_email', 'info@transitionbydesign.org') }}</a>
+          <br><a class="site-footer--phone contact-phone" href="tel:{{ get_theme_mod('contact_phone', '00441865554927') }}">{{ get_theme_mod('contact_phone_human', '(+44) 1865 554927') }}</a>
+        </p>
+
+        @if(get_theme_mod('facebook'))
+          <a class="navbar-item social-icon social-icon__facebook" href="{{ get_theme_mod('facebook') }}" target="_blank">
+            @include('icons.facebook')
+          </a>
+        @endif
+
+        @if(get_theme_mod('twitter'))
+          <a class="navbar-item social-icon social-icon__twitter" href="{{ get_theme_mod('twitter') }}" target="_blank">
+            @include('icons.twitter')
+          </a>
+        @endif
+
+        @if(get_theme_mod('instagram'))
+          <a class="navbar-item social-icon social-icon__instagram" href="{{ get_theme_mod('instagram') }}" target="_blank">
+            @include('icons.instagram')
+          </a>
+        @endif
+
+        @if(get_theme_mod('linkedin'))
+          <a class="navbar-item social-icon social-icon__linkedin" href="{{ get_theme_mod('linkedin') }}" target="_blank">
+            @include('icons.linkedin')
+          </a>
+        @endif
       </div>
     </div>
     <div class="site-footer--logos">

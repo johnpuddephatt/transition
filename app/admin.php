@@ -499,6 +499,132 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
     )
     );
 
+    // Facebook
+    $wp_customize->add_setting(
+        'facebook',
+        array(
+          'default' => '',
+          'sanitize_callback' => 'sanitize_text_field',
+          'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial('facebook', [
+      'selector' => '.social-icon__facebook',
+      'container_inclusive' => false,
+      'fallback_refresh' => false,
+      'render_callback' => function() {
+          echo get_theme_mod('facebook');
+      }
+    ]);
+
+    $wp_customize->get_setting('facebook')->transport = 'postMessage';
+
+    $wp_customize->add_control(
+    'facebook',
+    array(
+      'type' => 'text',
+      'label' => 'Facebook',
+      'section' => 'contact',
+      'settings' => 'facebook',
+    )
+    );
+
+
+    // Twitter
+    $wp_customize->add_setting(
+        'twitter',
+        array(
+          'default' => '',
+          'sanitize_callback' => 'sanitize_text_field',
+          'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial('twitter', [
+      'selector' => '.social-icon__twitter',
+      'container_inclusive' => false,
+      'fallback_refresh' => false,
+      'render_callback' => function() {
+          echo get_theme_mod('twitter');
+      }
+    ]);
+
+    $wp_customize->get_setting('twitter')->transport = 'postMessage';
+
+    $wp_customize->add_control(
+    'twitter',
+    array(
+      'type' => 'text',
+      'label' => 'Twitter',
+      'section' => 'contact',
+      'settings' => 'twitter',
+    )
+    );
+
+    // Instagram
+    $wp_customize->add_setting(
+        'instagram',
+        array(
+          'default' => '',
+          'sanitize_callback' => 'sanitize_text_field',
+          'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial('instagram', [
+      'selector' => '.social-icon__instagram',
+      'container_inclusive' => false,
+      'fallback_refresh' => false,
+      'render_callback' => function() {
+          echo get_theme_mod('instagram');
+      }
+    ]);
+
+    $wp_customize->get_setting('instagram')->transport = 'postMessage';
+
+    $wp_customize->add_control(
+    'instagram',
+    array(
+      'type' => 'text',
+      'label' => 'Instagram',
+      'section' => 'contact',
+      'settings' => 'instagram',
+    )
+    );
+
+
+    // Linkedin
+    $wp_customize->add_setting(
+        'linkedin',
+        array(
+          'default' => '',
+          'sanitize_callback' => 'sanitize_text_field',
+          'transport' => 'postMessage'
+        )
+    );
+
+    $wp_customize->selective_refresh->add_partial('linkedin', [
+      'selector' => '.social-icon__linkedin',
+      'container_inclusive' => false,
+      'fallback_refresh' => false,
+      'render_callback' => function() {
+          echo get_theme_mod('linkedin');
+      }
+    ]);
+
+    $wp_customize->get_setting('linkedin')->transport = 'postMessage';
+
+    $wp_customize->add_control(
+    'linkedin',
+    array(
+      'type' => 'text',
+      'label' => 'Linkedin',
+      'section' => 'contact',
+      'settings' => 'linkedin',
+    )
+    );
+
 });
 
 /**
