@@ -53,7 +53,7 @@ class App extends Controller
 
 
         $meta->site_name = get_bloginfo('name');
-        $meta->image = get_the_post_thumbnail_url($post_id, 'wide_m') ? (get_site_url() . get_the_post_thumbnail_url($post_id, 'wide_m')) : (\App\asset_path('images/opengraph.jpg'));
+        $meta->image = get_the_post_thumbnail_url($post_id, 'wide_m') ? (get_the_post_thumbnail_url($post_id, 'wide_m')) : (\App\asset_path('images/opengraph.jpg'));
         $meta->locale = get_locale();
 
         if(is_author()) {
