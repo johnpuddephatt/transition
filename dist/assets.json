@@ -21,12 +21,13 @@
   "images/textures/broken-noise.png": "images/textures/broken-noise_4e1dca05.png",
   "images/textures/clean-gray-paper.png": "images/textures/clean-gray-paper_8b908a0c.png",
   "images/textures/concrete-wall.png": "images/textures/concrete-wall_a1a373e1.png",
+  "images/textures/grain-overlay.png": "images/textures/grain-overlay_69490566.png",
   "images/textures/mocha-grunge.png": "images/textures/mocha-grunge_c1985d19.png",
   "images/textures/noise-overlay.png": "images/textures/noise-overlay_4ee0b6ad.png",
   "images/writing.jpg": "images/writing_5cba12c9.jpg",
-  "scripts/customizer.js": "scripts/customizer_3b664df0.js",
-  "styles/gutenberg.css": "styles/gutenberg_3b664df0.css",
-  "scripts/gutenberg.js": "scripts/gutenberg_3b664df0.js",
-  "styles/main.css": "styles/main_3b664df0.css",
-  "scripts/main.js": "scripts/main_3b664df0.js"
+  "scripts/customizer.js": "scripts/customizer_c7c99ed0.js",
+  "styles/gutenberg.css": "styles/gutenberg_c7c99ed0.css",
+  "scripts/gutenberg.js": "scripts/gutenberg_c7c99ed0.js",
+  "styles/main.css": "styles/main_c7c99ed0.css",
+  "scripts/main.js": "scripts/main_c7c99ed0.js"
 }
