@@ -69,6 +69,12 @@ p.is-style-two-columns {
 .wp-block-image {
   max-width: $max-line-length;
 
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   &.size-wide,
   &.size-large {
     margin-bottom: 2 * $base-spacing;
@@ -86,9 +92,13 @@ p.is-style-two-columns {
   &.is-style-full-width-grain {
     position: relative;
 
+    img {
+      filter: brightness(1.25);
+    }
+
     &::after {
       background-image: url(../images/textures/noise-overlay.png);
-      opacity: 0.25;
+      opacity: 0.2;
       image-rendering: pixelated;
       position: absolute;
       z-index: 9;
@@ -98,15 +108,9 @@ p.is-style-two-columns {
       left: 0;
       right: 0;
       bottom: 0;
-      background-size: 100%;
+      background-size: 30%;
       transition: opacity 1s ease;
     }
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
   }
 
   figcaption {
@@ -170,12 +174,12 @@ p.is-style-two-columns {
 
   .wp-block-image {
     margin-bottom: 0;
-  }
 
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
