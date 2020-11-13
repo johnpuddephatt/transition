@@ -97,7 +97,7 @@ p.is-style-two-columns {
     }
 
     &::after {
-      background-image: url(../images/textures/tactile-noise-light.png);
+      background-image: url(../images/textures/noise-overlay.png);
       opacity: 0.2;
       image-rendering: pixelated;
       position: absolute;
@@ -108,7 +108,7 @@ p.is-style-two-columns {
       left: 0;
       right: 0;
       bottom: 0;
-      background-size: 30%;
+      background-size: 100%;
       transition: opacity 1s ease;
     }
   }
