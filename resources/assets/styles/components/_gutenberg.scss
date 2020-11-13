@@ -82,6 +82,27 @@ p.is-style-two-columns {
     max-width: none;
   }
 
+  &.is-style-grain,
+  &.is-style-full-width-grain {
+    position: relative;
+
+    &::after {
+      background-image: url(../images/textures/noise-overlay.png);
+      opacity: 0.25;
+      image-rendering: pixelated;
+      position: absolute;
+      z-index: 9;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: 100%;
+      transition: opacity 1s ease;
+    }
+  }
+
   img {
     display: block;
     width: 100%;

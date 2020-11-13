@@ -33,8 +33,19 @@ wp.domReady( function() {
   } );
 
   wp.blocks.registerBlockStyle( 'core/image', {
+      name: 'grain',
+      label: 'Grain',
+  } );
+
+  wp.blocks.registerBlockStyle( 'core/image', {
       name: 'full-width',
       label: 'Full width',
   } );
+
+  wp.blocks.registerBlockStyle( 'core/image', {
+      name: 'full-width-grain',
+      label: 'Full width + grain',
+  } );
+
 
 });
