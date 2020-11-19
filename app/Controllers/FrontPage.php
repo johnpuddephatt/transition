@@ -18,8 +18,9 @@ class FrontPage extends Controller
 
         $projects = get_posts([
             'post_type' => 'Projects',
-            'posts_per_page'=>'24',
-            'numberposts' => 6
+            'posts_per_page'=>'6',
+            'numberposts' => 6,
+            'include' => get_theme_mod('homepage_projects') ? explode(',',get_theme_mod('homepage_projects')) : null
         ]);
 
         wp_reset_postdata();

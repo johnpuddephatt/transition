@@ -2,6 +2,8 @@
 
 namespace App;
 
+include 'inc/custom-controls.php';
+
 /**
  * Theme customizer
  */
@@ -204,6 +206,33 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
         'settings' => 'home_projects_text',
       )
     );
+
+    $wp_customize->add_setting( 'homepage_projects',
+        array(
+            'transport' => 'refresh'
+        )
+    );
+
+    $projects_list = array_reduce(
+        get_posts( 'post_type=projects&posts_per_page=-1' ),
+        function( $result, $item ) {
+            $result[strval($item->ID)] = strlen($item->post_title) > 26 ? substr($item->post_title,0,23)."..." : $item->post_title;
+            return $result;
+        }
+    );
+
+    $wp_customize->add_control( new \App\CustomControls\Skyrocket_Pill_Checkbox_Custom_Control( $wp_customize, 'homepage_projects',
+        array(
+            'label' => 'Featured projects',
+            'description' => 'Select case studies to appear on the homepage. Rearrange with drag and drop.',
+            'section' => 'home_projects',
+            'input_attrs' => array(
+                'sortable' => true,
+                'fullwidth' => true,
+            ),
+            'choices' => $projects_list
+        )
+    ) );
 
     // Newsletter
 

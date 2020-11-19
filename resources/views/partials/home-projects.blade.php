@@ -21,7 +21,6 @@
 
     <div class="projects-grid--wrapper">
       <div class="projects-grid projects-grid__irregular">
-
         @foreach($projects as $project)
           <a href="{!! $project->link !!}" class="projects-grid--project">
             <div class="projects-grid--image">

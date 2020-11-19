@@ -82,6 +82,7 @@
     "@barba/css": "^2.1.15",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.3.1",
+    "jquery-sortable": "^0.9.13",
     "typesplit": "^1.0.0"
   }
 }

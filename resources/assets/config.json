@@ -5,7 +5,8 @@
       "./styles/main.scss"
     ],
     "customizer": [
-      "./scripts/customizer.js"
+      "./scripts/customizer.js",
+      "./styles/customizer.scss"
     ],
     "gutenberg": [
       "./scripts/gutenberg.js",

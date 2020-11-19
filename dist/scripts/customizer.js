@@ -1,57 +1,140 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/wp-content/themes/transition/dist/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(18);
+module.exports = __webpack_require__(20);
+
+
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 /* eslint-disable */
 
-import jQuery from 'jquery';
+
 
 // wp.customize('blogname', (value) => {
 //   value.bind(to => jQuery('.brand').text(to));
 // });
 
-wp.customize('blogdescription', (value) => {
-  value.bind(to => jQuery('.site-footer--title').text(to));
+wp.customize('blogdescription', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.site-footer--title').text(to); });
 });
 
-wp.customize('home_about_text', (value) => {
-  value.bind(to => jQuery('.home-about--title').text(to));
+wp.customize('home_about_text', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.home-about--title').text(to); });
 });
 
-wp.customize('home_about_button', (value) => {
-  value.bind(to => jQuery('.home-about--button span').text(to));
+wp.customize('home_about_button', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.home-about--button span').text(to); });
 });
 
-wp.customize('home_projects_text', (value) => {
-  value.bind(to => jQuery('.home-projects--intro--text').text(to));
+wp.customize('home_projects_text', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.home-projects--intro--text').text(to); });
 });
 
-wp.customize('newsletter_heading', (value) => {
-  value.bind(to => jQuery('.newsletter-signup--heading').text(to));
+wp.customize('newsletter_heading', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.newsletter-signup--heading').text(to); });
 });
 
-wp.customize('newsletter_disclaimer', (value) => {
-  value.bind(to => jQuery('.newsletter-signup--disclaimer').html(to));
+wp.customize('newsletter_disclaimer', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.newsletter-signup--disclaimer').html(to); });
 });
 
-wp.customize('contact_phone_human', (value) => {
-  value.bind(to => jQuery('.contact-phone').text(to));
+wp.customize('contact_phone_human', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.contact-phone').text(to); });
 });
 
-wp.customize('contact_email', (value) => {
-  value.bind(to => jQuery('.contact-email').text(to));
+wp.customize('contact_email', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.contact-email').text(to); });
 });
 
-wp.customize('contact_address', (value) => {
-  value.bind(to => jQuery('.contact-address').text(to));
+wp.customize('contact_address', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.contact-address').text(to); });
 });
 
-wp.customize('home_sketchbook_text', (value) => {
-  value.bind(to => jQuery('.home-scrapbook--intro').text(to));
+wp.customize('home_sketchbook_text', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.home-scrapbook--intro').text(to); });
 });
 
-wp.customize('home_sketchbook_button', (value) => {
-  value.bind(to => jQuery('.home-scrapbook--button span').text(to));
+wp.customize('home_sketchbook_button', function (value) {
+  value.bind(function (to) { return __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.home-scrapbook--button span').text(to); });
 });
 
 
-jQuery( document ).ready(function(jQuery) {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()( document ).ready(function(jQuery) {
 	"use strict";
 
 	/**
@@ -64,6 +147,8 @@ jQuery( document ).ready(function(jQuery) {
 
 	// Update the values for all our input fields and initialise the sortable repeater
 	jQuery('.sortable_repeater_control').each(function() {
+		var this$1 = this;
+
 		// If there is an existing customizer value, populate our rows
 		var defaultValuesArray = jQuery(this).find('.customize-control-sortable-repeater').val().split(',');
 		var numRepeaterItems = defaultValuesArray.length;
@@ -75,7 +160,7 @@ jQuery( document ).ready(function(jQuery) {
 			if(numRepeaterItems > 1) {
 				var i;
 				for (i = 1; i < numRepeaterItems; ++i) {
-					skyrocketAppendRow(jQuery(this), defaultValuesArray[i]);
+					skyrocketAppendRow(jQuery(this$1), defaultValuesArray[i]);
 				}
 			}
 		}
@@ -129,7 +214,9 @@ jQuery( document ).ready(function(jQuery) {
 	});
 
 	// Append a new row to our list of elements
-	function skyrocketAppendRow(jQueryelement, defaultValue = '') {
+	function skyrocketAppendRow(jQueryelement, defaultValue) {
+		if ( defaultValue === void 0 ) defaultValue = '';
+
 		var newRow = '<div class="repeater" style="display:none"><input type="text" value="' + defaultValue + '" class="repeater-input" placeholder="https://" /><span class="dashicons dashicons-sort"></span><a class="customize-control-sortable-repeater-delete" href="#"><span class="dashicons dashicons-no-alt"></span></a></div>';
 
 		jQueryelement.find('.sortable').append(newRow);
@@ -718,3 +805,23 @@ jQuery( document ).ready(function(jQuery) {
 // 		}
 // 	} );
 // } )( jQuery, wp.customize );
+
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=customizer.js.map
