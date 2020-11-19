@@ -21,4 +21,8 @@
   p {
     max-width: $max-line-length;
   }
+
+  &.is-style-two-columns {
+    max-width: $medium-screen;
+  }
 }
