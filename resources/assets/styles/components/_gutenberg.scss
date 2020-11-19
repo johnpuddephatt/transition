@@ -34,7 +34,6 @@ p.is-style-two-columns {
   margin: 2 * $base-spacing 0;
 
   @media screen and (min-width: $medium-screen) {
-    max-width: none !important;
     column-count: 2;
     column-gap: 1 * $base-spacing;
     padding-right: 4 * $base-spacing;
