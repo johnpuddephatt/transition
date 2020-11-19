@@ -23,6 +23,6 @@
   }
 
   &.is-style-two-columns {
-    max-width: $medium-screen;
+    max-width: $medium-screen !important;
   }
 }
