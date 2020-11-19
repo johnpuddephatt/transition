@@ -84,7 +84,8 @@ p.is-style-two-columns {
     }
   }
 
-  &.is-style-full-width {
+  &.is-style-full-width,
+  &.is-style-full-width-grain {
     max-width: none;
   }
 
