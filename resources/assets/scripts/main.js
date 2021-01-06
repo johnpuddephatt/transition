@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
       barba.wrapper.classList.remove('is-animating');
       document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
       window.routes.loadEvents();
+
+      window.gtag('set', 'page', window.location.pathname);
+      window.gtag('send', 'pageview');
+
     });
 
     barba.hooks.enter(() => {
