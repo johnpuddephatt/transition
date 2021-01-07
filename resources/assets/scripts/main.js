@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       barba.wrapper.classList.remove('is-animating');
       document.body.className = document.querySelector('[data-barba="container"]').dataset.barbaClass; // copy new classes onto body class
       window.routes.loadEvents();
-
+      console.log('gtagging');
       window.gtag('config', 'G-1XNVY0FD6J', {'page_path': window.location.pathname});
       // window.gtag('set', 'page', window.location.pathname);
       window.gtag('send', 'pageview');
