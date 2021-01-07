@@ -3,7 +3,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <style>body {display: none}</style>
-
+  <script>(function(H){H.removeAttribute('class')})(document.documentElement)</script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1XNVY0FD6J"></script>
   <script>

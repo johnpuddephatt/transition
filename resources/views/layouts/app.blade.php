@@ -2,7 +2,6 @@
 
   <!doctype html>
   <html class="no-js" {!! get_language_attributes() !!}>
-    <script>(function(H){H.removeAttribute('class')})(document.documentElement)</script>
     @include('partials.head')
     <body @php body_class() @endphp>
 
@@ -15,7 +14,13 @@
       <div id="app" data-barba="wrapper" role="document">
         @php do_action('get_header') @endphp
         @include('partials.header')
-
+@else
+  <!doctype html>
+  <html>
+    <head>
+      <title>{{ $meta->title }}</title>
+    </head>
+      <body>
 @endif
 
         <div data-barba-class="{{ join( ' ', get_body_class()) }}" data-barba="container" data-barba-namespace="{{ basename( get_permalink() ) }}">
@@ -32,4 +37,7 @@
       @php wp_footer() @endphp
     </body>
   </html>
+@else
+  </body>
+</html>
 @endif
