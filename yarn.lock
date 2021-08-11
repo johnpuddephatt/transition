@@ -2,13 +2,18 @@
 # yarn lockfile v1
 
 
-"@barba/core@^2.9.6":
+"@barba/core@2.9.6":
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/@barba/core/-/core-2.9.6.tgz#c735356b6ed88d0a2f4fd2661095b9a49dc85ebf"
   integrity sha512-cIEfPHMnoQfxf2np720EJ2CT2IQ8wcxcs6UdmaR1Nilcwjr1kw8xYpYtAZSYpE40zcbJBMg+M1krb9fyAwaFPw==
   dependencies:
     is-promise "^2.1.0"
     path-to-regexp "^3.0.0"
+
+"@barba/css@^2.1.15":
+  version "2.1.15"
+  resolved "https://registry.yarnpkg.com/@barba/css/-/css-2.1.15.tgz#1bb0b1441723d581b032d4b0950c5a568484bb4e"
+  integrity sha512-nzLZZHqvQ+j22rLD1xIOUBPEYibHqa0euIiwo8vOvLg0ny9yWAUKfHDLJLDY0U1QC80oWHa+bp4rtolYmYeuQA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -5133,6 +5138,18 @@ jpegtran-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
+jquery-sortable@^0.9.13:
+  version "0.9.13"
+  resolved "https://registry.yarnpkg.com/jquery-sortable/-/jquery-sortable-0.9.13.tgz#1cbfb655013a0747370571f06e22f524a00ffba2"
+  integrity sha1-HL+2VQE6B0c3BXHwbiL1JKAP+6I=
+  dependencies:
+    jquery "^2.1.2"
+
+jquery@^2.1.2:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+  integrity sha1-LInWiJterFIqfuoywUUhVZxsvwI=
+
 jquery@^3.3.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
@@ -6884,9 +6901,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@^3.0.0:
   version "3.2.0"
