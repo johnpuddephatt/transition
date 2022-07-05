@@ -53,6 +53,8 @@ add_action('customize_register', function (\WP_Customize_Manager $wp_customize) 
         'label' => 'Case study',
         'section' => 'home_hero',
         'settings' => 'home_hero_project',
+        		'transport' => 'refresh',
+
         'choices' => array_reduce(
             get_posts( 'post_type=projects&posts_per_page=-1' ),
             function( $result, $item ) {
