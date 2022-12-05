@@ -2,13 +2,18 @@
 # yarn lockfile v1
 
 
-"@barba/core@^2.9.6":
+"@barba/core@2.9.6":
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/@barba/core/-/core-2.9.6.tgz#c735356b6ed88d0a2f4fd2661095b9a49dc85ebf"
   integrity sha512-cIEfPHMnoQfxf2np720EJ2CT2IQ8wcxcs6UdmaR1Nilcwjr1kw8xYpYtAZSYpE40zcbJBMg+M1krb9fyAwaFPw==
   dependencies:
     is-promise "^2.1.0"
     path-to-regexp "^3.0.0"
+
+"@barba/css@^2.1.15":
+  version "2.1.15"
+  resolved "https://registry.yarnpkg.com/@barba/css/-/css-2.1.15.tgz#1bb0b1441723d581b032d4b0950c5a568484bb4e"
+  integrity sha512-nzLZZHqvQ+j22rLD1xIOUBPEYibHqa0euIiwo8vOvLg0ny9yWAUKfHDLJLDY0U1QC80oWHa+bp4rtolYmYeuQA==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -2295,9 +2300,9 @@ decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2:
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
-  integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 decompress-response@^3.2.0, decompress-response@^3.3.0:
   version "3.3.0"
@@ -5132,6 +5137,18 @@ jpegtran-bin@^3.0.0:
     bin-build "^2.0.0"
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
+
+jquery-sortable@^0.9.13:
+  version "0.9.13"
+  resolved "https://registry.yarnpkg.com/jquery-sortable/-/jquery-sortable-0.9.13.tgz#1cbfb655013a0747370571f06e22f524a00ffba2"
+  integrity sha512-AlWotHQnKOAJLRfmbsv0iHcmTB6v6ZsCJ3MvIFaiqJ4Lcpuo8z2w+orAEo6SSP7sLfvhMegM0Oy+I3p20qUO+g==
+  dependencies:
+    jquery "^2.1.2"
+
+jquery@^2.1.2:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
+  integrity sha512-lBHj60ezci2u1v2FqnZIraShGgEXq35qCzMv4lITyHGppTnA13rwR0MgwyNJh9TnDs3aXUvd1xjAotfraMHX/Q==
 
 jquery@^3.3.1:
   version "3.4.1"
