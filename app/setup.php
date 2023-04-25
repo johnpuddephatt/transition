@@ -394,6 +394,8 @@ add_action("after_setup_theme", function () {
                     "type" => "checkbox",
                     "choices" => [
                         "display_on_about" => "Display on About page",
+                        "display_on_about_associate" =>
+                            "Display on About page (associate)",
                     ],
                     "instructions" => "",
                     "required" => 0,
