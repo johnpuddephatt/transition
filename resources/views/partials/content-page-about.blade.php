@@ -29,9 +29,10 @@
       </div>
 
       @if(isset($associates) && count($associates))
+       <h3>Associates</h3>
             <div class="about-people--grid">
 
-          <h3>Associates</h3>
+         
           @foreach($associates as $user)
             <a href="/about/{{ $user->user_login }}" class="about-people--grid--item">
               <div class="about-people--grid--item--image">{!! $user->image !!}</div>
