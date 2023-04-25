@@ -14,6 +14,7 @@
 
     <div class="about-people">
       <h2 class="tag">Our people</h2>
+      <div>
       <div class="about-people--grid">
 
         @foreach($team as $user)
@@ -41,6 +42,7 @@
                 </div>
 
         @endif
+</div>
     </div>
 
     <div class="about-services">
