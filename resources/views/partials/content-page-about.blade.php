@@ -24,7 +24,12 @@
           </a>
         @endforeach
 
-        @if(isset($associates) && count($associates))
+        
+      </div>
+
+      @if(isset($associates) && count($associates))
+            <div class="about-people--grid">
+
           <h3>Associates</h3>
           @foreach($associates as $user)
             <a href="/about/{{ $user->user_login }}" class="about-people--grid--item">
@@ -33,8 +38,9 @@
               <p>{{ $user->position }}</p>
             </a>
           @endforeach
+                </div>
+
         @endif
-      </div>
     </div>
 
     <div class="about-services">
