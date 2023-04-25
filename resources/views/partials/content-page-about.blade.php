@@ -23,6 +23,17 @@
             <p>{{ $user->position }}</p>
           </a>
         @endforeach
+
+        @if(count($associates))
+          <h3>Associates</h3>
+          @foreach($associates as $user)
+            <a href="/about/{{ $user->user_login }}" class="about-people--grid--item">
+              <div class="about-people--grid--item--image">{!! $user->image !!}</div>
+              <h3>{{ $user->display_name }}</h3>
+              <p>{{ $user->position }}</p>
+            </a>
+          @endforeach
+        @endif
       </div>
     </div>
 
