@@ -24,7 +24,7 @@
           </a>
         @endforeach
 
-        @if(count($associates))
+        @if(isset($associates) && count($associates))
           <h3>Associates</h3>
           @foreach($associates as $user)
             <a href="/about/{{ $user->user_login }}" class="about-people--grid--item">
